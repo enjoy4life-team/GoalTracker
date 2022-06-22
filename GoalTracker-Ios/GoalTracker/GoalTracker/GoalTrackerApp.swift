@@ -13,8 +13,10 @@ struct GoalTrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            GoalMainScreen().onAppear{
+                let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+                print(paths[0])
+            }
         }
     }
 }
