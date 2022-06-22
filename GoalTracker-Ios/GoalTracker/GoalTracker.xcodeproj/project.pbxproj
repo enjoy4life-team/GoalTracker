@@ -8,14 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		CBE314942862F3F500E88F35 /* GoalTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314932862F3F500E88F35 /* GoalTrackerApp.swift */; };
-		CBE314962862F3F500E88F35 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314952862F3F500E88F35 /* ContentView.swift */; };
 		CBE314982862F3F600E88F35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE314972862F3F600E88F35 /* Assets.xcassets */; };
 		CBE3149B2862F3F600E88F35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE3149A2862F3F600E88F35 /* Preview Assets.xcassets */; };
-		CBE3149D2862F3F600E88F35 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE3149C2862F3F600E88F35 /* Persistence.swift */; };
+		CBE3149D2862F3F600E88F35 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE3149C2862F3F600E88F35 /* PersistenceController.swift */; };
 		CBE314A02862F3F600E88F35 /* GoalTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBE3149E2862F3F600E88F35 /* GoalTracker.xcdatamodeld */; };
 		CBE314AA2862F3F600E88F35 /* GoalTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314A92862F3F600E88F35 /* GoalTrackerTests.swift */; };
 		CBE314B42862F3F600E88F35 /* GoalTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314B32862F3F600E88F35 /* GoalTrackerUITests.swift */; };
 		CBE314B62862F3F600E88F35 /* GoalTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314B52862F3F600E88F35 /* GoalTrackerUITestsLaunchTests.swift */; };
+		CBE314CD2862FA9200E88F35 /* GoalLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314CC2862FA9200E88F35 /* GoalLocalDataSource.swift */; };
+		CBE314CF2862FAA100E88F35 /* GoalLocalDefaultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314CE2862FAA100E88F35 /* GoalLocalDefaultDataSource.swift */; };
+		CBE314D62862FB0900E88F35 /* GoalMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314D52862FB0900E88F35 /* GoalMainScreen.swift */; };
+		CBE314D82862FBD600E88F35 /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314D72862FBD600E88F35 /* GoalViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,16 +41,19 @@
 /* Begin PBXFileReference section */
 		CBE314902862F3F500E88F35 /* GoalTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoalTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE314932862F3F500E88F35 /* GoalTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTrackerApp.swift; sourceTree = "<group>"; };
-		CBE314952862F3F500E88F35 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CBE314972862F3F600E88F35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBE3149A2862F3F600E88F35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CBE3149C2862F3F600E88F35 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		CBE3149C2862F3F600E88F35 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		CBE3149F2862F3F600E88F35 /* GoalTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoalTracker.xcdatamodel; sourceTree = "<group>"; };
 		CBE314A52862F3F600E88F35 /* GoalTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoalTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE314A92862F3F600E88F35 /* GoalTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTrackerTests.swift; sourceTree = "<group>"; };
 		CBE314AF2862F3F600E88F35 /* GoalTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoalTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE314B32862F3F600E88F35 /* GoalTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTrackerUITests.swift; sourceTree = "<group>"; };
 		CBE314B52862F3F600E88F35 /* GoalTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CBE314CC2862FA9200E88F35 /* GoalLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalLocalDataSource.swift; sourceTree = "<group>"; };
+		CBE314CE2862FAA100E88F35 /* GoalLocalDefaultDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalLocalDefaultDataSource.swift; sourceTree = "<group>"; };
+		CBE314D52862FB0900E88F35 /* GoalMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalMainScreen.swift; sourceTree = "<group>"; };
+		CBE314D72862FBD600E88F35 /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +104,10 @@
 		CBE314922862F3F500E88F35 /* GoalTracker */ = {
 			isa = PBXGroup;
 			children = (
+				CBE314D02862FAB000E88F35 /* Goal */,
+				CBE314C22862F71800E88F35 /* Common */,
 				CBE314932862F3F500E88F35 /* GoalTrackerApp.swift */,
-				CBE314952862F3F500E88F35 /* ContentView.swift */,
 				CBE314972862F3F600E88F35 /* Assets.xcassets */,
-				CBE3149C2862F3F600E88F35 /* Persistence.swift */,
-				CBE3149E2862F3F600E88F35 /* GoalTracker.xcdatamodeld */,
 				CBE314992862F3F600E88F35 /* Preview Content */,
 			);
 			path = GoalTracker;
@@ -131,6 +136,82 @@
 				CBE314B52862F3F600E88F35 /* GoalTrackerUITestsLaunchTests.swift */,
 			);
 			path = GoalTrackerUITests;
+			sourceTree = "<group>";
+		};
+		CBE314C22862F71800E88F35 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CBE314C32862F71E00E88F35 /* Data */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CBE314C32862F71E00E88F35 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CBE314C62862F9F500E88F35 /* Goal */,
+				CBE314C42862F72500E88F35 /* CoreData */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CBE314C42862F72500E88F35 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CBE3149C2862F3F600E88F35 /* PersistenceController.swift */,
+				CBE314C52862F73300E88F35 /* Model */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		CBE314C52862F73300E88F35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CBE3149E2862F3F600E88F35 /* GoalTracker.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CBE314C62862F9F500E88F35 /* Goal */ = {
+			isa = PBXGroup;
+			children = (
+				CBE314CB2862FA6D00E88F35 /* Local */,
+			);
+			path = Goal;
+			sourceTree = "<group>";
+		};
+		CBE314CB2862FA6D00E88F35 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				CBE314CC2862FA9200E88F35 /* GoalLocalDataSource.swift */,
+				CBE314CE2862FAA100E88F35 /* GoalLocalDefaultDataSource.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		CBE314D02862FAB000E88F35 /* Goal */ = {
+			isa = PBXGroup;
+			children = (
+				CBE314D22862FAC100E88F35 /* ViewModel */,
+				CBE314D12862FAB500E88F35 /* View */,
+			);
+			path = Goal;
+			sourceTree = "<group>";
+		};
+		CBE314D12862FAB500E88F35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CBE314D52862FB0900E88F35 /* GoalMainScreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CBE314D22862FAC100E88F35 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CBE314D72862FBD600E88F35 /* GoalViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,9 +344,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBE3149D2862F3F600E88F35 /* Persistence.swift in Sources */,
-				CBE314962862F3F500E88F35 /* ContentView.swift in Sources */,
+				CBE3149D2862F3F600E88F35 /* PersistenceController.swift in Sources */,
+				CBE314D82862FBD600E88F35 /* GoalViewModel.swift in Sources */,
+				CBE314CF2862FAA100E88F35 /* GoalLocalDefaultDataSource.swift in Sources */,
+				CBE314D62862FB0900E88F35 /* GoalMainScreen.swift in Sources */,
 				CBE314942862F3F500E88F35 /* GoalTrackerApp.swift in Sources */,
+				CBE314CD2862FA9200E88F35 /* GoalLocalDataSource.swift in Sources */,
 				CBE314A02862F3F600E88F35 /* GoalTracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
