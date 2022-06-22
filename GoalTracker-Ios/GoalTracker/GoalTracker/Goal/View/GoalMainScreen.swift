@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct GoalMainScreen: View {
-    @ObservedObject var viewModel = GoalViewModel()
+    @ObservedObject var viewModel: GoalViewModel
     var body: some View {
-        
+        ScrollView{
         ForEach(0..<viewModel.goal.count, id: \.self) { idx in
             Text(viewModel.goal[idx].id?.uuidString ?? "null")
         }
@@ -21,12 +21,13 @@ struct GoalMainScreen: View {
     }.onAppear{
         viewModel.getData()
     }
+        }
 }
 
 }
 
 struct GoalMainScreen_Previews: PreviewProvider {
     static var previews: some View {
-        GoalMainScreen()
+        GoalMainScreen(viewModel: GoalViewModel())
     }
 }

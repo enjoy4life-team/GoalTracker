@@ -13,7 +13,7 @@ struct GoalTrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            GoalMainScreen().onAppear{
+            MainTabView().onAppear{
                 let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
                 print(paths[0])
             }
