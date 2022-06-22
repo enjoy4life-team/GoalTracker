@@ -19,6 +19,11 @@
 		CBE314CF2862FAA100E88F35 /* GoalLocalDefaultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314CE2862FAA100E88F35 /* GoalLocalDefaultDataSource.swift */; };
 		CBE314D62862FB0900E88F35 /* GoalMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314D52862FB0900E88F35 /* GoalMainScreen.swift */; };
 		CBE314D82862FBD600E88F35 /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314D72862FBD600E88F35 /* GoalViewModel.swift */; };
+		CBE314DF2862FF7600E88F35 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314DE2862FF7600E88F35 /* MainTabView.swift */; };
+		CBE314E12862FFE700E88F35 /* MainTabVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314E02862FFE700E88F35 /* MainTabVIewModel.swift */; };
+		CBE314E62863007D00E88F35 /* UITabBar+DefaultAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314E52863007D00E88F35 /* UITabBar+DefaultAppearance.swift */; };
+		CBE314E82863019900E88F35 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314E72863019900E88F35 /* Settings.swift */; };
+		CBE314EB2863023E00E88F35 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314EA2863023E00E88F35 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +59,11 @@
 		CBE314CE2862FAA100E88F35 /* GoalLocalDefaultDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalLocalDefaultDataSource.swift; sourceTree = "<group>"; };
 		CBE314D52862FB0900E88F35 /* GoalMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalMainScreen.swift; sourceTree = "<group>"; };
 		CBE314D72862FBD600E88F35 /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
+		CBE314DE2862FF7600E88F35 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		CBE314E02862FFE700E88F35 /* MainTabVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVIewModel.swift; sourceTree = "<group>"; };
+		CBE314E52863007D00E88F35 /* UITabBar+DefaultAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+DefaultAppearance.swift"; sourceTree = "<group>"; };
+		CBE314E72863019900E88F35 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		CBE314EA2863023E00E88F35 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +114,11 @@
 		CBE314922862F3F500E88F35 /* GoalTracker */ = {
 			isa = PBXGroup;
 			children = (
+				CBE314DD2862FF3D00E88F35 /* TabBar */,
+				CBE314DC2862FE9A00E88F35 /* Settings */,
+				CBE314DB2862FE9000E88F35 /* Summary */,
+				CBE314DA2862FE5E00E88F35 /* Activity */,
+				CBE314D92862FE4B00E88F35 /* Onboarding */,
 				CBE314D02862FAB000E88F35 /* Goal */,
 				CBE314C22862F71800E88F35 /* Common */,
 				CBE314932862F3F500E88F35 /* GoalTrackerApp.swift */,
@@ -141,6 +156,7 @@
 		CBE314C22862F71800E88F35 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CBE314E22863004A00E88F35 /* Extension */,
 				CBE314C32862F71E00E88F35 /* Data */,
 			);
 			path = Common;
@@ -212,6 +228,77 @@
 				CBE314D72862FBD600E88F35 /* GoalViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CBE314D92862FE4B00E88F35 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		CBE314DA2862FE5E00E88F35 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		CBE314DB2862FE9000E88F35 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
+		CBE314DC2862FE9A00E88F35 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CBE314E72863019900E88F35 /* Settings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		CBE314DD2862FF3D00E88F35 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				CBE314DE2862FF7600E88F35 /* MainTabView.swift */,
+				CBE314E02862FFE700E88F35 /* MainTabVIewModel.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		CBE314E22863004A00E88F35 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CBE314E92863023300E88F35 /* Color */,
+				CBE314E32863005700E88F35 /* UIKit */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		CBE314E32863005700E88F35 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				CBE314E42863006B00E88F35 /* UITabBarAppearance */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		CBE314E42863006B00E88F35 /* UITabBarAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				CBE314E52863007D00E88F35 /* UITabBar+DefaultAppearance.swift */,
+			);
+			path = UITabBarAppearance;
+			sourceTree = "<group>";
+		};
+		CBE314E92863023300E88F35 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				CBE314EA2863023E00E88F35 /* Color.swift */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,10 +433,15 @@
 			files = (
 				CBE3149D2862F3F600E88F35 /* PersistenceController.swift in Sources */,
 				CBE314D82862FBD600E88F35 /* GoalViewModel.swift in Sources */,
+				CBE314E62863007D00E88F35 /* UITabBar+DefaultAppearance.swift in Sources */,
 				CBE314CF2862FAA100E88F35 /* GoalLocalDefaultDataSource.swift in Sources */,
+				CBE314DF2862FF7600E88F35 /* MainTabView.swift in Sources */,
+				CBE314EB2863023E00E88F35 /* Color.swift in Sources */,
+				CBE314E12862FFE700E88F35 /* MainTabVIewModel.swift in Sources */,
 				CBE314D62862FB0900E88F35 /* GoalMainScreen.swift in Sources */,
 				CBE314942862F3F500E88F35 /* GoalTrackerApp.swift in Sources */,
 				CBE314CD2862FA9200E88F35 /* GoalLocalDataSource.swift in Sources */,
+				CBE314E82863019900E88F35 /* Settings.swift in Sources */,
 				CBE314A02862F3F600E88F35 /* GoalTracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

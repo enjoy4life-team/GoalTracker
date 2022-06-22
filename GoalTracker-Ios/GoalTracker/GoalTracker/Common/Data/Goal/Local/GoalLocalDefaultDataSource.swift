@@ -29,6 +29,7 @@ final class GoalDefaultLocalDataStore: GoalLocalDataSource {
         goal.id = UUID.init()
         goal.startDate = Date.now
         goal.endDate = Date.now
+        goal.name = "goal a"
 
         try? self.container.viewContext.save()
     }
