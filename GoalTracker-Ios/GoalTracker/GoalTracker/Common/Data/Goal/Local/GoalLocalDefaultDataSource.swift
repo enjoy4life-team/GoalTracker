@@ -12,7 +12,6 @@ import Foundation
 
 
 final class GoalDefaultLocalDataStore: GoalLocalDataSource {
-    
     private let container = PersistenceController.shared.container
 
     
@@ -34,5 +33,7 @@ final class GoalDefaultLocalDataStore: GoalLocalDataSource {
         try? self.container.viewContext.save()
     }
     
-    
+    func saveChanges() {
+        try? self.container.viewContext.save()
+    }
 }

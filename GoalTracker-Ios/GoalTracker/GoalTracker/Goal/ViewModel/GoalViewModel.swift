@@ -8,7 +8,7 @@
 import Foundation
 
 final class GoalViewModel: ObservableObject {
-    @Published var goal: [Goal] = []
+    @Published var goals: [Goal] = []
     
     let dataStore: GoalLocalDataSource
     
@@ -22,7 +22,7 @@ final class GoalViewModel: ObservableObject {
             guard let data = try dataStore.getAllGoalsData() else{
                 return
             }
-            goal = data
+            goals = data
                     
             } catch {
                 print(error)
@@ -32,5 +32,21 @@ final class GoalViewModel: ObservableObject {
     func newData(){
         dataStore.createNewGoal()
         getData()
+    }
+    
+    func addGoals(goal: Goal) {
+        goals.append(goal)
+    }
+    
+    func saveState(){
+        dataStore.saveChanges()
+    }
+    
+    func getGoalTemplateData() -> [GoalTemplateItem] {
+        return [
+            GoalTemplateItem(imageName: "communication", goal: .Communication),
+            GoalTemplateItem(imageName: "collaboration", goal: .Collaboration),
+            GoalTemplateItem(imageName: "presentation", goal: .Presentation),
+        ]
     }
 }
