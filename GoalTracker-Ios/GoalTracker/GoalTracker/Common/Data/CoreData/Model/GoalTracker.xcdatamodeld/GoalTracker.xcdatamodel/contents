@@ -7,7 +7,7 @@
         <attribute name="note" optional="YES" attributeType="String"/>
         <attribute name="repeated" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <relationship name="goal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Goal" inverseName="activities" inverseEntity="Goal"/>
-        <relationship name="tasks" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Task" inverseName="activity" inverseEntity="Task"/>
+        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="activity" inverseEntity="Task"/>
     </entity>
     <entity name="Goal" representedClassName="Goal" syncable="YES" codeGenerationType="class">
         <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>

@@ -10,4 +10,5 @@ import Foundation
 protocol GoalLocalDataSource {
     func getAllGoalsData() throws -> [Goal]?
     func createNewGoal()
+    func saveChanges()
 }

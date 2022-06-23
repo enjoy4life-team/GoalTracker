@@ -24,6 +24,8 @@
 		CBE314E62863007D00E88F35 /* UITabBar+DefaultAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314E52863007D00E88F35 /* UITabBar+DefaultAppearance.swift */; };
 		CBE314E82863019900E88F35 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314E72863019900E88F35 /* Settings.swift */; };
 		CBE314EB2863023E00E88F35 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314EA2863023E00E88F35 /* Color.swift */; };
+		CBFEE284286441F400377AE1 /* GoalTemplateDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE283286441F400377AE1 /* GoalTemplateDummy.swift */; };
+		CBFEE2862864CDA800377AE1 /* GoalTemplateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE2852864CDA800377AE1 /* GoalTemplateItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		CBE314E52863007D00E88F35 /* UITabBar+DefaultAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+DefaultAppearance.swift"; sourceTree = "<group>"; };
 		CBE314E72863019900E88F35 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CBE314EA2863023E00E88F35 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		CBFEE283286441F400377AE1 /* GoalTemplateDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTemplateDummy.swift; sourceTree = "<group>"; };
+		CBFEE2852864CDA800377AE1 /* GoalTemplateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTemplateItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,7 @@
 		CBE314C22862F71800E88F35 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CBFEE282286441DE00377AE1 /* Template */,
 				CBE314E22863004A00E88F35 /* Extension */,
 				CBE314C32862F71E00E88F35 /* Data */,
 			);
@@ -226,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				CBE314D72862FBD600E88F35 /* GoalViewModel.swift */,
+				CBFEE2852864CDA800377AE1 /* GoalTemplateItem.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -299,6 +305,14 @@
 				CBE314EA2863023E00E88F35 /* Color.swift */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		CBFEE282286441DE00377AE1 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				CBFEE283286441F400377AE1 /* GoalTemplateDummy.swift */,
+			);
+			path = Template;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,6 +445,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBFEE284286441F400377AE1 /* GoalTemplateDummy.swift in Sources */,
+				CBFEE2862864CDA800377AE1 /* GoalTemplateItem.swift in Sources */,
 				CBE3149D2862F3F600E88F35 /* PersistenceController.swift in Sources */,
 				CBE314D82862FBD600E88F35 /* GoalViewModel.swift in Sources */,
 				CBE314E62863007D00E88F35 /* UITabBar+DefaultAppearance.swift in Sources */,

@@ -11,19 +11,25 @@ struct GoalMainScreen: View {
     @ObservedObject var viewModel: GoalViewModel
     var body: some View {
         ScrollView{
-        ForEach(0..<viewModel.goal.count, id: \.self) { idx in
-            Text(viewModel.goal[idx].id?.uuidString ?? "null")
+            ForEach(0..<viewModel.goals.count, id: \.self) { idx in
+                Text(viewModel.goals[idx].id?.uuidString ?? "null")
+            }
+            
+            
+            Button("new item"){
+                viewModel.addGoals(goal: SmartGoalTemplate.Communication.getGoals())
+            }.onAppear{
+                viewModel.getData()
+            }
+            
+            Button("Save"){
+                viewModel.saveState()
+            }.onAppear{
+                viewModel.getData()
+            }
         }
-    
-    
-    Button("new item"){
-        viewModel.newData()
-    }.onAppear{
-        viewModel.getData()
     }
-        }
-}
-
+    
 }
 
 struct GoalMainScreen_Previews: PreviewProvider {
