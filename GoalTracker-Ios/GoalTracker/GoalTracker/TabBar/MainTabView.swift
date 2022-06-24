@@ -32,7 +32,6 @@ struct MainTabView: View {
             }.onAppear{
                 goalViewModel.getData()
             }
-            
         }
     }
 }
