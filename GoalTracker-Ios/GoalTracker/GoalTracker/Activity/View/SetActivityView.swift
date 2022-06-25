@@ -14,6 +14,7 @@ struct SetActivityView: View {
     @State private var setActivity = true
     @State private var editMode: EditMode = .inactive
     @State private var isEditing = false
+    @State private var isAlertShowed = false
     
     
     var body: some View {
@@ -44,13 +45,13 @@ struct SetActivityView: View {
                             }
                             
                         }
-                                                
+                        
                     }
                     .onMove(perform: { from, to in
                         viewModel.moveData(fromOffsets: from, toOffset: to)
                     })
                     .onDelete(perform: { deletedOffsets in
-                        
+                        viewModel.deleteData(idx: deletedOffsets)
                     })
                     Label {
                         Text("New Activity")
@@ -58,7 +59,7 @@ struct SetActivityView: View {
                         Image(systemName: "plus.circle.fill")
                             .foregroundColor(Color.green)
                     }
-
+                    
                     
                 }
                 .environment(\.editMode, $editMode)
@@ -66,25 +67,38 @@ struct SetActivityView: View {
                 
                 Spacer()
             }
-            .navigationBarTitle(Text("Detail View"), displayMode: .inline)
+            .navigationBarTitle(Text("Set Activity"), displayMode: .inline)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: Button(action: {
+                
                 editMode = isEditing ? .inactive : .active
                 isEditing.toggle()
-                viewModel.saveChanges()
             }){
                 Text(isEditing ? "Done" : "Edit")
             }, trailing: Button(action: {
-
                 
-                presentationMode.wrappedValue.dismiss()
-
+                isAlertShowed.toggle()
+                
             }){
                 Text("Save")
             })
         }.onAppear{
             viewModel.getData()
         }
+        .alert(isPresented: $isAlertShowed) {
+            Alert(
+                            title: Text("Are you sure you want to save the change?"),
+                            primaryButton: .default(Text("Yes")){
+                                viewModel.saveChanges()
+                                presentationMode.wrappedValue.dismiss()
+                            },
+                            secondaryButton: .destructive(Text("No")) {
+                                viewModel.cancelChanges()
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                        )
+        }
+        
     }
 }
 

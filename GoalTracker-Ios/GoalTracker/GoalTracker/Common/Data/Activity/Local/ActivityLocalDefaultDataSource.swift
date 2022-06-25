@@ -23,4 +23,8 @@ final class ActivityDefaultLocalDataStore: ActivityLocalDataSource{
         try? self.container.viewContext.save()
     }
     
+    func rollBack(){
+        self.container.viewContext.rollback()
+    }
+    
 }

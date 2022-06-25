@@ -53,4 +53,17 @@ class SetActivityViewModel: ObservableObject {
         
         dataStore.saveChanges()
     }
+    
+    func deleteData(idx: IndexSet) {
+        idx.forEach{
+            i in
+            dataStore.deleteActivity(activity: activities[i])
+        }
+        
+        activities.remove(atOffsets: idx)
+    }
+    
+    func cancelChanges(){
+        dataStore.rollBack()
+    }
 }

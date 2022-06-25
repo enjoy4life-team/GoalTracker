@@ -11,4 +11,5 @@ protocol ActivityLocalDataSource {
     func deleteActivity(activity: Activity)
     func getActivitiesByGoalID(id: UUID) throws -> [Activity]?
     func saveChanges()
+    func rollBack()
 }
