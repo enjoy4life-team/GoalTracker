@@ -12,7 +12,12 @@ struct GoalMainScreen: View {
     var body: some View {
         ScrollView{
             ForEach(0..<viewModel.goals.count, id: \.self) { idx in
-                Text(viewModel.goals[idx].id?.uuidString ?? "null")
+                NavigationLink {
+                    SetActivityView(viewModel: SetActivityViewModel(goal: viewModel.goals[idx]))
+                } label: {
+                    Text(viewModel.goals[idx].id?.uuidString ?? "null")
+                    Text("asdasfasd")
+                }.buttonStyle(.plain)
             }
             
             

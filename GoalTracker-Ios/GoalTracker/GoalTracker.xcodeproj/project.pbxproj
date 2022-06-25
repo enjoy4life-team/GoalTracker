@@ -26,6 +26,10 @@
 		CBE314EB2863023E00E88F35 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314EA2863023E00E88F35 /* Color.swift */; };
 		CBFEE284286441F400377AE1 /* GoalTemplateDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE283286441F400377AE1 /* GoalTemplateDummy.swift */; };
 		CBFEE2862864CDA800377AE1 /* GoalTemplateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE2852864CDA800377AE1 /* GoalTemplateItem.swift */; };
+		CBFEE2882865E5AA00377AE1 /* SetActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE2872865E5AA00377AE1 /* SetActivityView.swift */; };
+		CBFEE28B2865FD5E00377AE1 /* ActivityLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE28A2865FD5E00377AE1 /* ActivityLocalDataSource.swift */; };
+		CBFEE28E2865FD8A00377AE1 /* ActivityLocalDefaultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE28D2865FD8A00377AE1 /* ActivityLocalDefaultDataSource.swift */; };
+		CBFEE2922865FE6F00377AE1 /* SetActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE2912865FE6F00377AE1 /* SetActivityViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,10 @@
 		CBE314EA2863023E00E88F35 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		CBFEE283286441F400377AE1 /* GoalTemplateDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTemplateDummy.swift; sourceTree = "<group>"; };
 		CBFEE2852864CDA800377AE1 /* GoalTemplateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTemplateItem.swift; sourceTree = "<group>"; };
+		CBFEE2872865E5AA00377AE1 /* SetActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetActivityView.swift; sourceTree = "<group>"; };
+		CBFEE28A2865FD5E00377AE1 /* ActivityLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLocalDataSource.swift; sourceTree = "<group>"; };
+		CBFEE28D2865FD8A00377AE1 /* ActivityLocalDefaultDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLocalDefaultDataSource.swift; sourceTree = "<group>"; };
+		CBFEE2912865FE6F00377AE1 /* SetActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetActivityViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +178,7 @@
 		CBE314C32862F71E00E88F35 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CBFEE2892865FD1700377AE1 /* Activity */,
 				CBE314C62862F9F500E88F35 /* Goal */,
 				CBE314C42862F72500E88F35 /* CoreData */,
 			);
@@ -246,6 +255,8 @@
 		CBE314DA2862FE5E00E88F35 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				CBFEE2902865FE5400377AE1 /* View */,
+				CBFEE28F2865FE4C00377AE1 /* ViewModel */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -313,6 +324,39 @@
 				CBFEE283286441F400377AE1 /* GoalTemplateDummy.swift */,
 			);
 			path = Template;
+			sourceTree = "<group>";
+		};
+		CBFEE2892865FD1700377AE1 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				CBFEE28C2865FD7200377AE1 /* Local */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		CBFEE28C2865FD7200377AE1 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				CBFEE28A2865FD5E00377AE1 /* ActivityLocalDataSource.swift */,
+				CBFEE28D2865FD8A00377AE1 /* ActivityLocalDefaultDataSource.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		CBFEE28F2865FE4C00377AE1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CBFEE2912865FE6F00377AE1 /* SetActivityViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CBFEE2902865FE5400377AE1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CBFEE2872865E5AA00377AE1 /* SetActivityView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,9 +497,13 @@
 				CBE314CF2862FAA100E88F35 /* GoalLocalDefaultDataSource.swift in Sources */,
 				CBE314DF2862FF7600E88F35 /* MainTabView.swift in Sources */,
 				CBE314EB2863023E00E88F35 /* Color.swift in Sources */,
+				CBFEE2922865FE6F00377AE1 /* SetActivityViewModel.swift in Sources */,
+				CBFEE2882865E5AA00377AE1 /* SetActivityView.swift in Sources */,
 				CBE314E12862FFE700E88F35 /* MainTabVIewModel.swift in Sources */,
 				CBE314D62862FB0900E88F35 /* GoalMainScreen.swift in Sources */,
+				CBFEE28B2865FD5E00377AE1 /* ActivityLocalDataSource.swift in Sources */,
 				CBE314942862F3F500E88F35 /* GoalTrackerApp.swift in Sources */,
+				CBFEE28E2865FD8A00377AE1 /* ActivityLocalDefaultDataSource.swift in Sources */,
 				CBE314CD2862FA9200E88F35 /* GoalLocalDataSource.swift in Sources */,
 				CBE314E82863019900E88F35 /* Settings.swift in Sources */,
 				CBE314A02862F3F600E88F35 /* GoalTracker.xcdatamodeld in Sources */,

@@ -42,6 +42,8 @@ struct SmartGoalData {
         acttivity1.id = UUID.init()
         acttivity1.name = "Activity 1"
         acttivity1.date = Date.now
+        acttivity1.number = 1
+        acttivity1.goal_id = goal.id
         
         let activity1Task1 = Task(context: ctx)
         activity1Task1.id = UUID.init()
@@ -59,18 +61,27 @@ struct SmartGoalData {
         acttivity2.id = UUID.init()
         acttivity2.name = "Activity 2"
         acttivity2.date = Date.now
+        acttivity2.number = 2
+        acttivity2.goal_id = goal.id
+
 
 
         let acttivity3 = Activity(context: ctx)
         acttivity3.id = UUID.init()
         acttivity3.name = "Activity 3"
         acttivity3.date = Date.now
+        acttivity3.number = 3
+        acttivity3.goal_id = goal.id
+
 
 
         let acttivity4 = Activity(context: ctx)
         acttivity4.id = UUID.init()
         acttivity4.name = "Activity 4"
         acttivity4.date = Date.now
+        acttivity4.number = 4
+        acttivity4.goal_id = goal.id
+
 
 
         goal.addToActivities(acttivity1)
