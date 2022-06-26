@@ -17,6 +17,8 @@ class SetActivityViewModel: ObservableObject {
     init(goal: Goal){
         self.dataStore = ActivityDefaultLocalDataStore()
         self.goal = goal
+        
+        getData()
     }
     
     func getData(){
@@ -30,7 +32,6 @@ class SetActivityViewModel: ObservableObject {
                 return
             }
             activities = data.sorted(by: { $0.number < $1.number })
-            
         } catch {
             print(error)
         }

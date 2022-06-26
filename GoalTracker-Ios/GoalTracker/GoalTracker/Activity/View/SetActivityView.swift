@@ -39,9 +39,9 @@ struct SetActivityView: View {
                 List{
                     ForEach(viewModel.activities.indices, id: \.self) { idx in
                         HStack{
-                            Text(viewModel.activities[idx].name ?? "").padding(.vertical, 10)
+                            Text("\(viewModel.activities[idx].tasks?.count ?? 0)").padding(.vertical, 10)
                             if !isEditing {
-                                NavigationLink(destination: Text("D")) { EmptyView() } // disabled  !
+                                NavigationLink(destination: ActivityTask(activity: viewModel.activities[idx])) { EmptyView() } // disabled  !
                             }
                             
                         }
@@ -83,7 +83,7 @@ struct SetActivityView: View {
                 Text("Save")
             })
         }.onAppear{
-            viewModel.getData()
+            print("appear")
         }
         .alert(isPresented: $isAlertShowed) {
             Alert(
