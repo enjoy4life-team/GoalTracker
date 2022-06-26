@@ -24,7 +24,7 @@ final class GoalViewModel: ObservableObject {
             }
             goals = data
                     
-            } catch {
+        } catch {
                 print(error)
             }
     }
