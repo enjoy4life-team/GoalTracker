@@ -24,6 +24,8 @@
 		CBE314E62863007D00E88F35 /* UITabBar+DefaultAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314E52863007D00E88F35 /* UITabBar+DefaultAppearance.swift */; };
 		CBE314E82863019900E88F35 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314E72863019900E88F35 /* Settings.swift */; };
 		CBE314EB2863023E00E88F35 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314EA2863023E00E88F35 /* Color.swift */; };
+		CBF074122869733F006452CB /* GoalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF074112869733F006452CB /* GoalDetailViewModel.swift */; };
+		CBF07416286978F9006452CB /* TaskLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF07415286978F9006452CB /* TaskLocalDataSource.swift */; };
 		CBFEE284286441F400377AE1 /* GoalTemplateDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE283286441F400377AE1 /* GoalTemplateDummy.swift */; };
 		CBFEE2862864CDA800377AE1 /* GoalTemplateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE2852864CDA800377AE1 /* GoalTemplateItem.swift */; };
 		CBFEE2882865E5AA00377AE1 /* SetActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE2872865E5AA00377AE1 /* SetActivityView.swift */; };
@@ -71,6 +73,8 @@
 		CBE314E52863007D00E88F35 /* UITabBar+DefaultAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+DefaultAppearance.swift"; sourceTree = "<group>"; };
 		CBE314E72863019900E88F35 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CBE314EA2863023E00E88F35 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		CBF074112869733F006452CB /* GoalDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailViewModel.swift; sourceTree = "<group>"; };
+		CBF07415286978F9006452CB /* TaskLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskLocalDataSource.swift; sourceTree = "<group>"; };
 		CBFEE283286441F400377AE1 /* GoalTemplateDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTemplateDummy.swift; sourceTree = "<group>"; };
 		CBFEE2852864CDA800377AE1 /* GoalTemplateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTemplateItem.swift; sourceTree = "<group>"; };
 		CBFEE2872865E5AA00377AE1 /* SetActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetActivityView.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 		CBE314C32862F71E00E88F35 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CBF07413286978DC006452CB /* Task */,
 				CBFEE2892865FD1700377AE1 /* Activity */,
 				CBE314C62862F9F500E88F35 /* Goal */,
 				CBE314C42862F72500E88F35 /* CoreData */,
@@ -243,6 +248,7 @@
 			children = (
 				CBE314D72862FBD600E88F35 /* GoalViewModel.swift */,
 				CBFEE2852864CDA800377AE1 /* GoalTemplateItem.swift */,
+				CBF074112869733F006452CB /* GoalDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -318,6 +324,22 @@
 				CBE314EA2863023E00E88F35 /* Color.swift */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		CBF07413286978DC006452CB /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				CBF07414286978E3006452CB /* Local */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		CBF07414286978E3006452CB /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				CBF07415286978F9006452CB /* TaskLocalDataSource.swift */,
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 		CBFEE282286441DE00377AE1 /* Template */ = {
@@ -502,10 +524,12 @@
 				CBE314DF2862FF7600E88F35 /* MainTabView.swift in Sources */,
 				CBE314EB2863023E00E88F35 /* Color.swift in Sources */,
 				CBFEE2922865FE6F00377AE1 /* SetActivityViewModel.swift in Sources */,
+				CBF074122869733F006452CB /* GoalDetailViewModel.swift in Sources */,
 				CBFEE2882865E5AA00377AE1 /* SetActivityView.swift in Sources */,
 				CBE314E12862FFE700E88F35 /* MainTabVIewModel.swift in Sources */,
 				CBE314D62862FB0900E88F35 /* GoalMainScreen.swift in Sources */,
 				CBFEE28B2865FD5E00377AE1 /* ActivityLocalDataSource.swift in Sources */,
+				CBF07416286978F9006452CB /* TaskLocalDataSource.swift in Sources */,
 				CBE314942862F3F500E88F35 /* GoalTrackerApp.swift in Sources */,
 				CBFEE28E2865FD8A00377AE1 /* ActivityLocalDefaultDataSource.swift in Sources */,
 				CBE314CD2862FA9200E88F35 /* GoalLocalDataSource.swift in Sources */,
