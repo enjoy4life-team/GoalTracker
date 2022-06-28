@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C86DD967286A717D006F9A0A /* AddGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86DD965286A717D006F9A0A /* AddGoal.swift */; };
+		C86DD968286A717D006F9A0A /* DefaultGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86DD966286A717D006F9A0A /* DefaultGoal.swift */; };
 		CB6CF970286B4AB900828A54 /* GoalViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CF96F286B4AB900828A54 /* GoalViewItem.swift */; };
 		CBE314942862F3F500E88F35 /* GoalTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314932862F3F500E88F35 /* GoalTrackerApp.swift */; };
 		CBE314982862F3F600E88F35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE314972862F3F600E88F35 /* Assets.xcassets */; };
@@ -67,6 +69,8 @@
 
 /* Begin PBXFileReference section */
 		CB6CF96F286B4AB900828A54 /* GoalViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewItem.swift; sourceTree = "<group>"; };
+		C86DD965286A717D006F9A0A /* AddGoal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoal.swift; sourceTree = "<group>"; };
+		C86DD966286A717D006F9A0A /* DefaultGoal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultGoal.swift; sourceTree = "<group>"; };
 		CBE314902862F3F500E88F35 /* GoalTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoalTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE314932862F3F500E88F35 /* GoalTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTrackerApp.swift; sourceTree = "<group>"; };
 		CBE314972862F3F600E88F35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -275,6 +279,8 @@
 		CBE314D12862FAB500E88F35 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C86DD965286A717D006F9A0A /* AddGoal.swift */,
+				C86DD966286A717D006F9A0A /* DefaultGoal.swift */,
 				CBE314D52862FB0900E88F35 /* GoalMainScreen.swift */,
 			);
 			path = View;
@@ -608,6 +614,8 @@
 				CBF07416286978F9006452CB /* TaskLocalDataSource.swift in Sources */,
 				CBE314942862F3F500E88F35 /* GoalTrackerApp.swift in Sources */,
 				CBFEE28E2865FD8A00377AE1 /* ActivityLocalDefaultDataSource.swift in Sources */,
+				C86DD967286A717D006F9A0A /* AddGoal.swift in Sources */,
+				C86DD968286A717D006F9A0A /* DefaultGoal.swift in Sources */,
 				CBE314CD2862FA9200E88F35 /* GoalLocalDataSource.swift in Sources */,
 				CBE314E82863019900E88F35 /* Settings.swift in Sources */,
 				CBE314A02862F3F600E88F35 /* GoalTracker.xcdatamodeld in Sources */,
