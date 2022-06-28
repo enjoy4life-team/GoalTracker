@@ -10,6 +10,7 @@
 		C86DD967286A717D006F9A0A /* AddGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86DD965286A717D006F9A0A /* AddGoal.swift */; };
 		C86DD968286A717D006F9A0A /* DefaultGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86DD966286A717D006F9A0A /* DefaultGoal.swift */; };
 		CB6CF970286B4AB900828A54 /* GoalViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CF96F286B4AB900828A54 /* GoalViewItem.swift */; };
+		CB6CF974286B634300828A54 /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = CB6CF973286B634300828A54 /* SwiftUINavigation */; };
 		CBE314942862F3F500E88F35 /* GoalTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314932862F3F500E88F35 /* GoalTrackerApp.swift */; };
 		CBE314982862F3F600E88F35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE314972862F3F600E88F35 /* Assets.xcassets */; };
 		CBE3149B2862F3F600E88F35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE3149A2862F3F600E88F35 /* Preview Assets.xcassets */; };
@@ -68,9 +69,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CB6CF96F286B4AB900828A54 /* GoalViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewItem.swift; sourceTree = "<group>"; };
 		C86DD965286A717D006F9A0A /* AddGoal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoal.swift; sourceTree = "<group>"; };
 		C86DD966286A717D006F9A0A /* DefaultGoal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultGoal.swift; sourceTree = "<group>"; };
+		CB6CF96F286B4AB900828A54 /* GoalViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewItem.swift; sourceTree = "<group>"; };
 		CBE314902862F3F500E88F35 /* GoalTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoalTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE314932862F3F500E88F35 /* GoalTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTrackerApp.swift; sourceTree = "<group>"; };
 		CBE314972862F3F600E88F35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB6CF974286B634300828A54 /* SwiftUINavigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +471,9 @@
 			dependencies = (
 			);
 			name = GoalTracker;
+			packageProductDependencies = (
+				CB6CF973286B634300828A54 /* SwiftUINavigation */,
+			);
 			productName = GoalTracker;
 			productReference = CBE314902862F3F500E88F35 /* GoalTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -541,6 +546,9 @@
 				Base,
 			);
 			mainGroup = CBE314872862F3F500E88F35;
+			packageReferences = (
+				CB6CF972286B634300828A54 /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
+			);
 			productRefGroup = CBE314912862F3F500E88F35 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -943,6 +951,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CB6CF972286B634300828A54 /* XCRemoteSwiftPackageReference "swiftui-navigation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swiftui-navigation";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CB6CF973286B634300828A54 /* SwiftUINavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB6CF972286B634300828A54 /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
+			productName = SwiftUINavigation;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CBE3149E2862F3F600E88F35 /* GoalTracker.xcdatamodeld */ = {

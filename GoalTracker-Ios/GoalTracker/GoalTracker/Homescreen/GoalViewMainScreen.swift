@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import SwiftUINavigation
 
 struct GoalViewMainScreen: View {
     
     @ObservedObject var viewModel: GoalViewModel
     @State var searchText = ""
+    @State var isSheetPresented = false
+    @State var route: Route?
     
     init(viewModel: GoalViewModel){
         self.viewModel = viewModel
@@ -19,6 +22,7 @@ struct GoalViewMainScreen: View {
     
     var body: some View{
         NavigationView{
+           
             VStack{
                 if viewModel.goals.isEmpty {
                     GoalItemEmpty()
@@ -26,17 +30,33 @@ struct GoalViewMainScreen: View {
                     GoalViewItem(viewModel: viewModel)
                     
                 }
+                
+                NavigationLink(unwrapping: $route, case: /Route.AddGoalsMainScreen) { _ in
+                    GoalMainScreen(viewModel: viewModel)
+                } onNavigate: { _ in } label: { EmptyView() }
             }.navigationBarTitleDisplayMode(.large)
                 .navigationTitle("My Goals")
                 .toolbar {
-                    Button ("Add"){
-                        viewModel.newData()
-                    }
+                    //                    Button ("Add"){
+                    //                        NavigationLink(destination: AddGoal()){
+                    //                            EmptyView()
+                    //                        }
+                    //                    }
+                    
+                    ToolbarItem(placement: .navigationBarTrailing, content: {
+                        Button("add"){
+                            isSheetPresented.toggle()
+                        }
+                    })
                 }.searchable(text: $searchText)
-        }.onAppear{
+        }.fullScreenCover(isPresented: $isSheetPresented){
+            AddGoal(viewModel: viewModel, isSheetPresented: $isSheetPresented, parentRoute: $route)
+        }
+        .onAppear{
             viewModel.getData()
         }
     }
+    
 }
 
 struct goalRings: View {
@@ -77,3 +97,9 @@ struct goalRings: View {
 //        GoalView()
 //    }
 //}
+
+extension GoalViewMainScreen {
+    enum Route {
+        case AddGoalsMainScreen
+    }
+}

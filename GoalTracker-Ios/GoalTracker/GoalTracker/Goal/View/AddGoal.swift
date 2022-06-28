@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct AddGoal: View {
+    @ObservedObject var viewModel: GoalViewModel
+    @Binding var isSheetPresented: Bool
+    @Binding var parentRoute: GoalViewMainScreen.Route?
+    
     var body: some View {
-        NavigationView{
             VStack{
                 ZStack{
                     Image("Communication")
@@ -27,6 +30,12 @@ struct AddGoal: View {
                             .padding(.trailing, 120)
                     })
                 }
+                .onTapGesture {
+                    viewModel.setSelectedGoal(goalName: .Communication)
+                    parentRoute = .AddGoalsMainScreen
+                    isSheetPresented.toggle()
+                }
+                
                 ZStack{
                     Image("Collaboration")
                         .resizable()
@@ -42,6 +51,13 @@ struct AddGoal: View {
                             .padding(.trailing, 140)
                     })
                 }
+                .onTapGesture {
+                    viewModel.setSelectedGoal(goalName: .Collaboration)
+                    parentRoute = .AddGoalsMainScreen
+                    isSheetPresented.toggle()
+                }
+                
+                
                 ZStack{
                     Image("Presentation")
                         .resizable()
@@ -58,6 +74,14 @@ struct AddGoal: View {
                             .padding(.trailing, 145)
                     })
                 }
+                
+                .onTapGesture {
+                    viewModel.setSelectedGoal(goalName: .Presentation)
+                    parentRoute = .AddGoalsMainScreen
+                    isSheetPresented.toggle()
+                }
+                
+                
                 ZStack{
                     Image("Custom Goal")
                         .resizable()
@@ -71,15 +95,14 @@ struct AddGoal: View {
                             .padding()
                     })
                 }
+                .onTapGesture {
+                    parentRoute = .AddGoalsMainScreen
+                }
+                
             }
             .navigationTitle("Select Goal")
             .padding(.top, -150)
-        }
     }
 }
 
-struct AddGoal_Previews: PreviewProvider {
-    static var previews: some View {
-        AddGoal()
-    }
-}
+
