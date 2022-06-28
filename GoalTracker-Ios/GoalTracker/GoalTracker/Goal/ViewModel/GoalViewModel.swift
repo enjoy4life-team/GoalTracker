@@ -9,6 +9,7 @@ import Foundation
 
 final class GoalViewModel: ObservableObject {
     @Published var goals: [Goal] = []
+    @Published var selectedGoal: Goal?
     
     let dataStore: GoalLocalDataSource
     
@@ -49,4 +50,10 @@ final class GoalViewModel: ObservableObject {
             GoalTemplateItem(imageName: "presentation", goal: .Presentation),
         ]
     }
+    
+    func setSelectedGoal(goalName: SmartGoalTemplate) {
+        selectedGoal = goalName.getGoals()
+    }
+
+
 }
