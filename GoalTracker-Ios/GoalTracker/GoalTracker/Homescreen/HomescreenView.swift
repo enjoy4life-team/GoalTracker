@@ -28,7 +28,6 @@ struct HomescreenView: View {
                                 Label("Setting", systemImage: "gearshape")
                             }.tag(2)
                     }
-                    
                 }
                 .navigationBarTitleDisplayMode(.large)
                 .navigationTitle("My Goals")

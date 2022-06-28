@@ -1,33 +1,31 @@
 //
-//  GoalView.swift
+//  CompletedView.swift
 //  GoalTracker
 //
-//  Created by Imam Sutria on 24/06/22.
+//  Created by Imam Sutria on 25/06/22.
 //
 
 import SwiftUI
 
-struct GoalView: View {
+struct CompletedView: View {
     
-    @State private var goalStatus = "On Going"
+    @State private var goalStatus = "Completed"
     var status = ["On Going", "Completed", "Archive"]
     
-    var body: some View{
+    var body: some View {
         VStack {
             ZStack {
-                Text("On Going")
-                    .font(.title2)
+                VStack {
+                    Text("Wohoo...")
+                        .font(.title2)
                     .bold()
-                
-                Group {
-                    goalRings(radius: 110, percent: 0.85, background: .black.opacity(0.1), color: .black)
-                    goalRings(radius: 90, percent: 0.45, background: .mint.opacity(0.1), color: .mint)
-                    goalRings(radius: 70, percent: 0.6, background: .red.opacity(0.1), color: .red)
+                    Text("You have completed")
+                    Text("your goal!")
                 }
+                completeRings(radius: 110, percent: 10, color: .green)
+                    .padding()
             }
-            .padding()
-            
-            Picker("", selection: $goalStatus) {
+            Picker("What is your favorite color?", selection: $goalStatus) {
                 ForEach(status, id: \.self) {
                     Text($0)
                 }
@@ -36,17 +34,16 @@ struct GoalView: View {
             .padding()
             
             CardView()
-//            Text("Value: \(goalStatus)")
-            
             Spacer()
         }
+        
     }
 }
 
-struct goalRings: View {
+struct completeRings: View {
     var radius: CGFloat
     var percent: CGFloat
-    
+   
     var background : Color = .red.opacity(0.05)
     var color: Color = Color.red
     var lineWidth: CGFloat = 16
@@ -76,8 +73,8 @@ struct goalRings: View {
     }
 }
 
-struct GoalView_Previews: PreviewProvider {
+struct CompletedView_Previews: PreviewProvider {
     static var previews: some View {
-        GoalView()
+        CompletedView()
     }
 }

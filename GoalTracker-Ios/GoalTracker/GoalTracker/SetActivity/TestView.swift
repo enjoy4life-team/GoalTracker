@@ -8,14 +8,32 @@
 import SwiftUI
 
 struct TestView: View {
+    
+    @State var test = "Scripting"
+    
     var body: some View {
-        NavigationView{
-            SetActivityView()
+        NavigationView {
+            List {
+                Section{
+                    NavigationLink(destination: SetSubtaskView()) {
+                        Text("\(test)")
+                    }
+                    .navigationTitle("Set Activity")
+                    .navigationBarTitleDisplayMode(.inline)
+                }
+            }
+            .listStyle(.insetGrouped)
             
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationTitle("Set Activity")
+                .navigationBarItems(
+                    leading: Button(action: {
+    //                    dismiss()
+                    }, label: { Text("Cancel") }),
+
+                    trailing: Button(action: {
+                        
+                    }, label: { Text("Done") })
+                )
         }
-        
     }
 }
 

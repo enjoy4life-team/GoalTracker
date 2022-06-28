@@ -10,10 +10,11 @@ import SwiftUI
 struct CardView: View {
     
     var body: some View {
-        List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
+        List( 1..<4 ) { item in
             card()
         }
         .listStyle(.insetGrouped)
+        
     }
 
 }
