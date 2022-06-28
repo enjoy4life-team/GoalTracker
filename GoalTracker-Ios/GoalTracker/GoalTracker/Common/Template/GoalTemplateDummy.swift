@@ -29,11 +29,15 @@ enum SmartGoalTemplate{
 
 
 struct SmartGoalData {
+    static var communicationString = "Communication"
+    static var collaborationString = "Collaboration"
+    static var presentationString = "Presentation"
+    
     func getCommunicationGoal() -> Goal{
         let ctx = PersistenceController.shared.container.viewContext
         let goal = Goal(context: ctx)
         
-        goal.name = "Name A"
+        goal.name = "Communication"
         goal.startDate = Date.now
         goal.id = UUID.init()
 
@@ -96,7 +100,7 @@ struct SmartGoalData {
         let ctx = PersistenceController.shared.container.viewContext
         let goal = Goal(context: ctx)
         goal.id = UUID.init()
-        goal.name = "Name B"
+        goal.name = "Collaboration"
         goal.startDate = Date.now
         
 //        let acttivity1 = Activity(context: ctx)
@@ -117,7 +121,7 @@ struct SmartGoalData {
         let ctx = PersistenceController.shared.container.viewContext
         let goal = Goal(context: ctx)
         goal.id = UUID.init()
-        goal.name = "Name C"
+        goal.name = "Presentation"
         goal.startDate = Date.now
         
 //        let acttivity1 = Activity(context: ctx)

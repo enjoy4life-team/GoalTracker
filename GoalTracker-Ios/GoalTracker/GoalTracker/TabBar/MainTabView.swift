@@ -12,33 +12,27 @@ struct MainTabView: View {
     @StateObject private var mainTabViewModel = MainTabViewModel()
     @ObservedObject private var goalViewModel = GoalViewModel()
     
+
+    
     init() {
         UITabBar.appearance().standardAppearance = .defaultAppearance
         UITabBar.appearance().scrollEdgeAppearance = .defaultAppearance
     }
     
     var body: some View {
-        NavigationView {
             TabView(selection: $mainTabViewModel.selectedTab){
-                GoalMainScreen(viewModel: goalViewModel)
+                GoalViewMainScreen(viewModel: goalViewModel)
                     .tabItem {
-                        Label("Goals", systemImage: "list.dash")
+                        Label("Goal", systemImage: "list.dash")
                     }.tag(MainTabViewModel.TabItem.home)
-                
-//                Settings()
-//                    .tabItem {
-//                        Label("Setting", systemImage: "square.and.pencil")
-//                    }.tag(MainTabViewModel.TabItem.setting)
-
-                Settings()
+                       
+                SettingView()
                     .tabItem {
-                        Label("Setting", systemImage: "square.and.pencil")
+                        Label("Setting", systemImage: "gearshape")
                     }.tag(MainTabViewModel.TabItem.setting)
-                
             }.onAppear{
                 goalViewModel.getData()
             }
-        }
     }
 }
 

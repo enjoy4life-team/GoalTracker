@@ -33,7 +33,6 @@ struct CompletedView: View {
             .pickerStyle(.segmented)
             .padding()
             
-            CardView()
             Spacer()
         }
         
