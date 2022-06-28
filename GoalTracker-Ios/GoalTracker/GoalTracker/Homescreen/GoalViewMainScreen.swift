@@ -1,47 +1,48 @@
 //
-//  ArchiveView.swift
+//  GoalView.swift
 //  GoalTracker
 //
-//  Created by Imam Sutria on 25/06/22.
+//  Created by Imam Sutria on 24/06/22.
 //
 
 import SwiftUI
 
-struct ArchiveView: View {
-    @State private var goalStatus = "Archive"
-    var status = ["On Going", "Completed", "Archive"]
+struct GoalViewMainScreen: View {
     
-    var body: some View {
-        VStack {
-            ZStack {
-                VStack {
-                    Text("Don't waste your time,")
-                    Text("Make it On Going!")
-                        .font(.title2)
-                        .bold()
+    @ObservedObject var viewModel: GoalViewModel
+    @State var searchText = ""
+    
+    init(viewModel: GoalViewModel){
+        self.viewModel = viewModel
+    }
+    
+    
+    var body: some View{
+        NavigationView{
+            VStack{
+                if viewModel.goals.isEmpty {
+                    GoalItemEmpty()
+                }else{
+                    GoalViewItem(viewModel: viewModel)
+                    
                 }
-                archiveRings(radius: 110, percent: 10, color: .gray)
-                    .padding()
-            }
-            Picker("What is your favorite color?", selection: $goalStatus) {
-                ForEach(status, id: \.self) {
-                    Text($0)
-                }
-            }
-            .pickerStyle(.segmented)
-            .padding()
-            
-            CardView()
-            Spacer()
+            }.navigationBarTitleDisplayMode(.large)
+                .navigationTitle("My Goals")
+                .toolbar {
+                    Button ("Add"){
+                        viewModel.newData()
+                    }
+                }.searchable(text: $searchText)
+        }.onAppear{
+            viewModel.getData()
         }
-        
     }
 }
 
-struct archiveRings: View {
+struct goalRings: View {
     var radius: CGFloat
     var percent: CGFloat
-   
+    
     var background : Color = .red.opacity(0.05)
     var color: Color = Color.red
     var lineWidth: CGFloat = 16
@@ -71,8 +72,8 @@ struct archiveRings: View {
     }
 }
 
-struct ArchiveView_Previews: PreviewProvider {
-    static var previews: some View {
-        ArchiveView()
-    }
-}
+//struct GoalView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GoalView()
+//    }
+//}

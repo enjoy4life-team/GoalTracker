@@ -19,10 +19,10 @@ struct HomescreenView: View {
                         .searchable(text: $searchText)
                     
                     TabView(selection: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Selection@*/.constant(1)/*@END_MENU_TOKEN@*/) {
-                        GoalView()
-                            .tabItem {
-                                Label("Goal", systemImage: "list.dash")
-                            }.tag(1)
+//                        GoalView()
+//                            .tabItem {
+//                                Label("Goal", systemImage: "list.dash")
+//                            }.tag(1)
                         SettingView()
                             .tabItem {
                                 Label("Setting", systemImage: "gearshape")
