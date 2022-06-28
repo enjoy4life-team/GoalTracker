@@ -25,14 +25,19 @@ struct MainTabView: View {
                         Label("Goals", systemImage: "list.dash")
                     }.tag(MainTabViewModel.TabItem.home)
                 
+//                Settings()
+//                    .tabItem {
+//                        Label("Setting", systemImage: "square.and.pencil")
+//                    }.tag(MainTabViewModel.TabItem.setting)
+
                 Settings()
                     .tabItem {
                         Label("Setting", systemImage: "square.and.pencil")
                     }.tag(MainTabViewModel.TabItem.setting)
+                
             }.onAppear{
                 goalViewModel.getData()
             }
-            
         }
     }
 }
