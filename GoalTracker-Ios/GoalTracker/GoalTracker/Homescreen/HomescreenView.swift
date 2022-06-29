@@ -33,9 +33,12 @@ struct HomescreenView: View {
                 .navigationTitle("My Goals")
                 
                 .toolbar {
-                    Button ("Add"){
+                    Button (){
                         
+                    } label: {
+                        Image(systemName: "plus")
                     }
+                    .tint(.blue)
                 }
             }
         }

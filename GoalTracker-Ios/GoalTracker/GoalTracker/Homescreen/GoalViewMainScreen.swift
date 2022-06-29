@@ -24,37 +24,40 @@ struct GoalViewMainScreen: View {
         NavigationView{
            
             VStack{
+                NavigationLink(unwrapping: $route, case: /Route.AddGoalsMainScreen) { _ in
+                    AddNewGoalView(viewModel: AddNewGoalViewModel(goal: viewModel.selectedGoal!), parentRoute: $route)
+                } onNavigate: { _ in } label: { EmptyView() }
+                
+                
                 if viewModel.goals.isEmpty {
                     GoalItemEmpty()
+                        .onAppear{
+                            viewModel.getData()
+                        }
                 }else{
                     GoalViewItem(viewModel: viewModel)
-                    
+                        .onAppear{
+                            viewModel.getData()
+                        }
                 }
                 
-                NavigationLink(unwrapping: $route, case: /Route.AddGoalsMainScreen) { _ in
-                    GoalMainScreen(viewModel: viewModel)
-                } onNavigate: { _ in } label: { EmptyView() }
             }.navigationBarTitleDisplayMode(.large)
                 .navigationTitle("My Goals")
                 .toolbar {
-                    //                    Button ("Add"){
-                    //                        NavigationLink(destination: AddGoal()){
-                    //                            EmptyView()
-                    //                        }
-                    //                    }
-                    
                     ToolbarItem(placement: .navigationBarTrailing, content: {
-                        Button("add"){
+                        Button(){
                             isSheetPresented.toggle()
+                        }label: {
+                            Image(systemName: "plus")
                         }
+                        .tint(.blue)
                     })
                 }.searchable(text: $searchText)
-        }.fullScreenCover(isPresented: $isSheetPresented){
-            AddGoal(viewModel: viewModel, isSheetPresented: $isSheetPresented, parentRoute: $route)
         }
-        .onAppear{
-            viewModel.getData()
+        .fullScreenCover(isPresented: $isSheetPresented){
+            AddGoalTemplate(viewModel: viewModel, isSheetPresented: $isSheetPresented, parentRoute: $route)
         }
+        
     }
     
 }
