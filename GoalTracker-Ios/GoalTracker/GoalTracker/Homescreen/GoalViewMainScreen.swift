@@ -44,9 +44,12 @@ struct GoalViewMainScreen: View {
                     //                    }
                     
                     ToolbarItem(placement: .navigationBarTrailing, content: {
-                        Button("add"){
+                        Button(){
                             isSheetPresented.toggle()
+                        }label: {
+                            Image(systemName: "plus")
                         }
+                        .tint(.blue)
                     })
                 }.searchable(text: $searchText)
         }.fullScreenCover(isPresented: $isSheetPresented){

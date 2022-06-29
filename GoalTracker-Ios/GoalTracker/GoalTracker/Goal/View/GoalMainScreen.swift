@@ -16,7 +16,6 @@ struct GoalMainScreen: View {
                     SetActivityView(viewModel: SetActivityViewModel(goal: viewModel.goals[idx]))
                 } label: {
                     Text(viewModel.goals[idx].id?.uuidString ?? "null")
-                    Text("asdasfasd")
                 }.buttonStyle(.plain)
             }
             
