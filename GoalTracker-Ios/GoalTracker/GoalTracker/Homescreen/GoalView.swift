@@ -13,33 +13,40 @@ struct GoalView: View {
     var status = ["On Going", "Completed", "Archive"]
     
     var body: some View{
-        VStack {
-            ZStack {
-                Text("On Going")
-                    .font(.title2)
-                    .bold()
+        ScrollView{
+            VStack {
+                ZStack {
+                    Text("On Going")
+                        .font(.title2)
+                        .bold()
+                    
+                    Group {
+                        goalRings(radius: 110, percent: 0.85, background: .black.opacity(0.1), color: .black)
+                        goalRings(radius: 90, percent: 0.45, background: .mint.opacity(0.1), color: .mint)
+                        goalRings(radius: 70, percent: 0.6, background: .red.opacity(0.1), color: .red)
+                    }
+                }
+                .padding()
                 
-                Group {
-                    goalRings(radius: 110, percent: 0.85, background: .black.opacity(0.1), color: .black)
-                    goalRings(radius: 90, percent: 0.45, background: .mint.opacity(0.1), color: .mint)
-                    goalRings(radius: 70, percent: 0.6, background: .red.opacity(0.1), color: .red)
+                Picker("", selection: $goalStatus) {
+                    ForEach(status, id: \.self) {
+                        Text($0)
+                    }
                 }
+                .pickerStyle(.segmented)
+                .padding()
+                
+//                CardView()
+                CardNew(background: .black)
+                CardNew(background: .mint)
+                CardNew(background: .red)
+                
+                
+//                Spacer()
             }
-            .padding()
-            
-            Picker("", selection: $goalStatus) {
-                ForEach(status, id: \.self) {
-                    Text($0)
-                }
-            }
-            .pickerStyle(.segmented)
-            .padding()
-            
-            CardView()
-//            Text("Value: \(goalStatus)")
-            
-            Spacer()
         }
+            
+        
     }
 }
 
@@ -79,5 +86,36 @@ struct goalRings: View {
 struct GoalView_Previews: PreviewProvider {
     static var previews: some View {
         GoalView()
+    }
+}
+
+struct CardNew: View {
+    var background: Color
+    
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .foregroundColor(background)
+                .frame(height: 85)
+                .cornerRadius(20)
+            
+            HStack {
+                Text("Presentation")
+                    .font(.subheadline)
+                    .foregroundColor(Color.white)
+                Spacer()
+                ZStack {
+                    Rectangle()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(12)
+                    
+                    Image(systemName: "arrow.right")
+                        .foregroundColor(Color.black)
+                }
+            }
+            .padding(.horizontal, 20)
+        }
+        .padding(.horizontal, 30)
     }
 }

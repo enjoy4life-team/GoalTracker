@@ -10,7 +10,7 @@ import SwiftUI
 struct SettingView: View {
     
     var body: some View {
-        NavigationView {
+//        NavigationView { 
             List {
                 darkMode()
                 
@@ -24,9 +24,9 @@ struct SettingView: View {
                     rate()
                 }
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("Setting")
-        }
+//            .navigationBarTitleDisplayMode(.inline)
+//            .navigationTitle("Setting")
+//        }
     }
 }
 
@@ -36,6 +36,7 @@ struct SettingView_Previews: PreviewProvider {
     }
 }
 
+//Dark Mode
 struct darkMode: View {
     
     @State private var isToggleOn = false
@@ -48,24 +49,35 @@ struct darkMode: View {
                     .frame(width: 30, height: 30)
                     .cornerRadius(6)
                 
-                Label ("", systemImage: "hand.raised.slash.fill")
-                    .foregroundColor(.white)
-                    .padding(.leading, 8)
-                    .padding(.bottom, 2)
+                Image(systemName: "moon.circle")
+                    .foregroundColor(Color.white)
+
             }
-            VStack (alignment: .leading) {
-                Text("Dark Mode")
-                    .font(.headline)
-                Text("Display setting light-colored text")
-                    .font(.caption)
-                    .foregroundColor(.gray)
-                
+            .padding(.vertical, 10)
+            .padding(.leading, 5)
+            .padding(.trailing, 10)
+            
+            
+            ZStack {
+                HStack {
+                    VStack (alignment: .leading) {
+                        Text("Dark Mode")
+                            .font(.headline)
+                        Text("Display setting light-colored text")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                        
+                    }
+                    Spacer()
+                    
+                }
+                Toggle("", isOn: $isToggleOn)
             }
-            Toggle("", isOn: $isToggleOn)
         }
     }
 }
 
+//Privacy Policy
 struct privacyPolicy: View {
     var body: some View {
         HStack {
@@ -75,11 +87,13 @@ struct privacyPolicy: View {
                     .frame(width: 30, height: 30)
                     .cornerRadius(6)
                 
-                Label ("", systemImage: "hand.raised.slash.fill")
-                    .foregroundColor(.white)
-                    .padding(.leading, 8)
-                    .padding(.bottom, 2)
+                Image(systemName: "hand.raised.slash.fill")
+                    .foregroundColor(Color.white)
             }
+            .padding(.vertical, 10)
+            .padding(.leading, 5)
+            .padding(.trailing, 10)
+            
             VStack (alignment: .leading){
                 Text("Privacy Policy")
                     .font(.headline)
@@ -87,7 +101,7 @@ struct privacyPolicy: View {
                     .font(.caption)
                     .foregroundColor(.gray)
             }
-            .padding(.vertical)
+            
         }
     }
 }
@@ -102,19 +116,21 @@ struct tellAFriend: View {
                     .frame(width: 30, height: 30)
                     .cornerRadius(6)
                 
-                Label ("", systemImage: "arrowshape.turn.up.forward.fill")
-                    .foregroundColor(.white)
-                    .padding(.leading, 10)
-                    .padding(.bottom, 4)
+                Image(systemName: "arrowshape.turn.up.forward.fill")
+                    .foregroundColor(Color.white)
             }
+            .padding(.leading, 5)
+            .padding(.trailing, 10)
+            
             VStack (alignment: .leading){
-                Text("Privacy Policy")
+                Text("Tell a Friend")
                     .font(.headline)
-                Text("Read documents manages client data")
+                
+                Text("Let your friends know our app")
                     .font(.caption)
                     .foregroundColor(.gray)
             }
-            .padding(.vertical)
+            .padding(.vertical, 10)
         }
     }
 }
@@ -128,11 +144,12 @@ struct aboutUs: View {
                     .frame(width: 30, height: 30)
                     .cornerRadius(6)
                 
-                Label ("", systemImage: "hand.wave.fill")
-                    .foregroundColor(.white)
-                    .padding(.leading, 8)
-                    .padding(.bottom, 2)
+                Image(systemName: "hand.wave.fill")
+                    .foregroundColor(Color.white)
             }
+            .padding(.leading, 5)
+            .padding(.trailing, 10)
+            
             VStack (alignment: .leading){
                 Text("About Us")
                     .font(.headline)
@@ -140,7 +157,7 @@ struct aboutUs: View {
                     .font(.caption)
                     .foregroundColor(.gray)
             }
-            .padding(.vertical)
+            .padding(.vertical, 10)
         }
     }
 }
@@ -154,11 +171,12 @@ struct rate: View {
                     .frame(width: 30, height: 30)
                     .cornerRadius(6)
                 
-                Label ("", systemImage: "heart.fill")
-                    .foregroundColor(.white)
-                    .padding(.leading, 10)
-                    .padding(.bottom, 1)
+                Image(systemName: "heart.fill")
+                    .foregroundColor(Color.white)
             }
+            .padding(.leading, 5)
+            .padding(.trailing, 10)
+            
             VStack (alignment: .leading){
                 Text("Rate")
                     .font(.headline)
@@ -166,7 +184,7 @@ struct rate: View {
                     .font(.caption)
                     .foregroundColor(.gray)
             }
-            .padding(.vertical)
+            .padding(.vertical, 10)
         }
     }
 }

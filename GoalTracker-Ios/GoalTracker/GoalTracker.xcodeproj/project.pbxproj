@@ -24,12 +24,6 @@
 		CBE314E62863007D00E88F35 /* UITabBar+DefaultAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314E52863007D00E88F35 /* UITabBar+DefaultAppearance.swift */; };
 		CBE314E82863019900E88F35 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314E72863019900E88F35 /* Settings.swift */; };
 		CBE314EB2863023E00E88F35 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314EA2863023E00E88F35 /* Color.swift */; };
-		F445F7A02866B04400A2EE2B /* CompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445F79F2866B04400A2EE2B /* CompletedView.swift */; };
-		F445F7A22866B38C00A2EE2B /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445F7A12866B38C00A2EE2B /* ArchiveView.swift */; };
-		F445F7A42866B9BF00A2EE2B /* SetSubtaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445F7A32866B9BF00A2EE2B /* SetSubtaskView.swift */; };
-		F445F7A62866C4F200A2EE2B /* SelectRepeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445F7A52866C4F200A2EE2B /* SelectRepeat.swift */; };
-		F44C068D286741840086FD36 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C068C286741840086FD36 /* HomeTabView.swift */; };
-		F44C06922867437A0086FD36 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C06912867437A0086FD36 /* SearchBarView.swift */; };
 		CBF074122869733F006452CB /* GoalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF074112869733F006452CB /* GoalDetailViewModel.swift */; };
 		CBF07416286978F9006452CB /* TaskLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF07415286978F9006452CB /* TaskLocalDataSource.swift */; };
 		CBFEE284286441F400377AE1 /* GoalTemplateDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE283286441F400377AE1 /* GoalTemplateDummy.swift */; };
@@ -39,6 +33,10 @@
 		CBFEE28E2865FD8A00377AE1 /* ActivityLocalDefaultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE28D2865FD8A00377AE1 /* ActivityLocalDefaultDataSource.swift */; };
 		CBFEE2922865FE6F00377AE1 /* SetActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE2912865FE6F00377AE1 /* SetActivityViewModel.swift */; };
 		CBFEE2962866BB6800377AE1 /* ActivityTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE2952866BB6800377AE1 /* ActivityTask.swift */; };
+		F445F7A02866B04400A2EE2B /* CompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445F79F2866B04400A2EE2B /* CompletedView.swift */; };
+		F445F7A22866B38C00A2EE2B /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445F7A12866B38C00A2EE2B /* ArchiveView.swift */; };
+		F445F7A42866B9BF00A2EE2B /* SetSubtaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445F7A32866B9BF00A2EE2B /* SetSubtaskView.swift */; };
+		F44C06922867437A0086FD36 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C06912867437A0086FD36 /* SearchBarView.swift */; };
 		F4E3768B28647CD3001020AA /* HomescreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E3768A28647CD3001020AA /* HomescreenView.swift */; };
 		F4E3768D28649AF4001020AA /* HomescreenFillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E3768C28649AF4001020AA /* HomescreenFillView.swift */; };
 		F4E3768F28649BDA001020AA /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E3768E28649BDA001020AA /* CardView.swift */; };
@@ -85,18 +83,6 @@
 		CBE314E52863007D00E88F35 /* UITabBar+DefaultAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+DefaultAppearance.swift"; sourceTree = "<group>"; };
 		CBE314E72863019900E88F35 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CBE314EA2863023E00E88F35 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		F445F79F2866B04400A2EE2B /* CompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedView.swift; sourceTree = "<group>"; };
-		F445F7A12866B38C00A2EE2B /* ArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
-		F445F7A32866B9BF00A2EE2B /* SetSubtaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSubtaskView.swift; sourceTree = "<group>"; };
-		F445F7A52866C4F200A2EE2B /* SelectRepeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRepeat.swift; sourceTree = "<group>"; };
-		F44C068C286741840086FD36 /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
-		F44C06912867437A0086FD36 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
-		F4E3768A28647CD3001020AA /* HomescreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenView.swift; sourceTree = "<group>"; };
-		F4E3768C28649AF4001020AA /* HomescreenFillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenFillView.swift; sourceTree = "<group>"; };
-		F4E3768E28649BDA001020AA /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		F4E376952864BE49001020AA /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
-		F4E3769728655BF1001020AA /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
-		F4E3769928655C91001020AA /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
 		CBF074112869733F006452CB /* GoalDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailViewModel.swift; sourceTree = "<group>"; };
 		CBF07415286978F9006452CB /* TaskLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskLocalDataSource.swift; sourceTree = "<group>"; };
 		CBFEE283286441F400377AE1 /* GoalTemplateDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTemplateDummy.swift; sourceTree = "<group>"; };
@@ -106,6 +92,16 @@
 		CBFEE28D2865FD8A00377AE1 /* ActivityLocalDefaultDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLocalDefaultDataSource.swift; sourceTree = "<group>"; };
 		CBFEE2912865FE6F00377AE1 /* SetActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetActivityViewModel.swift; sourceTree = "<group>"; };
 		CBFEE2952866BB6800377AE1 /* ActivityTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTask.swift; sourceTree = "<group>"; };
+		F445F79F2866B04400A2EE2B /* CompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedView.swift; sourceTree = "<group>"; };
+		F445F7A12866B38C00A2EE2B /* ArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
+		F445F7A32866B9BF00A2EE2B /* SetSubtaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSubtaskView.swift; sourceTree = "<group>"; };
+		F44C06912867437A0086FD36 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		F4E3768A28647CD3001020AA /* HomescreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenView.swift; sourceTree = "<group>"; };
+		F4E3768C28649AF4001020AA /* HomescreenFillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenFillView.swift; sourceTree = "<group>"; };
+		F4E3768E28649BDA001020AA /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		F4E376952864BE49001020AA /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		F4E3769728655BF1001020AA /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		F4E3769928655C91001020AA /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,32 +348,6 @@
 			path = Color;
 			sourceTree = "<group>";
 		};
-		F4E3768928647CB3001020AA /* Homescreen */ = {
-			isa = PBXGroup;
-			children = (
-				F4E3768A28647CD3001020AA /* HomescreenView.swift */,
-				F4E3768C28649AF4001020AA /* HomescreenFillView.swift */,
-				F44C06912867437A0086FD36 /* SearchBarView.swift */,
-				F4E3768E28649BDA001020AA /* CardView.swift */,
-				F4E3769928655C91001020AA /* GoalView.swift */,
-				F445F79F2866B04400A2EE2B /* CompletedView.swift */,
-				F445F7A12866B38C00A2EE2B /* ArchiveView.swift */,
-				F44C068C286741840086FD36 /* HomeTabView.swift */,
-				F4E3769728655BF1001020AA /* SettingView.swift */,
-			);
-			path = Homescreen;
-			sourceTree = "<group>";
-		};
-		F4E376922864BE0F001020AA /* SetActivity */ = {
-			isa = PBXGroup;
-			children = (
-				F4E376952864BE49001020AA /* TestView.swift */,
-				F445F7A32866B9BF00A2EE2B /* SetSubtaskView.swift */,
-				F445F7A52866C4F200A2EE2B /* SelectRepeat.swift */,
-			);
-			path = SetActivity;
-			sourceTree = "<group>";
-		};
 		CBF07413286978DC006452CB /* Task */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +404,30 @@
 				CBFEE2952866BB6800377AE1 /* ActivityTask.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F4E3768928647CB3001020AA /* Homescreen */ = {
+			isa = PBXGroup;
+			children = (
+				F4E3768A28647CD3001020AA /* HomescreenView.swift */,
+				F4E3768C28649AF4001020AA /* HomescreenFillView.swift */,
+				F44C06912867437A0086FD36 /* SearchBarView.swift */,
+				F4E3768E28649BDA001020AA /* CardView.swift */,
+				F4E3769928655C91001020AA /* GoalView.swift */,
+				F445F79F2866B04400A2EE2B /* CompletedView.swift */,
+				F445F7A12866B38C00A2EE2B /* ArchiveView.swift */,
+				F4E3769728655BF1001020AA /* SettingView.swift */,
+			);
+			path = Homescreen;
+			sourceTree = "<group>";
+		};
+		F4E376922864BE0F001020AA /* SetActivity */ = {
+			isa = PBXGroup;
+			children = (
+				F4E376952864BE49001020AA /* TestView.swift */,
+				F445F7A32866B9BF00A2EE2B /* SetSubtaskView.swift */,
+			);
+			path = SetActivity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -566,13 +560,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F44C068D286741840086FD36 /* HomeTabView.swift in Sources */,
 				F4E3768D28649AF4001020AA /* HomescreenFillView.swift in Sources */,
 				CBFEE284286441F400377AE1 /* GoalTemplateDummy.swift in Sources */,
 				CBFEE2962866BB6800377AE1 /* ActivityTask.swift in Sources */,
 				CBFEE2862864CDA800377AE1 /* GoalTemplateItem.swift in Sources */,
 				CBE3149D2862F3F600E88F35 /* PersistenceController.swift in Sources */,
-				F445F7A62866C4F200A2EE2B /* SelectRepeat.swift in Sources */,
 				F44C06922867437A0086FD36 /* SearchBarView.swift in Sources */,
 				CBE314D82862FBD600E88F35 /* GoalViewModel.swift in Sources */,
 				F4E3769828655BF1001020AA /* SettingView.swift in Sources */,

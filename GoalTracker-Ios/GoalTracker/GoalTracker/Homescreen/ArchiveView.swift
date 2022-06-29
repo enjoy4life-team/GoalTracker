@@ -20,7 +20,7 @@ struct ArchiveView: View {
                         .font(.title2)
                         .bold()
                 }
-                archiveRings(radius: 110, percent: 10, color: .gray)
+                archiveRings(radius: 110, percent: 0.96, background: .gray.opacity(0.1), color: .gray)
                     .padding()
             }
             Picker("What is your favorite color?", selection: $goalStatus) {

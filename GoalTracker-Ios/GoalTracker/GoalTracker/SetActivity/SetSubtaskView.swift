@@ -6,86 +6,84 @@
 //
 
 import SwiftUI
+import Combine
 
-//struct subtaskArray {
-//    let id = UUID()
-//    let activity: String
-//}
+struct Item: Identifiable {
+    let id = UUID()
+    var activity: String
+}
 
 struct SetSubtaskView: View {
     @State private var subtask = 0
     @State private var isDateOn = false
     @State private var isTimeOn = false
     @State private var repeatTask = "0"
-    @State private var notes = ""
+    @State private var notes: String = "Notes"
     @State private var activity = ""
+    @State private var newActivity = ""
+    @State private var activityName = ""
     
-    @State private var subtaskArray: [String] = []
+    @State private var subtaskArray: [Item] = []
+    
+    var placeholderString = "Notes"
 
     
-    private func addRow() {
-        if activity != "" {
-//            subtaskArray.removeLast()
-            subtaskArray.append("\(activity)")
-//            activity = ""
-        }else{
-            self.subtaskArray.append("\(activity)")
-        }
+    private func onAdd(activity: String){
+        subtaskArray.append(Item(activity: activity))
+        self.newActivity = ""
     }
     
     private func remRow() {
         self.subtaskArray.removeLast()
     }
     
-//    var results = [
-//        subtaskArray(activity: "makan"),
-//        subtaskArray(activity: "minum"),
-//        subtaskArray(activity: "jog")
-//    ]
-    
     var body: some View {
         List {
             Section {
+                TextField("Activity Name", text: $activityName)
+            }
+            
+            Section {
                 Stepper("Subtask", onIncrement: {
                     subtask += 1
-                    self.addRow()
+                    self.onAdd(activity: activity)
                 }, onDecrement: {
                     subtask -= 1
                     self.remRow()
                 })
-
-//                ForEach(results, id: \.id) { result in
-//                    Text(result.activity)
-//                }
                 
-                ForEach($subtaskArray, id: \.self) { location in
-//                    Text(location)
-                    TextField("New Activity", text: $activity)
+                ForEach(subtaskArray, id: \.id) { result in
+                    HStack {
+                        TextField("New Activity", text: $activity)
+                    }
                 }
             }
+            .navigationTitle("Scripting")
+            
             
             Section {
                 //DATE
                 HStack {
                     ZStack {
                         Rectangle()
-                            .foregroundColor(.red)
+                            .foregroundColor(Color.red)
                             .frame(width: 30, height: 30)
                             .cornerRadius(5)
-                            .padding(.vertical)
+                            .padding(.vertical, 10)
                         
-                        Label("", systemImage: "calendar")
-                            .foregroundColor(.white)
-                            .padding(.leading, 10)
-                            .padding(.bottom, 2)
+                        Image(systemName: "calendar")
+                            .foregroundColor(Color.white)
                     }
+                    .padding(.leading, 5)
+                    .padding(.trailing, 10)
+                    
                     VStack (alignment: .leading){
                         Text("Date")
                             .font(.body)
                             
                         Text("Today")
                             .font(.subheadline)
-                            .foregroundColor(.blue)
+                            .foregroundColor(Color.blue)
                     }
                     Spacer()
                     
@@ -96,23 +94,24 @@ struct SetSubtaskView: View {
                 HStack {
                     ZStack {
                         Rectangle()
-                            .foregroundColor(.blue)
+                            .foregroundColor(Color.blue)
                             .frame(width: 30, height: 30)
                             .cornerRadius(5)
-                            .padding(.vertical)
+                            .padding(.vertical, 10)
                         
-                        Label("", systemImage: "clock")
-                            .foregroundColor(.white)
-                            .padding(.leading, 10)
-                            .padding(.bottom, 2)
+                        Image(systemName: "clock")
+                            .foregroundColor(Color.white)
                     }
+                    .padding(.leading, 5)
+                    .padding(.trailing, 10)
+                    
                     VStack(alignment: .leading) {
                         Text("Time")
                             .font(.body)
                             
                         Text("4:00 AM")
                             .font(.subheadline)
-                            .foregroundColor(.blue)
+                            .foregroundColor(Color.blue)
                     }
                     Spacer()
                     
@@ -125,41 +124,45 @@ struct SetSubtaskView: View {
                 HStack {
                     ZStack {
                         Rectangle()
-                            .foregroundColor(.gray)
+                            .foregroundColor(Color.gray)
                             .opacity(0.5)
                             .frame(width: 30, height: 30)
                             .cornerRadius(5)
-                            .padding(.vertical)
+                            .padding(.vertical, 10)
                         
-                        Label("", systemImage: "repeat")
-                            .foregroundColor(.white)
-                            .padding(.leading, 10)
-                            .padding(.bottom, 2)
+                        Image(systemName: "repeat")
+                            .foregroundColor(Color.white)
                     }
+                    .padding(.leading, 5)
+                    .padding(.trailing, 10)
                     
-                    Picker("Repeat", selection: $repeatTask){
-                        Text("Never").tag("0")
-                        Text("Daily").tag("1")
-                        Text("Weekly").tag("2")
-                        Text("Monthly").tag("3")
+                    HStack {
+                        Text("Repeat")
+                        Picker("", selection: $repeatTask){
+                            Text("Never").tag("0")
+                            Text("Daily").tag("1")
+                            Text("Weekly").tag("2")
+                            Text("Monthly").tag("3")
+                        }
+                        .navigationBarTitleDisplayMode(.inline)
                     }
-                    .navigationBarTitleDisplayMode(.inline)
                 }
             }
             
+            //NOTES
             Section {
-                HStack{
-                    VStack {
-                        TextField("Notes", text: $notes)
-                            .padding(.bottom, 60)
-                    }
+                TextEditor(text: self.$notes)
                     .frame(height: 118)
-                }
+                    .foregroundColor(self.notes == placeholderString ? .gray : .primary)
+                    .onTapGesture {
+                        if self.notes == placeholderString {
+                            self.notes = ""
+                        }
+                    }
             }
         }
         .listStyle(.insetGrouped)
     }
-    
 }
 
 struct SetSubtaskView_Previews: PreviewProvider {

@@ -16,12 +16,11 @@ struct CardView: View {
         .listStyle(.insetGrouped)
         
     }
-
 }
-
 
 struct card: View {
     var goalName = "Presentation"
+//    var background: Color
     
     var body: some View {
         ZStack {
@@ -36,10 +35,8 @@ struct card: View {
                         .foregroundColor(.black)
                         .cornerRadius(12)
                     
-                    Label("", systemImage: "arrow.right")
-                        .padding(.leading, 10)
-                        .padding(.bottom, 2)
-                        .foregroundColor(.white)
+                    Image(systemName: "arrow.right")
+                        .foregroundColor(Color.white)
                 }
             }
             .padding(.top)

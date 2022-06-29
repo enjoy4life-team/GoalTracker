@@ -22,7 +22,7 @@ struct CompletedView: View {
                     Text("You have completed")
                     Text("your goal!")
                 }
-                completeRings(radius: 110, percent: 10, color: .green)
+                completeRings(radius: 110, percent: 0.96, background: .green.opacity(0.1), color: .green)
                     .padding()
             }
             Picker("What is your favorite color?", selection: $goalStatus) {
