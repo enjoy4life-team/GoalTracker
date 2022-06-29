@@ -22,14 +22,10 @@ struct GoalMainScreen: View {
             
             Button("new item"){
                 viewModel.addGoals(goal: SmartGoalTemplate.Communication.getGoals())
-            }.onAppear{
-                viewModel.getData()
             }
             
             Button("Save"){
                 viewModel.saveState()
-            }.onAppear{
-                viewModel.getData()
             }
         }
     }

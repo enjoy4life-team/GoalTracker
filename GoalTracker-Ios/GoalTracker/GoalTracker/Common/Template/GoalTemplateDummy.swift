@@ -12,6 +12,7 @@ enum SmartGoalTemplate{
     case Communication
     case Collaboration
     case Presentation
+    case Custom
     
     func getGoals() -> Goal {
         let data = SmartGoalData()
@@ -23,47 +24,38 @@ enum SmartGoalTemplate{
             return data.getCollaborationGoal()
         case .Presentation:
             return data.getPresentationGoal()
+        case .Custom:
+            return data.getCustomGoal()
         }
     }
 }
 
 
 struct SmartGoalData {
-    static var communicationString = "Communication"
-    static var collaborationString = "Collaboration"
-    static var presentationString = "Presentation"
+    static let communicationString = "Communication"
+    static let collaborationString = "Collaboration"
+    static let presentationString = "Presentation"
     
     func getCommunicationGoal() -> Goal{
         let ctx = PersistenceController.shared.container.viewContext
         let goal = Goal(context: ctx)
         
-        goal.name = "Communication"
+        goal.name = SmartGoalData.communicationString
         goal.startDate = Date.now
         goal.id = UUID.init()
 
         
         let acttivity1 = Activity(context: ctx)
         acttivity1.id = UUID.init()
-        acttivity1.name = "Activity 1"
+        acttivity1.name = "Body Language"
         acttivity1.date = Date.now
         acttivity1.number = 1
         acttivity1.goal_id = goal.id
         
-        let activity1Task1 = Task(context: ctx)
-        activity1Task1.id = UUID.init()
-        activity1Task1.name = "task 1"
-
-        let activity1Task2 = Task(context: ctx)
-        activity1Task2.id = UUID.init()
-        activity1Task2.name = "task 2"
-
-        acttivity1.addToTasks(activity1Task1)
-        acttivity1.addToTasks(activity1Task2)
-
 
         let acttivity2 = Activity(context: ctx)
         acttivity2.id = UUID.init()
-        acttivity2.name = "Activity 2"
+        acttivity2.name = "Active Listening"
         acttivity2.date = Date.now
         acttivity2.number = 2
         acttivity2.goal_id = goal.id
@@ -72,7 +64,7 @@ struct SmartGoalData {
 
         let acttivity3 = Activity(context: ctx)
         acttivity3.id = UUID.init()
-        acttivity3.name = "Activity 3"
+        acttivity3.name = "Feed Back"
         acttivity3.date = Date.now
         acttivity3.number = 3
         acttivity3.goal_id = goal.id
@@ -81,7 +73,7 @@ struct SmartGoalData {
 
         let acttivity4 = Activity(context: ctx)
         acttivity4.id = UUID.init()
-        acttivity4.name = "Activity 4"
+        acttivity4.name = "Delivery Information"
         acttivity4.date = Date.now
         acttivity4.number = 4
         acttivity4.goal_id = goal.id
@@ -92,6 +84,26 @@ struct SmartGoalData {
         goal.addToActivities(acttivity2)
         goal.addToActivities(acttivity3)
         goal.addToActivities(acttivity4)
+        
+        
+        let q1 = Question(context: ctx)
+        q1.id = UUID.init()
+        q1.text = "Reality i have?"
+        q1.number = 1
+        goal.addToQuestions(q1)
+
+        let q2 = Question(context: ctx)
+        q2.text = "My Opportunities?"
+        q2.id = UUID.init()
+        q2.number = 2
+        goal.addToQuestions(q2)
+
+        let q3 = Question(context: ctx)
+        q3.text = "Why This Goal Important?"
+        q3.id = UUID.init()
+        q3.number = 3
+        goal.addToQuestions(q3)
+        
         return goal
     }
     
@@ -100,19 +112,71 @@ struct SmartGoalData {
         let ctx = PersistenceController.shared.container.viewContext
         let goal = Goal(context: ctx)
         goal.id = UUID.init()
-        goal.name = "Collaboration"
+        goal.name = SmartGoalData.collaborationString
         goal.startDate = Date.now
         
-//        let acttivity1 = Activity(context: ctx)
-//        let acttivity2 = Activity(context: ctx)
-//        let acttivity3 = Activity(context: ctx)
-//        let acttivity4 = Activity(context: ctx)
-//
-//
-//        goal.addToActivities(acttivity1)
-//        goal.addToActivities(acttivity2)
-//        goal.addToActivities(acttivity3)
-//        goal.addToActivities(acttivity4)
+        let acttivity1 = Activity(context: ctx)
+        acttivity1.id = UUID.init()
+        acttivity1.name = "Team Goal"
+        acttivity1.date = Date.now
+        acttivity1.number = 1
+        acttivity1.goal_id = goal.id
+        
+
+        let acttivity2 = Activity(context: ctx)
+        acttivity2.id = UUID.init()
+        acttivity2.name = "Active Listening"
+        acttivity2.date = Date.now
+        acttivity2.number = 2
+        acttivity2.goal_id = goal.id
+
+
+
+        let acttivity3 = Activity(context: ctx)
+        acttivity3.id = UUID.init()
+        acttivity3.name = "Decision Making"
+        acttivity3.date = Date.now
+        acttivity3.number = 3
+        acttivity3.goal_id = goal.id
+
+
+
+        let acttivity4 = Activity(context: ctx)
+        acttivity4.id = UUID.init()
+        acttivity4.name = "FeedBack / Evaluation"
+        acttivity4.date = Date.now
+        acttivity4.number = 4
+        acttivity4.goal_id = goal.id
+
+
+
+        goal.addToActivities(acttivity1)
+        goal.addToActivities(acttivity2)
+        goal.addToActivities(acttivity3)
+        goal.addToActivities(acttivity4)
+        
+        
+        let q1 = Question(context: ctx)
+        q1.id = UUID.init()
+        q1.text = "Reality i have?"
+        q1.number = 1
+        
+        let q2 = Question(context: ctx)
+        q2.text = "My Opportunities?"
+        q2.id = UUID.init()
+        q2.number = 2
+
+        
+        let q3 = Question(context: ctx)
+        q3.text = "Why This Goal Important?"
+        q3.id = UUID.init()
+        q3.number = 3
+
+        
+        goal.addToQuestions(q1)
+        goal.addToQuestions(q2)
+        goal.addToQuestions(q3)
+        
         return goal
     }
 
@@ -121,21 +185,104 @@ struct SmartGoalData {
         let ctx = PersistenceController.shared.container.viewContext
         let goal = Goal(context: ctx)
         goal.id = UUID.init()
-        goal.name = "Presentation"
+        goal.name = SmartGoalData.presentationString
         goal.startDate = Date.now
         
-//        let acttivity1 = Activity(context: ctx)
-//        let acttivity2 = Activity(context: ctx)
-//        let acttivity3 = Activity(context: ctx)
-//        let acttivity4 = Activity(context: ctx)
-//
-//
-//        goal.addToActivities(acttivity1)
-//        goal.addToActivities(acttivity2)
-//        goal.addToActivities(acttivity3)
-//        goal.addToActivities(acttivity4)
+        let acttivity1 = Activity(context: ctx)
+        acttivity1.id = UUID.init()
+        acttivity1.name = "Scripting"
+        acttivity1.date = Date.now
+        acttivity1.number = 1
+        acttivity1.goal_id = goal.id
+        
+
+        let acttivity2 = Activity(context: ctx)
+        acttivity2.id = UUID.init()
+        acttivity2.name = "Public Speaking"
+        acttivity2.date = Date.now
+        acttivity2.number = 2
+        acttivity2.goal_id = goal.id
+
+
+
+        let acttivity3 = Activity(context: ctx)
+        acttivity3.id = UUID.init()
+        acttivity3.name = "Keynote / Presentation slide"
+        acttivity3.date = Date.now
+        acttivity3.number = 3
+        acttivity3.goal_id = goal.id
+
+
+
+        let acttivity4 = Activity(context: ctx)
+        acttivity4.id = UUID.init()
+        acttivity4.name = "Hands on presentation"
+        acttivity4.date = Date.now
+        acttivity4.number = 4
+        acttivity4.goal_id = goal.id
+
+
+
+        goal.addToActivities(acttivity1)
+        goal.addToActivities(acttivity2)
+        goal.addToActivities(acttivity3)
+        goal.addToActivities(acttivity4)
+        
+        
+        let q1 = Question(context: ctx)
+        q1.id = UUID.init()
+        q1.text = "Reality i have?"
+        q1.number = 1
+        
+        let q2 = Question(context: ctx)
+        q2.text = "My Opportunities?"
+        q2.id = UUID.init()
+        q2.number = 2
+
+        
+        let q3 = Question(context: ctx)
+        q3.text = "Why This Goal Important?"
+        q3.id = UUID.init()
+        q3.number = 3
+
+        
+        goal.addToQuestions(q1)
+        goal.addToQuestions(q2)
+        goal.addToQuestions(q3)
+        
         return goal
     }
 
+    
+    func getCustomGoal() -> Goal {
+        let ctx = PersistenceController.shared.container.viewContext
+        let goal = Goal(context: ctx)
+        goal.id = UUID.init()
+        goal.startDate = Date.now
+        goal.isTemplate = false
+        
+        let q1 = Question(context: ctx)
+        q1.id = UUID.init()
+        q1.text = "Reality i have?"
+        q1.number = 1
+        
+        let q2 = Question(context: ctx)
+        q2.text = "My Opportunities?"
+        q2.id = UUID.init()
+        q2.number = 2
+
+        
+        let q3 = Question(context: ctx)
+        q3.text = "Why This Goal Important?"
+        q3.id = UUID.init()
+        q3.number = 3
+
+        
+        goal.addToQuestions(q1)
+        goal.addToQuestions(q2)
+        goal.addToQuestions(q3)
+        
+        return goal
+    }
 }
 

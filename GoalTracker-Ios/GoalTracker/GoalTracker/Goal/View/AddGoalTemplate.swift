@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddGoal: View {
+struct AddGoalTemplate: View {
     @ObservedObject var viewModel: GoalViewModel
     @Binding var isSheetPresented: Bool
     @Binding var parentRoute: GoalViewMainScreen.Route?
@@ -21,14 +21,12 @@ struct AddGoal: View {
                                height: 120)
                         .cornerRadius(20)
                     
-                    NavigationLink(destination: Communication(), label: {
-                        Text("Communication")
-                            .foregroundColor(.white)
-                            .bold()
-                            .font(.title2)
-                            .padding(.top, 60)
-                            .padding(.trailing, 120)
-                    })
+                    Text("Communication")
+                        .foregroundColor(.white)
+                        .bold()
+                        .font(.title2)
+                        .padding(.top, 60)
+                        .padding(.trailing, 120)
                 }
                 .onTapGesture {
                     viewModel.setSelectedGoal(goalName: .Communication)
@@ -42,14 +40,12 @@ struct AddGoal: View {
                         .frame(width: 330,
                                height: 120)
                         .cornerRadius(20)
-                    NavigationLink(destination: Communication(), label: {
-                        Text("Collaboration")
-                            .foregroundColor(.white)
-                            .bold()
-                            .font(.title2)
-                            .padding(.top, 60)
-                            .padding(.trailing, 140)
-                    })
+                    Text("Collaboration")
+                        .foregroundColor(.white)
+                        .bold()
+                        .font(.title2)
+                        .padding(.top, 60)
+                        .padding(.trailing, 120)
                 }
                 .onTapGesture {
                     viewModel.setSelectedGoal(goalName: .Collaboration)
@@ -65,14 +61,12 @@ struct AddGoal: View {
                                height: 120)
                         .cornerRadius(20)
                     
-                    NavigationLink(destination: Communication(), label: {
-                        Text("Presentation")
-                            .foregroundColor(.white)
-                            .bold()
-                            .font(.title2)
-                            .padding(.top, 60)
-                            .padding(.trailing, 145)
-                    })
+                    Text("Presentation")
+                        .foregroundColor(.white)
+                        .bold()
+                        .font(.title2)
+                        .padding(.top, 60)
+                        .padding(.trailing, 120)
                 }
                 
                 .onTapGesture {
@@ -87,16 +81,17 @@ struct AddGoal: View {
                         .resizable()
                         .frame(width: 330, height: 120)
                         .cornerRadius(20)
-                    NavigationLink(destination: Communication(), label: {
-                        Text("+ Custom Goal")
-                            .foregroundColor(.white)
-                            .bold()
-                            .font(.title2)
-                            .padding()
-                    })
+                    Text("Custom Goal")
+                        .foregroundColor(.white)
+                        .bold()
+                        .font(.title2)
+                        .padding(.top, 60)
+                        .padding(.trailing, 120)
                 }
                 .onTapGesture {
                     parentRoute = .AddGoalsMainScreen
+                    viewModel.setSelectedGoal(goalName: .Custom)
+                    isSheetPresented.toggle()
                 }
                 
             }

@@ -58,7 +58,7 @@ struct card: View {
         case SmartGoalData.communicationString:
             return Color.blue
         case SmartGoalData.presentationString:
-            return Color.black
+            return Color.yellow
         default:
             return Color.green
         }
