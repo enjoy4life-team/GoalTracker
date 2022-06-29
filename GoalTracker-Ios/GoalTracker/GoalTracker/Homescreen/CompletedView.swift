@@ -13,6 +13,7 @@ struct CompletedView: View {
     var status = ["On Going", "Completed", "Archive"]
     
     var body: some View {
+        List{
         VStack {
             ZStack {
                 VStack {
@@ -35,7 +36,7 @@ struct CompletedView: View {
             
             Spacer()
         }
-        
+        }
     }
 }
 

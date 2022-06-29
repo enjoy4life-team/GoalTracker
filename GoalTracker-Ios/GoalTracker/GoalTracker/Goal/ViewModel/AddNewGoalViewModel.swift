@@ -26,6 +26,11 @@ final class AddNewGoalViewModel: ObservableObject {
         dataStore.saveChanges()
     }
     
+    func rollback(){
+        dataStore.rollback()
+    }
+
+    
 }
 
 

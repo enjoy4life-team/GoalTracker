@@ -11,4 +11,5 @@ protocol GoalLocalDataSource {
     func getAllGoalsData() throws -> [Goal]?
     func createNewGoal()
     func saveChanges()
+    func rollback()
 }

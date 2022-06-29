@@ -39,7 +39,7 @@ struct SetActivityView: View {
                 List{
                     ForEach(viewModel.activities.indices, id: \.self) { idx in
                         HStack{
-                            Text("\(viewModel.activities[idx].tasks?.count ?? 0)").padding(.vertical, 10)
+                            Text(viewModel.activities[idx].name ?? "null").padding(.vertical, 10)
                             if !isEditing {
                                 NavigationLink(destination: ActivityTask(viewModel: GoalDetailViewModel(goal: viewModel.goal),activity: viewModel.activities[idx])) { EmptyView() } // disabled  !
                             }

@@ -14,6 +14,7 @@
 		CB6CF974286B634300828A54 /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = CB6CF973286B634300828A54 /* SwiftUINavigation */; };
 		CB6CF97B286C240400828A54 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CF97A286C240400828A54 /* Binding.swift */; };
 		CB6CF97D286C2B9D00828A54 /* AddNewGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CF97C286C2B9D00828A54 /* AddNewGoalViewModel.swift */; };
+		CB6CF981286CA92D00828A54 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = CB6CF980286CA92D00828A54 /* Introspect */; };
 		CB6CF9A0286DC76600828A54 /* OnboardingMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CF99F286DC76600828A54 /* OnboardingMainView.swift */; };
 		CBE314942862F3F500E88F35 /* GoalTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314932862F3F500E88F35 /* GoalTrackerApp.swift */; };
 		CBE314982862F3F600E88F35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE314972862F3F600E88F35 /* Assets.xcassets */; };
@@ -127,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB6CF974286B634300828A54 /* SwiftUINavigation in Frameworks */,
+				CB6CF981286CA92D00828A54 /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +476,7 @@
 			name = GoalTracker;
 			packageProductDependencies = (
 				CB6CF973286B634300828A54 /* SwiftUINavigation */,
+				CB6CF980286CA92D00828A54 /* Introspect */,
 			);
 			productName = GoalTracker;
 			productReference = CBE314902862F3F500E88F35 /* GoalTracker.app */;
@@ -549,6 +552,7 @@
 			mainGroup = CBE314872862F3F500E88F35;
 			packageReferences = (
 				CB6CF972286B634300828A54 /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
+				CB6CF97F286CA92D00828A54 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = CBE314912862F3F500E88F35 /* Products */;
 			projectDirPath = "";
@@ -798,6 +802,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -807,7 +812,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -827,6 +832,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -836,7 +842,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -966,6 +972,14 @@
 				kind = branch;
 			};
 		};
+		CB6CF97F286CA92D00828A54 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -973,6 +987,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CB6CF972286B634300828A54 /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
 			productName = SwiftUINavigation;
+		};
+		CB6CF980286CA92D00828A54 /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB6CF97F286CA92D00828A54 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
 		};
 /* End XCSwiftPackageProductDependency section */
 
