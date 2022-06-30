@@ -6,27 +6,25 @@
 //
 
 import SwiftUI
+import Introspect
+
 
 struct SettingView: View {
     
     var body: some View {
-        NavigationView {
             List {
                 darkMode()
-                
+
                 Section ("Privacy") {
                     privacyPolicy()
                 }
-                
+
                 Section ("More") {
                     aboutUs()
                     tellAFriend()
                     rate()
                 }
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("Setting")
-        }
     }
 }
 
@@ -177,3 +175,5 @@ struct rate: View {
         }
     }
 }
+
+

@@ -12,6 +12,10 @@ import Foundation
 
 
 final class GoalDefaultLocalDataStore: GoalLocalDataSource {
+    func rollback() {
+        container.viewContext.rollback()
+    }
+    
     private let container = PersistenceController.shared.container
 
     
