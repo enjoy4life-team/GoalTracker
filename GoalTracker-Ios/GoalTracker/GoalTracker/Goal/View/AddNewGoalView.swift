@@ -95,7 +95,7 @@ struct AddNewGoalView: View{
         }
 }
 
-struct Communication_Previews: PreviewProvider {
+struct AddNewGoal_Previews: PreviewProvider {
     static var previews: some View {
         AddNewGoalView(viewModel: AddNewGoalViewModel(goal: SmartGoalTemplate.Presentation.getGoals()), parentRoute: Binding.constant(GoalViewMainScreen.Route.AddGoalsMainScreen))
     }
