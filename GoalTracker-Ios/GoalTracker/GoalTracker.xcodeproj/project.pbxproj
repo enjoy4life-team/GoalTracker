@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C813F05D286E3C36001D7DC1 /* StepperView in Frameworks */ = {isa = PBXBuildFile; productRef = C813F05C286E3C36001D7DC1 /* StepperView */; };
 		C86DD967286A717D006F9A0A /* AddGoalTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86DD965286A717D006F9A0A /* AddGoalTemplate.swift */; };
 		C86DD968286A717D006F9A0A /* AddNewGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86DD966286A717D006F9A0A /* AddNewGoalView.swift */; };
 		C8A8813F286DD7E40098866C /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A8813E286DD7E40098866C /* SettingViewModel.swift */; };
@@ -127,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C813F05D286E3C36001D7DC1 /* StepperView in Frameworks */,
 				CB6CF974286B634300828A54 /* SwiftUINavigation in Frameworks */,
 				CB6CF981286CA92D00828A54 /* Introspect in Frameworks */,
 			);
@@ -477,6 +479,7 @@
 			packageProductDependencies = (
 				CB6CF973286B634300828A54 /* SwiftUINavigation */,
 				CB6CF980286CA92D00828A54 /* Introspect */,
+				C813F05C286E3C36001D7DC1 /* StepperView */,
 			);
 			productName = GoalTracker;
 			productReference = CBE314902862F3F500E88F35 /* GoalTracker.app */;
@@ -553,6 +556,7 @@
 			packageReferences = (
 				CB6CF972286B634300828A54 /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
 				CB6CF97F286CA92D00828A54 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+				C813F05B286E3C36001D7DC1 /* XCRemoteSwiftPackageReference "StepperView" */,
 			);
 			productRefGroup = CBE314912862F3F500E88F35 /* Products */;
 			projectDirPath = "";
@@ -633,7 +637,6 @@
 				C86DD967286A717D006F9A0A /* AddGoalTemplate.swift in Sources */,
 				C86DD968286A717D006F9A0A /* AddNewGoalView.swift in Sources */,
 				CBE314CD2862FA9200E88F35 /* GoalLocalDataSource.swift in Sources */,
-				CBE314E82863019900E88F35 /* Settings.swift in Sources */,
 				CB6CF9A0286DC76600828A54 /* OnboardingMainView.swift in Sources */,
 				CBE314A02862F3F600E88F35 /* GoalTracker.xcdatamodeld in Sources */,
 			);
@@ -964,6 +967,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C813F05B286E3C36001D7DC1 /* XCRemoteSwiftPackageReference "StepperView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/badrinathvm/StepperView";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		CB6CF972286B634300828A54 /* XCRemoteSwiftPackageReference "swiftui-navigation" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swiftui-navigation";
@@ -983,6 +994,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C813F05C286E3C36001D7DC1 /* StepperView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C813F05B286E3C36001D7DC1 /* XCRemoteSwiftPackageReference "StepperView" */;
+			productName = StepperView;
+		};
 		CB6CF973286B634300828A54 /* SwiftUINavigation */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CB6CF972286B634300828A54 /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
