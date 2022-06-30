@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C86DD967286A717D006F9A0A /* AddGoalTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86DD965286A717D006F9A0A /* AddGoalTemplate.swift */; };
 		C86DD968286A717D006F9A0A /* AddNewGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86DD966286A717D006F9A0A /* AddNewGoalView.swift */; };
+		C8A8813F286DD7E40098866C /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A8813E286DD7E40098866C /* SettingViewModel.swift */; };
 		CB6CF970286B4AB900828A54 /* GoalViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CF96F286B4AB900828A54 /* GoalViewItem.swift */; };
 		CB6CF974286B634300828A54 /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = CB6CF973286B634300828A54 /* SwiftUINavigation */; };
 		CB6CF97B286C240400828A54 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CF97A286C240400828A54 /* Binding.swift */; };
@@ -74,6 +75,7 @@
 /* Begin PBXFileReference section */
 		C86DD965286A717D006F9A0A /* AddGoalTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalTemplate.swift; sourceTree = "<group>"; };
 		C86DD966286A717D006F9A0A /* AddNewGoalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewGoalView.swift; sourceTree = "<group>"; };
+		C8A8813E286DD7E40098866C /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		CB6CF96F286B4AB900828A54 /* GoalViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewItem.swift; sourceTree = "<group>"; };
 		CB6CF97A286C240400828A54 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		CB6CF97C286C2B9D00828A54 /* AddNewGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewGoalViewModel.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				CBE314E72863019900E88F35 /* Settings.swift */,
+				C8A8813E286DD7E40098866C /* SettingViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				F445F7A42866B9BF00A2EE2B /* SetSubtaskView.swift in Sources */,
 				F445F7A22866B38C00A2EE2B /* ArchiveView.swift in Sources */,
 				CB6CF970286B4AB900828A54 /* GoalViewItem.swift in Sources */,
+				C8A8813F286DD7E40098866C /* SettingViewModel.swift in Sources */,
 				F4E3768B28647CD3001020AA /* HomescreenView.swift in Sources */,
 				F4E3769A28655C91001020AA /* GoalViewMainScreen.swift in Sources */,
 				CBE314CF2862FAA100E88F35 /* GoalLocalDefaultDataSource.swift in Sources */,

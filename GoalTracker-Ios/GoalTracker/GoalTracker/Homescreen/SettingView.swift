@@ -19,8 +19,8 @@ struct SettingView: View {
                 }
                 
                 Section ("More") {
-                    tellAFriend()
                     aboutUs()
+                    tellAFriend()
                     rate()
                 }
             }
@@ -68,26 +68,28 @@ struct darkMode: View {
 
 struct privacyPolicy: View {
     var body: some View {
-        HStack {
-            ZStack {
-                Rectangle()
-                    .foregroundColor(.pink)
-                    .frame(width: 30, height: 30)
-                    .cornerRadius(6)
-                
-                Label ("", systemImage: "hand.raised.slash.fill")
-                    .foregroundColor(.white)
-                    .padding(.leading, 8)
-                    .padding(.bottom, 2)
+        NavigationLink(destination: PrivacyPolicyView() .navigationTitle("Privacy Policy")){
+            HStack{
+                ZStack{
+                    Rectangle()
+                        .foregroundColor(.pink)
+                        .frame(width: 30, height: 30)
+                        .cornerRadius(6)
+                    
+                    Label ("", systemImage: "hand.raised.slash.fill")
+                        .foregroundColor(.white)
+                        .padding(.leading, 8)
+                        .padding(.bottom, 2)
+                }
+                VStack (alignment: .leading){
+                    Text("Privacy Policy")
+                        .font(.headline)
+                    Text("Read documents manages client data")
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                }
+                .padding(.vertical)
             }
-            VStack (alignment: .leading){
-                Text("Privacy Policy")
-                    .font(.headline)
-                Text("Read documents manages client data")
-                    .font(.caption)
-                    .foregroundColor(.gray)
-            }
-            .padding(.vertical)
         }
     }
 }
@@ -95,52 +97,57 @@ struct privacyPolicy: View {
 //MORE
 struct tellAFriend: View {
     var body: some View {
-        HStack {
-            ZStack {
-                Rectangle()
-                    .foregroundColor(.orange)
-                    .frame(width: 30, height: 30)
-                    .cornerRadius(6)
-                
-                Label ("", systemImage: "arrowshape.turn.up.forward.fill")
-                    .foregroundColor(.white)
-                    .padding(.leading, 10)
-                    .padding(.bottom, 4)
+        Button(action: {tellaFriend()}) {
+            HStack {
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(.orange)
+                        .frame(width: 30, height: 30)
+                        .cornerRadius(6)
+                    
+                    Label ("", systemImage: "arrowshape.turn.up.forward.fill")
+                        .foregroundColor(.white)
+                        .padding(.leading, 10)
+                        .padding(.bottom, 4)
+                }
+                VStack (alignment: .leading){
+                    Text("Tell a Friend")
+                        .font(.headline)
+                    Text("Tell your friends about our app")
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                }
+                .padding(.vertical)
             }
-            VStack (alignment: .leading){
-                Text("Privacy Policy")
-                    .font(.headline)
-                Text("Read documents manages client data")
-                    .font(.caption)
-                    .foregroundColor(.gray)
-            }
-            .padding(.vertical)
         }
+        .foregroundColor(.black)
     }
 }
 
 struct aboutUs: View {
     var body: some View {
-        HStack {
-            ZStack {
-                Rectangle()
-                    .foregroundColor(.init(red: 255, green: 0, blue: 196))
-                    .frame(width: 30, height: 30)
-                    .cornerRadius(6)
-                
-                Label ("", systemImage: "hand.wave.fill")
-                    .foregroundColor(.white)
-                    .padding(.leading, 8)
-                    .padding(.bottom, 2)
+        NavigationLink(destination: AboutUsView() .navigationTitle("About Us")){
+            HStack {
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(.init(red: 255, green: 0, blue: 196))
+                        .frame(width: 30, height: 30)
+                        .cornerRadius(6)
+                    
+                    Label ("", systemImage: "hand.wave.fill")
+                        .foregroundColor(.white)
+                        .padding(.leading, 8)
+                        .padding(.bottom, 2)
+                }
+                VStack (alignment: .leading){
+                    Text("About Us")
+                        .font(.headline)
+                    Text("Know us more")
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                }
+                .padding(.vertical)
             }
-            VStack (alignment: .leading){
-                Text("About Us")
-                    .font(.headline)
-                Text("Know us more")
-                    .font(.caption)
-                    .foregroundColor(.gray)
-            }
-            .padding(.vertical)
         }
     }
 }
