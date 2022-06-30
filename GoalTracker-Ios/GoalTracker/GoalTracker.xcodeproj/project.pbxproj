@@ -30,7 +30,6 @@
 		CBE314DF2862FF7600E88F35 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314DE2862FF7600E88F35 /* MainTabView.swift */; };
 		CBE314E12862FFE700E88F35 /* MainTabVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314E02862FFE700E88F35 /* MainTabVIewModel.swift */; };
 		CBE314E62863007D00E88F35 /* UITabBar+DefaultAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314E52863007D00E88F35 /* UITabBar+DefaultAppearance.swift */; };
-		CBE314E82863019900E88F35 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314E72863019900E88F35 /* Settings.swift */; };
 		CBE314EB2863023E00E88F35 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314EA2863023E00E88F35 /* Color.swift */; };
 		CBF074122869733F006452CB /* GoalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF074112869733F006452CB /* GoalDetailViewModel.swift */; };
 		CBF07416286978F9006452CB /* TaskLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF07415286978F9006452CB /* TaskLocalDataSource.swift */; };
@@ -98,7 +97,6 @@
 		CBE314DE2862FF7600E88F35 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		CBE314E02862FFE700E88F35 /* MainTabVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVIewModel.swift; sourceTree = "<group>"; };
 		CBE314E52863007D00E88F35 /* UITabBar+DefaultAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+DefaultAppearance.swift"; sourceTree = "<group>"; };
-		CBE314E72863019900E88F35 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CBE314EA2863023E00E88F35 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		CBF074112869733F006452CB /* GoalDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailViewModel.swift; sourceTree = "<group>"; };
 		CBF07415286978F9006452CB /* TaskLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskLocalDataSource.swift; sourceTree = "<group>"; };
@@ -326,7 +324,6 @@
 		CBE314DC2862FE9A00E88F35 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				CBE314E72863019900E88F35 /* Settings.swift */,
 				C8A8813E286DD7E40098866C /* SettingViewModel.swift */,
 			);
 			path = Settings;

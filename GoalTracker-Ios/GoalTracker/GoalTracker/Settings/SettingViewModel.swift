@@ -15,7 +15,7 @@ struct AboutUsView: View {
                     HStack{
                         Spacer()
                         VStack{
-                            Image("memoR")
+                            Image("memoAl")
                                 .resizable()
                                 .frame(width: 99, height: 99)
                                 .padding(.bottom, -10)
@@ -26,7 +26,7 @@ struct AboutUsView: View {
                                 .font(.caption2)
                         }
                         VStack{
-                            Image("")
+                            Image("memoJo")
                                 .resizable()
                                 .frame(width: 99, height: 99)
                                 .padding(.bottom, -10)
@@ -37,7 +37,7 @@ struct AboutUsView: View {
                                 .font(.caption2)
                         }
                         VStack{
-                            Image("")
+                            Image("memoAg")
                                 .resizable()
                                 .frame(width: 99, height: 99)
                                 .padding(.bottom, -10)
@@ -53,7 +53,7 @@ struct AboutUsView: View {
                     HStack{
                         Spacer()
                         VStack{
-                            Image("")
+                            Image("memoKa")
                                 .resizable()
                                 .frame(width: 99, height: 99)
                                 .padding(.bottom, -10)
@@ -64,7 +64,7 @@ struct AboutUsView: View {
                                 .font(.caption2)
                         }
                         VStack{
-                            Image("")
+                            Image("memoIm")
                                 .resizable()
                                 .frame(width: 99, height: 99)
                                 .padding(.bottom, -10)
