@@ -13,6 +13,7 @@
 		CB6CF974286B634300828A54 /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = CB6CF973286B634300828A54 /* SwiftUINavigation */; };
 		CB6CF97B286C240400828A54 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CF97A286C240400828A54 /* Binding.swift */; };
 		CB6CF97D286C2B9D00828A54 /* AddNewGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CF97C286C2B9D00828A54 /* AddNewGoalViewModel.swift */; };
+		CB6CF9A0286DC76600828A54 /* OnboardingMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CF99F286DC76600828A54 /* OnboardingMainView.swift */; };
 		CBE314942862F3F500E88F35 /* GoalTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314932862F3F500E88F35 /* GoalTrackerApp.swift */; };
 		CBE314982862F3F600E88F35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE314972862F3F600E88F35 /* Assets.xcassets */; };
 		CBE3149B2862F3F600E88F35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE3149A2862F3F600E88F35 /* Preview Assets.xcassets */; };
@@ -76,6 +77,7 @@
 		CB6CF96F286B4AB900828A54 /* GoalViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewItem.swift; sourceTree = "<group>"; };
 		CB6CF97A286C240400828A54 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		CB6CF97C286C2B9D00828A54 /* AddNewGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewGoalViewModel.swift; sourceTree = "<group>"; };
+		CB6CF99F286DC76600828A54 /* OnboardingMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMainView.swift; sourceTree = "<group>"; };
 		CBE314902862F3F500E88F35 /* GoalTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoalTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE314932862F3F500E88F35 /* GoalTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTrackerApp.swift; sourceTree = "<group>"; };
 		CBE314972862F3F600E88F35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -154,6 +156,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		CB6CF99E286DC75700828A54 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				CB6CF99F286DC76600828A54 /* OnboardingMainView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		CBE314872862F3F500E88F35 = {
 			isa = PBXGroup;
 			children = (
@@ -177,13 +187,12 @@
 		CBE314922862F3F500E88F35 /* GoalTracker */ = {
 			isa = PBXGroup;
 			children = (
+				CB6CF99E286DC75700828A54 /* Onboarding */,
 				F4E376922864BE0F001020AA /* SetActivity */,
 				F4E3768928647CB3001020AA /* Homescreen */,
 				CBE314DD2862FF3D00E88F35 /* TabBar */,
 				CBE314DC2862FE9A00E88F35 /* Settings */,
-				CBE314DB2862FE9000E88F35 /* Summary */,
 				CBE314DA2862FE5E00E88F35 /* Activity */,
-				CBE314D92862FE4B00E88F35 /* Onboarding */,
 				CBE314D02862FAB000E88F35 /* Goal */,
 				CBE314C22862F71800E88F35 /* Common */,
 				CBE314932862F3F500E88F35 /* GoalTrackerApp.swift */,
@@ -303,13 +312,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		CBE314D92862FE4B00E88F35 /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Onboarding;
-			sourceTree = "<group>";
-		};
 		CBE314DA2862FE5E00E88F35 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,13 +319,6 @@
 				CBFEE28F2865FE4C00377AE1 /* ViewModel */,
 			);
 			path = Activity;
-			sourceTree = "<group>";
-		};
-		CBE314DB2862FE9000E88F35 /* Summary */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Summary;
 			sourceTree = "<group>";
 		};
 		CBE314DC2862FE9A00E88F35 /* Settings */ = {
@@ -634,6 +629,7 @@
 				C86DD968286A717D006F9A0A /* AddNewGoalView.swift in Sources */,
 				CBE314CD2862FA9200E88F35 /* GoalLocalDataSource.swift in Sources */,
 				CBE314E82863019900E88F35 /* Settings.swift in Sources */,
+				CB6CF9A0286DC76600828A54 /* OnboardingMainView.swift in Sources */,
 				CBE314A02862F3F600E88F35 /* GoalTracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
