@@ -13,30 +13,39 @@ struct CompletedView: View {
     var status = ["On Going", "Completed", "Archive"]
     
     var body: some View {
-        VStack {
-            ZStack {
-                VStack {
-                    Text("Wohoo...")
-                        .font(.title2)
-                    .bold()
-                    Text("You have completed")
-                    Text("your goal!")
+        ScrollView {
+            VStack {
+                ZStack {
+                    Rectangle()
+                        .frame(width: 330, height: 260)
+                        .foregroundColor(Color.gray.opacity(0.1))
+                        .cornerRadius(20)
+                    
+                    VStack {
+                        Text("Wohoo...")
+                            .font(.title2)
+                        .bold()
+                        Text("You have completed")
+                        Text("your goal!")
+                    }
+                    completeRings(radius: 110, percent: 1, background: .green.opacity(0.1), color: .green)
+                        .padding()
                 }
-                completeRings(radius: 110, percent: 0.96, background: .green.opacity(0.1), color: .green)
-                    .padding()
+                .padding(.bottom, 20)
+    //            Picker("What is your favorite color?", selection: $goalStatus) {
+    //                ForEach(status, id: \.self) {
+    //                    Text($0)
+    //                }
+    //            }
+    //            .pickerStyle(.segmented)
+    //            .padding()
+                
+                CardCompleted(background: Color.green)
+                CardCompleted(background: Color.green)
+                CardCompleted(background: Color.green)
+                Spacer()
             }
-            Picker("What is your favorite color?", selection: $goalStatus) {
-                ForEach(status, id: \.self) {
-                    Text($0)
-                }
-            }
-            .pickerStyle(.segmented)
-            .padding()
-            
-            CardView()
-            Spacer()
         }
-        
     }
 }
 
@@ -76,5 +85,36 @@ struct completeRings: View {
 struct CompletedView_Previews: PreviewProvider {
     static var previews: some View {
         CompletedView()
+    }
+}
+
+struct CardCompleted: View {
+    var background: Color
+    
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .foregroundColor(background)
+                .frame(height: 85)
+                .cornerRadius(20)
+            
+            HStack {
+                Text("Presentation")
+                    .font(.subheadline)
+                    .foregroundColor(Color.white)
+                Spacer()
+                ZStack {
+                    Rectangle()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(8)
+                    
+                    Image(systemName: "arrow.right")
+                        .foregroundColor(Color.black)
+                }
+            }
+            .padding(.horizontal, 20)
+        }
+        .padding(.horizontal, 30)
     }
 }

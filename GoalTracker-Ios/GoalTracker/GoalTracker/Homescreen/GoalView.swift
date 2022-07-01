@@ -20,33 +20,34 @@ struct GoalView: View {
                         .font(.title2)
                         .bold()
                     
+                    Rectangle()
+                        .frame(width: 330, height: 260)
+                        .foregroundColor(Color.gray.opacity(0.1))
+                        .cornerRadius(20)
+                    
                     Group {
                         goalRings(radius: 110, percent: 0.85, background: .black.opacity(0.1), color: .black)
                         goalRings(radius: 90, percent: 0.45, background: .mint.opacity(0.1), color: .mint)
                         goalRings(radius: 70, percent: 0.6, background: .red.opacity(0.1), color: .red)
                     }
                 }
-                .padding()
-                
-                Picker("", selection: $goalStatus) {
-                    ForEach(status, id: \.self) {
-                        Text($0)
-                    }
-                }
-                .pickerStyle(.segmented)
-                .padding()
-                
+//                .padding()
+                .padding(.bottom, 20)
+//                Picker("What is your favorite color?", selection: $goalStatus) {
+//                    ForEach(status, id: \.self) {
+//                        Text($0)
+//                    }
+//                }
+//                .pickerStyle(.segmented)
+//                .padding()
+
 //                CardView()
                 CardNew(background: .black)
                 CardNew(background: .mint)
                 CardNew(background: .red)
-                
-                
-//                Spacer()
+                Spacer()
             }
         }
-            
-        
     }
 }
 
@@ -108,7 +109,7 @@ struct CardNew: View {
                     Rectangle()
                         .frame(width: 30, height: 30)
                         .foregroundColor(Color.white)
-                        .cornerRadius(12)
+                        .cornerRadius(8)
                     
                     Image(systemName: "arrow.right")
                         .foregroundColor(Color.black)

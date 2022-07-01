@@ -37,6 +37,7 @@
 		F445F7A22866B38C00A2EE2B /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445F7A12866B38C00A2EE2B /* ArchiveView.swift */; };
 		F445F7A42866B9BF00A2EE2B /* SetSubtaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445F7A32866B9BF00A2EE2B /* SetSubtaskView.swift */; };
 		F44C06922867437A0086FD36 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C06912867437A0086FD36 /* SearchBarView.swift */; };
+		F48C519E286DA3B100DE1099 /* SegmentedControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48C519D286DA3B100DE1099 /* SegmentedControls.swift */; };
 		F4E3768B28647CD3001020AA /* HomescreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E3768A28647CD3001020AA /* HomescreenView.swift */; };
 		F4E3768D28649AF4001020AA /* HomescreenFillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E3768C28649AF4001020AA /* HomescreenFillView.swift */; };
 		F4E3768F28649BDA001020AA /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E3768E28649BDA001020AA /* CardView.swift */; };
@@ -96,6 +97,7 @@
 		F445F7A12866B38C00A2EE2B /* ArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
 		F445F7A32866B9BF00A2EE2B /* SetSubtaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSubtaskView.swift; sourceTree = "<group>"; };
 		F44C06912867437A0086FD36 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		F48C519D286DA3B100DE1099 /* SegmentedControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControls.swift; sourceTree = "<group>"; };
 		F4E3768A28647CD3001020AA /* HomescreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenView.swift; sourceTree = "<group>"; };
 		F4E3768C28649AF4001020AA /* HomescreenFillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenFillView.swift; sourceTree = "<group>"; };
 		F4E3768E28649BDA001020AA /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -406,9 +408,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F48C519C286DA39900DE1099 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F48C519D286DA3B100DE1099 /* SegmentedControls.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F4E3768928647CB3001020AA /* Homescreen */ = {
 			isa = PBXGroup;
 			children = (
+				F48C519C286DA39900DE1099 /* Views */,
 				F4E3768A28647CD3001020AA /* HomescreenView.swift */,
 				F4E3768C28649AF4001020AA /* HomescreenFillView.swift */,
 				F44C06912867437A0086FD36 /* SearchBarView.swift */,
@@ -562,6 +573,7 @@
 			files = (
 				F4E3768D28649AF4001020AA /* HomescreenFillView.swift in Sources */,
 				CBFEE284286441F400377AE1 /* GoalTemplateDummy.swift in Sources */,
+				F48C519E286DA3B100DE1099 /* SegmentedControls.swift in Sources */,
 				CBFEE2962866BB6800377AE1 /* ActivityTask.swift in Sources */,
 				CBFEE2862864CDA800377AE1 /* GoalTemplateItem.swift in Sources */,
 				CBE3149D2862F3F600E88F35 /* PersistenceController.swift in Sources */,

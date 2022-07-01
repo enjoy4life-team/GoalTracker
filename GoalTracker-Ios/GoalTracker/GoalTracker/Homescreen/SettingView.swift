@@ -10,7 +10,7 @@ import SwiftUI
 struct SettingView: View {
     
     var body: some View {
-//        NavigationView { 
+        NavigationView {
             List {
                 darkMode()
                 
@@ -24,9 +24,9 @@ struct SettingView: View {
                     rate()
                 }
             }
-//            .navigationBarTitleDisplayMode(.inline)
-//            .navigationTitle("Setting")
-//        }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Setting")
+        }
     }
 }
 
