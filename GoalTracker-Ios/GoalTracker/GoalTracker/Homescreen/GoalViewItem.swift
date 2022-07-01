@@ -1,69 +1,58 @@
 //
-//  GoalViewItem.swift
+//  GoalView.swift
 //  GoalTracker
 //
-//  Created by Agus Budianto on 28/06/22.
+//  Created by Imam Sutria on 24/06/22.
 //
 
 import SwiftUI
 
 struct GoalViewItem: View {
-    @ObservedObject var viewModel: GoalViewModel
-    var status = ["On Going", "Completed", "Archive"]
-    @State var goalStatus = "On Going"
     
-    var body: some View {
-        VStack {
-            ZStack {
-                Text("On Going")
-                    .font(.title2)
-                    .bold()
-                
-                Group {
-                    goalRings(radius: 110, percent: 0.85, background: .black.opacity(0.1), color: .black)
-                    goalRings(radius: 90, percent: 0.45, background: .mint.opacity(0.1), color: .mint)
-                    goalRings(radius: 70, percent: 0.6, background: .red.opacity(0.1), color: .red)
-                }
-            }
-            .padding()
-            
-            Picker("", selection: $goalStatus) {
-                ForEach(status, id: \.self) {
-                    Text($0)
-                }
-            }
-            .pickerStyle(.segmented)
-            .padding(.horizontal)
-            
-           
-            List{
-            ForEach(viewModel.goals, id: \.self) { goal in
+    @ObservedObject var viewModel: GoalViewModel
+    @State private var goalStatus = "On Going"
+    var status = ["On Going", "Completed", "Archive"]
+    
+    var body: some View{
+        ScrollView{
+            VStack {
                 ZStack {
+                    Text("On Going")
+                        .font(.title2)
+                        .bold()
+                    
+                    Rectangle()
+                        .frame(width: 330, height: 260)
+                        .foregroundColor(Color.gray.opacity(0.1))
+                        .cornerRadius(20)
+                    
+                    Group {
+                        goalRings(radius: 110, percent: 0.85, background: .black.opacity(0.1), color: .black)
+                        goalRings(radius: 90, percent: 0.45, background: .mint.opacity(0.1), color: .mint)
+                        goalRings(radius: 70, percent: 0.6, background: .red.opacity(0.1), color: .red)
+                    }
+                }
+                .padding(.bottom, 20)
+                
+                
+                ForEach(viewModel.goals, id: \.self) { goal in
+                    
                     NavigationLink(destination:
                                     SetActivityView(viewModel: SetActivityViewModel(goal: goal))
                     ) {
-                        EmptyView()
+                        CardNew(background: .black, goalName: goal.name ?? "Empty Goal Name")
+                        
                     }
-                    .opacity(0.0)
-                    .buttonStyle(PlainButtonStyle())
-                    card(goalName: goal.name ?? "Goal").listRowInsets(EdgeInsets())
-                    }
-                }.listRowSeparator(.hidden)
+                    
+                }
             }
-            .listStyle(PlainListStyle())
-            
-                
             Spacer()
-         }
+            
+        }.onAppear{
+            viewModel.getData()
         }
     }
-
-
-//struct GoalViewItem_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GoalViewItem()
-//    }
-//}
+}
 
 
 struct goalRings: View {
@@ -96,5 +85,43 @@ struct goalRings: View {
                     }
             }
         }
+    }
+}
+
+struct GoalView_Previews: PreviewProvider {
+    static var previews: some View {
+        GoalViewItem(viewModel: GoalViewModel())
+    }
+}
+
+struct CardNew: View {
+    var background: Color
+    var goalName: String
+    var body: some View {
+        ZStack {
+            
+            Rectangle()
+                .foregroundColor(background)
+                .frame(height: 85)
+                .cornerRadius(20)
+            
+            HStack {
+                Text("Presentation")
+                    .font(.subheadline)
+                    .foregroundColor(Color.white)
+                Spacer()
+                ZStack {
+                    Rectangle()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(8)
+                    
+                    Image(systemName: "arrow.right")
+                        .foregroundColor(Color.black)
+                }
+            }
+            .padding(.horizontal, 20)
+        }
+        .padding(.horizontal, 30)
     }
 }

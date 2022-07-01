@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ArchiveView: View {
-    @ObservedObject var viewModel: GoalViewModel
     @State private var goalStatus = "Archive"
     var status = ["On Going", "Completed", "Archive"]
     
@@ -39,17 +38,9 @@ struct ArchiveView: View {
     //            .pickerStyle(.segmented)
     //            .padding()
                 
-                ForEach(viewModel.getFinishGoal(), id: \.self) { goal in
-                    
-                    NavigationLink(destination:
-                                    SetActivityView(viewModel: SetActivityViewModel(goal: goal))
-                    ) {
-                        CardArchive(background: .gray, goalName: goal.name ?? "Empty Goal Name")
-
-                    }
-                    
-                }
-       
+                CardArchive(background: Color.gray)
+                CardArchive(background: Color.gray)
+                CardArchive(background: Color.gray)
                 Spacer()
             }
         }
@@ -91,13 +82,13 @@ struct archiveRings: View {
 
 struct ArchiveView_Previews: PreviewProvider {
     static var previews: some View {
-        ArchiveView(viewModel: GoalViewModel())
+        ArchiveView()
     }
 }
 
 struct CardArchive: View {
     var background: Color
-    var goalName: String
+    
     var body: some View {
         ZStack {
             Rectangle()
@@ -106,7 +97,7 @@ struct CardArchive: View {
                 .cornerRadius(20)
             
             HStack {
-                Text(goalName)
+                Text("Presentation")
                     .font(.subheadline)
                     .foregroundColor(Color.white)
                 Spacer()

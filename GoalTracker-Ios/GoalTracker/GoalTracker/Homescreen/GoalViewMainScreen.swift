@@ -27,11 +27,7 @@ struct GoalViewMainScreen: View {
                             viewModel.getData()
                         }
                 }else{
-                    GoalViewItem(viewModel: viewModel)
-                        .onAppear{
-                            viewModel.getData()
-                        }
-
+                    SegmentedControls(viewModel: viewModel)
                 }
                 
         }
