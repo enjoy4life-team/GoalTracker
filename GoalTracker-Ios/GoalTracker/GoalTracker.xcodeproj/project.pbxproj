@@ -16,6 +16,9 @@
 		CB6CF97D286C2B9D00828A54 /* AddNewGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CF97C286C2B9D00828A54 /* AddNewGoalViewModel.swift */; };
 		CB6CF981286CA92D00828A54 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = CB6CF980286CA92D00828A54 /* Introspect */; };
 		CB6CF9A0286DC76600828A54 /* OnboardingMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CF99F286DC76600828A54 /* OnboardingMainView.swift */; };
+		CB9449EA286E9CAC0008A35F /* SegmentedControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9449E9286E9CAC0008A35F /* SegmentedControls.swift */; };
+		CB9449ED286EA76F0008A35F /* SetTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9449EC286EA76F0008A35F /* SetTaskViewModel.swift */; };
+		CB9449EF286EA7D90008A35F /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9449EE286EA7D90008A35F /* TaskView.swift */; };
 		CBE314942862F3F500E88F35 /* GoalTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314932862F3F500E88F35 /* GoalTrackerApp.swift */; };
 		CBE314982862F3F600E88F35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE314972862F3F600E88F35 /* Assets.xcassets */; };
 		CBE3149B2862F3F600E88F35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE3149A2862F3F600E88F35 /* Preview Assets.xcassets */; };
@@ -43,14 +46,11 @@
 		CBFEE2962866BB6800377AE1 /* ActivityTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE2952866BB6800377AE1 /* ActivityTask.swift */; };
 		F445F7A02866B04400A2EE2B /* CompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445F79F2866B04400A2EE2B /* CompletedView.swift */; };
 		F445F7A22866B38C00A2EE2B /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445F7A12866B38C00A2EE2B /* ArchiveView.swift */; };
-		F445F7A42866B9BF00A2EE2B /* SetSubtaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445F7A32866B9BF00A2EE2B /* SetSubtaskView.swift */; };
-		F445F7A62866C4F200A2EE2B /* SelectRepeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445F7A52866C4F200A2EE2B /* SelectRepeat.swift */; };
 		F44C068D286741840086FD36 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C068C286741840086FD36 /* HomeTabView.swift */; };
 		F44C06922867437A0086FD36 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C06912867437A0086FD36 /* SearchBarView.swift */; };
 		F4E3768B28647CD3001020AA /* HomescreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E3768A28647CD3001020AA /* HomescreenView.swift */; };
 		F4E3768D28649AF4001020AA /* GoalItemEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E3768C28649AF4001020AA /* GoalItemEmpty.swift */; };
 		F4E3768F28649BDA001020AA /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E3768E28649BDA001020AA /* CardView.swift */; };
-		F4E376962864BE49001020AA /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E376952864BE49001020AA /* TestView.swift */; };
 		F4E3769828655BF1001020AA /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E3769728655BF1001020AA /* SettingView.swift */; };
 		F4E3769A28655C91001020AA /* GoalViewMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E3769928655C91001020AA /* GoalViewMainScreen.swift */; };
 /* End PBXBuildFile section */
@@ -80,6 +80,9 @@
 		CB6CF97A286C240400828A54 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		CB6CF97C286C2B9D00828A54 /* AddNewGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewGoalViewModel.swift; sourceTree = "<group>"; };
 		CB6CF99F286DC76600828A54 /* OnboardingMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMainView.swift; sourceTree = "<group>"; };
+		CB9449E9286E9CAC0008A35F /* SegmentedControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegmentedControls.swift; path = GoalTracker/Homescreen/Views/SegmentedControls.swift; sourceTree = SOURCE_ROOT; };
+		CB9449EC286EA76F0008A35F /* SetTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTaskViewModel.swift; sourceTree = "<group>"; };
+		CB9449EE286EA7D90008A35F /* TaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		CBE314902862F3F500E88F35 /* GoalTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoalTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE314932862F3F500E88F35 /* GoalTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTrackerApp.swift; sourceTree = "<group>"; };
 		CBE314972862F3F600E88F35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,14 +113,11 @@
 		CBFEE2952866BB6800377AE1 /* ActivityTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTask.swift; sourceTree = "<group>"; };
 		F445F79F2866B04400A2EE2B /* CompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedView.swift; sourceTree = "<group>"; };
 		F445F7A12866B38C00A2EE2B /* ArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
-		F445F7A32866B9BF00A2EE2B /* SetSubtaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSubtaskView.swift; sourceTree = "<group>"; };
-		F445F7A52866C4F200A2EE2B /* SelectRepeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRepeat.swift; sourceTree = "<group>"; };
 		F44C068C286741840086FD36 /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 		F44C06912867437A0086FD36 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		F4E3768A28647CD3001020AA /* HomescreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenView.swift; sourceTree = "<group>"; };
 		F4E3768C28649AF4001020AA /* GoalItemEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalItemEmpty.swift; sourceTree = "<group>"; };
 		F4E3768E28649BDA001020AA /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		F4E376952864BE49001020AA /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		F4E3769728655BF1001020AA /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		F4E3769928655C91001020AA /* GoalViewMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewMainScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +152,7 @@
 		CB6CF971286B4DF700828A54 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CB9449E9286E9CAC0008A35F /* SegmentedControls.swift */,
 				F445F7A12866B38C00A2EE2B /* ArchiveView.swift */,
 				F4E3768E28649BDA001020AA /* CardView.swift */,
 			);
@@ -164,6 +165,22 @@
 				CB6CF99F286DC76600828A54 /* OnboardingMainView.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		CB9449EB286EA7520008A35F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CB9449EC286EA76F0008A35F /* SetTaskViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CB9449F0286EA7EB0008A35F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CB9449EE286EA7D90008A35F /* TaskView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		CBE314872862F3F500E88F35 = {
@@ -190,7 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				CB6CF99E286DC75700828A54 /* Onboarding */,
-				F4E376922864BE0F001020AA /* SetActivity */,
+				F4E376922864BE0F001020AA /* Task */,
 				F4E3768928647CB3001020AA /* Homescreen */,
 				CBE314DD2862FF3D00E88F35 /* TabBar */,
 				CBE314DC2862FE9A00E88F35 /* Settings */,
@@ -448,14 +465,13 @@
 			path = Homescreen;
 			sourceTree = "<group>";
 		};
-		F4E376922864BE0F001020AA /* SetActivity */ = {
+		F4E376922864BE0F001020AA /* Task */ = {
 			isa = PBXGroup;
 			children = (
-				F4E376952864BE49001020AA /* TestView.swift */,
-				F445F7A32866B9BF00A2EE2B /* SetSubtaskView.swift */,
-				F445F7A52866C4F200A2EE2B /* SelectRepeat.swift */,
+				CB9449F0286EA7EB0008A35F /* View */,
+				CB9449EB286EA7520008A35F /* ViewModel */,
 			);
-			path = SetActivity;
+			path = Task;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -602,23 +618,23 @@
 				CBFEE2962866BB6800377AE1 /* ActivityTask.swift in Sources */,
 				CBFEE2862864CDA800377AE1 /* GoalTemplateItem.swift in Sources */,
 				CBE3149D2862F3F600E88F35 /* PersistenceController.swift in Sources */,
-				F445F7A62866C4F200A2EE2B /* SelectRepeat.swift in Sources */,
 				F44C06922867437A0086FD36 /* SearchBarView.swift in Sources */,
 				CBE314D82862FBD600E88F35 /* GoalViewModel.swift in Sources */,
 				F4E3769828655BF1001020AA /* SettingView.swift in Sources */,
 				CBE314E62863007D00E88F35 /* UITabBar+DefaultAppearance.swift in Sources */,
 				F4E3768F28649BDA001020AA /* CardView.swift in Sources */,
 				CB6CF97B286C240400828A54 /* Binding.swift in Sources */,
-				F445F7A42866B9BF00A2EE2B /* SetSubtaskView.swift in Sources */,
 				F445F7A22866B38C00A2EE2B /* ArchiveView.swift in Sources */,
 				CB6CF970286B4AB900828A54 /* GoalViewItem.swift in Sources */,
 				C8A8813F286DD7E40098866C /* SettingViewModel.swift in Sources */,
 				F4E3768B28647CD3001020AA /* HomescreenView.swift in Sources */,
+				CB9449EA286E9CAC0008A35F /* SegmentedControls.swift in Sources */,
 				F4E3769A28655C91001020AA /* GoalViewMainScreen.swift in Sources */,
 				CBE314CF2862FAA100E88F35 /* GoalLocalDefaultDataSource.swift in Sources */,
+				CB9449ED286EA76F0008A35F /* SetTaskViewModel.swift in Sources */,
 				F445F7A02866B04400A2EE2B /* CompletedView.swift in Sources */,
-				F4E376962864BE49001020AA /* TestView.swift in Sources */,
 				CBE314DF2862FF7600E88F35 /* MainTabView.swift in Sources */,
+				CB9449EF286EA7D90008A35F /* TaskView.swift in Sources */,
 				CBE314EB2863023E00E88F35 /* Color.swift in Sources */,
 				CBFEE2922865FE6F00377AE1 /* SetActivityViewModel.swift in Sources */,
 				CBF074122869733F006452CB /* GoalDetailViewModel.swift in Sources */,
@@ -633,7 +649,6 @@
 				C86DD967286A717D006F9A0A /* AddGoalTemplate.swift in Sources */,
 				C86DD968286A717D006F9A0A /* AddNewGoalView.swift in Sources */,
 				CBE314CD2862FA9200E88F35 /* GoalLocalDataSource.swift in Sources */,
-				CBE314E82863019900E88F35 /* Settings.swift in Sources */,
 				CB6CF9A0286DC76600828A54 /* OnboardingMainView.swift in Sources */,
 				CBE314A02862F3F600E88F35 /* GoalTracker.xcdatamodeld in Sources */,
 			);

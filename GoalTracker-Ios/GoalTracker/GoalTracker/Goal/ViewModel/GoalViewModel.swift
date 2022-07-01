@@ -56,4 +56,24 @@ final class GoalViewModel: ObservableObject {
     }
 
 
+    func getFinishGoal() -> [Goal]{
+        return self.goals.filter{
+            let activities = Array($0.activities as? Set<Activity> ?? [])
+            
+            return activities.filter{
+                let tasks = Array($0.tasks as? Set<Task> ?? [])
+                
+                return tasks.count == tasks.filter {
+                    $0.finish != false
+                }.count
+
+            }.count == activities.count
+        }
+    }
+    
+    func getArchivedGoal() -> [Goal]{
+        return self.goals.filter{
+            $0.isArchived
+        }
+    }
 }

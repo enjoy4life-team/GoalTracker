@@ -1,65 +1,60 @@
 //
-//  ArchiveView.swift
+//  GoalView.swift
 //  GoalTracker
 //
-//  Created by Imam Sutria on 25/06/22.
+//  Created by Imam Sutria on 24/06/22.
 //
 
 import SwiftUI
 
-struct ArchiveView: View {
-    @ObservedObject var viewModel: GoalViewModel
-    @State private var goalStatus = "Archive"
+struct GoalView: View {
+    
+    @State private var goalStatus = "On Going"
     var status = ["On Going", "Completed", "Archive"]
     
-    var body: some View {
-        ScrollView {
+    var body: some View{
+        ScrollView{
             VStack {
                 ZStack {
+                    Text("On Going")
+                        .font(.title2)
+                        .bold()
+                    
                     Rectangle()
                         .frame(width: 330, height: 260)
                         .foregroundColor(Color.gray.opacity(0.1))
                         .cornerRadius(20)
                     
-                    VStack {
-                        Text("Don't waste your time,")
-                        Text("Make it On Going!")
-                            .font(.title2)
-                            .bold()
+                    Group {
+                        goalRings(radius: 110, percent: 0.85, background: .black.opacity(0.1), color: .black)
+                        goalRings(radius: 90, percent: 0.45, background: .mint.opacity(0.1), color: .mint)
+                        goalRings(radius: 70, percent: 0.6, background: .red.opacity(0.1), color: .red)
                     }
-                    archiveRings(radius: 110, percent: 1, background: .gray.opacity(0.1), color: .gray)
-                        .padding()
                 }
+//                .padding()
                 .padding(.bottom, 20)
-    //            Picker("What is your favorite color?", selection: $goalStatus) {
-    //                ForEach(status, id: \.self) {
-    //                    Text($0)
-    //                }
-    //            }
-    //            .pickerStyle(.segmented)
-    //            .padding()
-                
-                ForEach(viewModel.getFinishGoal(), id: \.self) { goal in
-                    
-                    NavigationLink(destination:
-                                    SetActivityView(viewModel: SetActivityViewModel(goal: goal))
-                    ) {
-                        CardArchive(background: .gray, goalName: goal.name ?? "Empty Goal Name")
+//                Picker("What is your favorite color?", selection: $goalStatus) {
+//                    ForEach(status, id: \.self) {
+//                        Text($0)
+//                    }
+//                }
+//                .pickerStyle(.segmented)
+//                .padding()
 
-                    }
-                    
-                }
-       
+//                CardView()
+                CardNew(background: .black)
+                CardNew(background: .mint)
+                CardNew(background: .red)
                 Spacer()
             }
         }
     }
 }
 
-struct archiveRings: View {
+struct goalRings: View {
     var radius: CGFloat
     var percent: CGFloat
-   
+    
     var background : Color = .red.opacity(0.05)
     var color: Color = Color.red
     var lineWidth: CGFloat = 16
@@ -89,15 +84,15 @@ struct archiveRings: View {
     }
 }
 
-struct ArchiveView_Previews: PreviewProvider {
+struct GoalView_Previews: PreviewProvider {
     static var previews: some View {
-        ArchiveView(viewModel: GoalViewModel())
+        GoalView()
     }
 }
 
-struct CardArchive: View {
+struct CardNew: View {
     var background: Color
-    var goalName: String
+    
     var body: some View {
         ZStack {
             Rectangle()
@@ -106,7 +101,7 @@ struct CardArchive: View {
                 .cornerRadius(20)
             
             HStack {
-                Text(goalName)
+                Text("Presentation")
                     .font(.subheadline)
                     .foregroundColor(Color.white)
                 Spacer()

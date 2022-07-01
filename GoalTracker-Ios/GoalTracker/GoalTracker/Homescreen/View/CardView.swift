@@ -25,30 +25,31 @@ struct card: View {
     
     var body: some View {
         ZStack {
+            Rectangle()
+                .foregroundColor(self.chooseBgColor(goalName: goalName))
+                .frame(height: 85)
+                .cornerRadius(20)
+            
             HStack {
                 Text(goalName)
-                
+                    .font(.subheadline)
+                    .foregroundColor(Color.white)
                 Spacer()
-                
                 ZStack {
                     Rectangle()
-                        .frame(width: 35, height: 35)
-                        .foregroundColor(.black)
-                        .cornerRadius(12)
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(8)
                     
-                    Label("", systemImage: "arrow.right")
-                        .padding(.leading, 10)
-                        .padding(.bottom, 2)
-                        .foregroundColor(.white)
+                    Image(systemName: "arrow.right")
+                        .foregroundColor(Color.black)
                 }
             }
-            
-        }.padding()
-            .padding(.horizontal, 30)
-            .background(self.chooseBgColor(goalName: goalName))
-            .cornerRadius(20)
-            
-            
+            .padding(.horizontal, 20)
+        }
+        .padding(.horizontal, 30)
+        
+        
     }
     
     func chooseBgColor(goalName: String) -> Color {

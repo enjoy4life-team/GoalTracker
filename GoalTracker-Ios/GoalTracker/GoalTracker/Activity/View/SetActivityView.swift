@@ -41,7 +41,7 @@ struct SetActivityView: View {
                         HStack{
                             Text(viewModel.activities[idx].name ?? "null").padding(.vertical, 10)
                             if !isEditing {
-                                NavigationLink(destination: ActivityTask(viewModel: GoalDetailViewModel(goal: viewModel.goal),activity: viewModel.activities[idx])) { EmptyView() } // disabled  !
+                                NavigationLink(destination: TaskView(viewModel: SetTaskViewModel(activity: viewModel.activities[idx]))) { EmptyView() } // disabled  !
                             }
                             
                         }
