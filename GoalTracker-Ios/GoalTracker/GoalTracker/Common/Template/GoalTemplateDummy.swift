@@ -88,18 +88,18 @@ struct SmartGoalData {
         
         let q1 = Question(context: ctx)
         q1.id = UUID.init()
-        q1.text = "Reality i have?"
+        q1.text = "What will you prepare and do to master this skill?"
         q1.number = 1
         goal.addToQuestions(q1)
 
         let q2 = Question(context: ctx)
-        q2.text = "My Opportunities?"
+        q2.text = "What is your goal after mastering this skill?"
         q2.id = UUID.init()
         q2.number = 2
         goal.addToQuestions(q2)
 
         let q3 = Question(context: ctx)
-        q3.text = "Why This Goal Important?"
+        q3.text = "why do you have to master this skill?"
         q3.id = UUID.init()
         q3.number = 3
         goal.addToQuestions(q3)
@@ -158,17 +158,17 @@ struct SmartGoalData {
         
         let q1 = Question(context: ctx)
         q1.id = UUID.init()
-        q1.text = "Reality i have?"
+        q1.text = "What will you prepare and do to master this skill?"
         q1.number = 1
         
         let q2 = Question(context: ctx)
-        q2.text = "My Opportunities?"
+        q2.text = "What is your goal after mastering this skill?"
         q2.id = UUID.init()
         q2.number = 2
 
         
         let q3 = Question(context: ctx)
-        q3.text = "Why This Goal Important?"
+        q3.text = "Why do you have to master this skill?"
         q3.id = UUID.init()
         q3.number = 3
 
@@ -231,17 +231,17 @@ struct SmartGoalData {
         
         let q1 = Question(context: ctx)
         q1.id = UUID.init()
-        q1.text = "Reality i have?"
+        q1.text = "What will you prepare and do to master this skill?"
         q1.number = 1
         
         let q2 = Question(context: ctx)
-        q2.text = "My Opportunities?"
+        q2.text = "What is your goal after mastering this skill?"
         q2.id = UUID.init()
         q2.number = 2
 
         
         let q3 = Question(context: ctx)
-        q3.text = "Why This Goal Important?"
+        q3.text = "Why do you have to master this skill?"
         q3.id = UUID.init()
         q3.number = 3
 
@@ -263,17 +263,17 @@ struct SmartGoalData {
         
         let q1 = Question(context: ctx)
         q1.id = UUID.init()
-        q1.text = "Reality i have?"
+        q1.text = "What will you prepare and do to master this skill?"
         q1.number = 1
         
         let q2 = Question(context: ctx)
-        q2.text = "My Opportunities?"
+        q2.text = "What is your goal after mastering this skill?"
         q2.id = UUID.init()
         q2.number = 2
 
         
         let q3 = Question(context: ctx)
-        q3.text = "Why This Goal Important?"
+        q3.text = "Why do you have to master this skill?"
         q3.id = UUID.init()
         q3.number = 3
 
