@@ -11,9 +11,10 @@ struct AddNewGoalView: View{
     @ObservedObject var viewModel: AddNewGoalViewModel
     @Binding var parentRoute: GoalViewMainScreen.Route?
     @Environment(\.presentationMode) var presentationMode
+    @State var isPresented = false
 
     var body: some View{
-        VStack(spacing: 15){
+        VStack(spacing: 10){
             ZStack{
                 Image(viewModel.goal.isTemplate ? (viewModel.goal.name ?? "Custom Goal") : "Custom Goal")
                     .resizable()
@@ -45,9 +46,10 @@ struct AddNewGoalView: View{
 
             Group{
                 DatePicker("Start Date",
-                           selection: $viewModel.goal.startDate.toUnwrapped(defaultValue: Date.now),
+                           selection: $viewModel.goal.startDate.toUnwrapped(defaultValue: Date.now.addingTimeInterval(86400)),
                            in: Date()...,
                            displayedComponents: [DatePickerComponents.date, DatePickerComponents.hourAndMinute])
+                
 
                 Divider()
 
@@ -55,17 +57,22 @@ struct AddNewGoalView: View{
                            selection: $viewModel.goal.endDate.toUnwrapped(defaultValue: Date.now),
                            in: Date()...,
                            displayedComponents: [DatePickerComponents.date, DatePickerComponents.hourAndMinute])
+                .padding(.bottom,40)
             }
             .padding(.horizontal, 30)
 
 
+
             Group{
                 ForEach(0..<viewModel.questionList.count, id: \.self){ idx in
-                    Text(viewModel.questionList[idx].text ?? "question")
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
-                        .padding(.bottom, -10)
-                        .padding(.top)
+                    HStack{
+                        Text(viewModel.questionList[idx].text ?? "question")
+                            .font(.headline)
+                            .fontWeight(.semibold)
+                            .padding(.bottom, -5)
+                        Spacer()
+                    }
+                    .padding(.horizontal,30)
 
                     TextField("write it down here", text: $viewModel.questionList[idx].answer.toUnwrapped(defaultValue: ""))
                         .frame(width: 320, height: 50)
@@ -75,8 +82,6 @@ struct AddNewGoalView: View{
                             .fill(.gray.opacity(0.2))
                             .frame(width: 350, height: 50))
                 }
-
-
             }
         }
         .navigationTitle("Set Goal")
@@ -89,9 +94,9 @@ struct AddNewGoalView: View{
                     parentRoute = nil
                 } label: {
                     Text("Save")
-
                 }
                 .tint(.blue)
+            
             }
 
             ToolbarItem(placement: .navigationBarLeading){

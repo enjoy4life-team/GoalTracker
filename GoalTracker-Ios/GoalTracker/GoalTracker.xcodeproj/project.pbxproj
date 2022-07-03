@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C80A7A7128704FFD0068CC4C /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A7A7028704FFD0068CC4C /* Popup.swift */; };
 		C813F05D286E3C36001D7DC1 /* StepperView in Frameworks */ = {isa = PBXBuildFile; productRef = C813F05C286E3C36001D7DC1 /* StepperView */; };
+		C813F05F286E3D00001D7DC1 /* GoalSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C813F05E286E3D00001D7DC1 /* GoalSummary.swift */; };
 		C86DD967286A717D006F9A0A /* AddGoalTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86DD965286A717D006F9A0A /* AddGoalTemplate.swift */; };
 		C86DD968286A717D006F9A0A /* AddNewGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86DD966286A717D006F9A0A /* AddNewGoalView.swift */; };
 		C8A8813F286DD7E40098866C /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A8813E286DD7E40098866C /* SettingViewModel.swift */; };
+		C8B7EF00286E9E2B00484547 /* HalfASheet in Frameworks */ = {isa = PBXBuildFile; productRef = C8B7EEFF286E9E2B00484547 /* HalfASheet */; };
 		CB6CF970286B4AB900828A54 /* GoalViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CF96F286B4AB900828A54 /* GoalViewItem.swift */; };
 		CB6CF974286B634300828A54 /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = CB6CF973286B634300828A54 /* SwiftUINavigation */; };
 		CB6CF97B286C240400828A54 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CF97A286C240400828A54 /* Binding.swift */; };
@@ -74,6 +77,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C80A7A7028704FFD0068CC4C /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
+		C813F05E286E3D00001D7DC1 /* GoalSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalSummary.swift; sourceTree = "<group>"; };
 		C86DD965286A717D006F9A0A /* AddGoalTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalTemplate.swift; sourceTree = "<group>"; };
 		C86DD966286A717D006F9A0A /* AddNewGoalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewGoalView.swift; sourceTree = "<group>"; };
 		C8A8813E286DD7E40098866C /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
@@ -131,6 +136,7 @@
 				C813F05D286E3C36001D7DC1 /* StepperView in Frameworks */,
 				CB6CF974286B634300828A54 /* SwiftUINavigation in Frameworks */,
 				CB6CF981286CA92D00828A54 /* Introspect in Frameworks */,
+				C8B7EF00286E9E2B00484547 /* HalfASheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +305,8 @@
 			isa = PBXGroup;
 			children = (
 				C86DD965286A717D006F9A0A /* AddGoalTemplate.swift */,
+				C80A7A7028704FFD0068CC4C /* Popup.swift */,
+				C813F05E286E3D00001D7DC1 /* GoalSummary.swift */,
 				C86DD966286A717D006F9A0A /* AddNewGoalView.swift */,
 				CBE314D52862FB0900E88F35 /* GoalMainScreen.swift */,
 			);
@@ -480,6 +488,7 @@
 				CB6CF973286B634300828A54 /* SwiftUINavigation */,
 				CB6CF980286CA92D00828A54 /* Introspect */,
 				C813F05C286E3C36001D7DC1 /* StepperView */,
+				C8B7EEFF286E9E2B00484547 /* HalfASheet */,
 			);
 			productName = GoalTracker;
 			productReference = CBE314902862F3F500E88F35 /* GoalTracker.app */;
@@ -557,6 +566,7 @@
 				CB6CF972286B634300828A54 /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
 				CB6CF97F286CA92D00828A54 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 				C813F05B286E3C36001D7DC1 /* XCRemoteSwiftPackageReference "StepperView" */,
+				C8B7EEFE286E9E2B00484547 /* XCRemoteSwiftPackageReference "HalfASheet" */,
 			);
 			productRefGroup = CBE314912862F3F500E88F35 /* Products */;
 			projectDirPath = "";
@@ -613,6 +623,7 @@
 				CBE314E62863007D00E88F35 /* UITabBar+DefaultAppearance.swift in Sources */,
 				F4E3768F28649BDA001020AA /* CardView.swift in Sources */,
 				CB6CF97B286C240400828A54 /* Binding.swift in Sources */,
+				C80A7A7128704FFD0068CC4C /* Popup.swift in Sources */,
 				F445F7A42866B9BF00A2EE2B /* SetSubtaskView.swift in Sources */,
 				F445F7A22866B38C00A2EE2B /* ArchiveView.swift in Sources */,
 				CB6CF970286B4AB900828A54 /* GoalViewItem.swift in Sources */,
@@ -629,6 +640,7 @@
 				CBFEE2882865E5AA00377AE1 /* SetActivityView.swift in Sources */,
 				CBE314E12862FFE700E88F35 /* MainTabVIewModel.swift in Sources */,
 				CB6CF97D286C2B9D00828A54 /* AddNewGoalViewModel.swift in Sources */,
+				C813F05F286E3D00001D7DC1 /* GoalSummary.swift in Sources */,
 				CBE314D62862FB0900E88F35 /* GoalMainScreen.swift in Sources */,
 				CBFEE28B2865FD5E00377AE1 /* ActivityLocalDataSource.swift in Sources */,
 				CBF07416286978F9006452CB /* TaskLocalDataSource.swift in Sources */,
@@ -975,6 +987,14 @@
 				kind = branch;
 			};
 		};
+		C8B7EEFE286E9E2B00484547 /* XCRemoteSwiftPackageReference "HalfASheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/franklynw/HalfASheet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		CB6CF972286B634300828A54 /* XCRemoteSwiftPackageReference "swiftui-navigation" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swiftui-navigation";
@@ -998,6 +1018,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C813F05B286E3C36001D7DC1 /* XCRemoteSwiftPackageReference "StepperView" */;
 			productName = StepperView;
+		};
+		C8B7EEFF286E9E2B00484547 /* HalfASheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C8B7EEFE286E9E2B00484547 /* XCRemoteSwiftPackageReference "HalfASheet" */;
+			productName = HalfASheet;
 		};
 		CB6CF973286B634300828A54 /* SwiftUINavigation */ = {
 			isa = XCSwiftPackageProductDependency;
