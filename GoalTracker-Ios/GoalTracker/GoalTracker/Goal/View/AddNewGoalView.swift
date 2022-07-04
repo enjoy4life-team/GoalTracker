@@ -83,6 +83,7 @@ struct AddNewGoalView: View{
                             .frame(width: 350, height: 50))
                 }
             }
+            Spacer()
         }
         .navigationTitle("Set Goal")
         .navigationBarTitleDisplayMode(.inline)
@@ -105,7 +106,7 @@ struct AddNewGoalView: View{
                     viewModel.rollback()
                 }) {
                     HStack {
-                        Image(systemName: "arrow.left.circle")
+                        Image(systemName: "chevron.backward")
                         Text("Goal List")
                     }
                 }
