@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C80A7A7128704FFD0068CC4C /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A7A7028704FFD0068CC4C /* Popup.swift */; };
 		C813F05D286E3C36001D7DC1 /* StepperView in Frameworks */ = {isa = PBXBuildFile; productRef = C813F05C286E3C36001D7DC1 /* StepperView */; };
 		C813F05F286E3D00001D7DC1 /* GoalSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C813F05E286E3D00001D7DC1 /* GoalSummary.swift */; };
 		C86DD967286A717D006F9A0A /* AddGoalTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86DD965286A717D006F9A0A /* AddGoalTemplate.swift */; };
@@ -77,7 +76,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C80A7A7028704FFD0068CC4C /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 		C813F05E286E3D00001D7DC1 /* GoalSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalSummary.swift; sourceTree = "<group>"; };
 		C86DD965286A717D006F9A0A /* AddGoalTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalTemplate.swift; sourceTree = "<group>"; };
 		C86DD966286A717D006F9A0A /* AddNewGoalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewGoalView.swift; sourceTree = "<group>"; };
@@ -305,7 +303,6 @@
 			isa = PBXGroup;
 			children = (
 				C86DD965286A717D006F9A0A /* AddGoalTemplate.swift */,
-				C80A7A7028704FFD0068CC4C /* Popup.swift */,
 				C813F05E286E3D00001D7DC1 /* GoalSummary.swift */,
 				C86DD966286A717D006F9A0A /* AddNewGoalView.swift */,
 				CBE314D52862FB0900E88F35 /* GoalMainScreen.swift */,
@@ -623,7 +620,6 @@
 				CBE314E62863007D00E88F35 /* UITabBar+DefaultAppearance.swift in Sources */,
 				F4E3768F28649BDA001020AA /* CardView.swift in Sources */,
 				CB6CF97B286C240400828A54 /* Binding.swift in Sources */,
-				C80A7A7128704FFD0068CC4C /* Popup.swift in Sources */,
 				F445F7A42866B9BF00A2EE2B /* SetSubtaskView.swift in Sources */,
 				F445F7A22866B38C00A2EE2B /* ArchiveView.swift in Sources */,
 				CB6CF970286B4AB900828A54 /* GoalViewItem.swift in Sources */,

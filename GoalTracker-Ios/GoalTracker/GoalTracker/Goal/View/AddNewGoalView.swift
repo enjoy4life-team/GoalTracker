@@ -92,11 +92,14 @@ struct AddNewGoalView: View{
                 Button{
                     viewModel.saveChanges()
                     parentRoute = nil
+                    isPresented.toggle()
                 } label: {
                     Text("Save")
                 }
                 .tint(.blue)
-            
+                .sheet(isPresented: $isPresented) {
+                    popUp()
+                }
             }
 
             ToolbarItem(placement: .navigationBarLeading){
@@ -111,6 +114,50 @@ struct AddNewGoalView: View{
                 }
             }
         }
+    }
+}
+
+struct popUp: View{
+    var body: some View{
+        VStack(spacing:10){
+            Image("GoalSave")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            
+            Text("There’s something to fill")
+                .font(.title2.bold())
+
+            Text("You still need to fill activities in order to reach your target more detail")
+                .font(.title3)
+            
+            Button{
+
+            }label: {
+                Text("Fill Now")
+                    .foregroundColor(.black)
+                    .font(.subheadline.weight(.semibold))
+                    .frame(width: 300, height: 55)
+                    .background{
+                        RoundedRectangle(cornerRadius: 50, style: .continuous)
+                            .foregroundColor(.teal)
+                    }
+            }
+            
+            Button{
+
+            }label: {
+                Text("Next Time")
+                    .foregroundColor(.black)
+                    .font(.subheadline.weight(.semibold))
+                    .frame(width: 300, height: 55)
+                    .background{
+                        RoundedRectangle(cornerRadius: 50, style: .continuous)
+                            .foregroundColor(.teal)
+                    }
+            }
+
+        }
+        .padding(.horizontal, 30)
     }
 }
 
