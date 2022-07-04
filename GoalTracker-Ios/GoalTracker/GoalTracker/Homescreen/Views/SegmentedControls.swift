@@ -27,7 +27,9 @@ struct SegmentedControls: View {
                 .padding()
 
                 Spacer()
-                ChooseGoalStatusView(selectedStatus: selectedStatus, viewModel: viewModel)
+                ScrollView{
+                    ChooseGoalStatusView(selectedStatus: selectedStatus, viewModel: viewModel)
+                }
                 Spacer()
             }
 
@@ -55,7 +57,7 @@ struct ChooseGoalStatusView: View {
         case .gOnGoing:
             GoalViewItem(viewModel: viewModel)
         case .gCompleted:
-            CompletedView(viewModel: viewModel)
+            CompletedSegment(viewModel: viewModel)
         case .gArchive:
             ArchiveView(viewModel: viewModel)
         }

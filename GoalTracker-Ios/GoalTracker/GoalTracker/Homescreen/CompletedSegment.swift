@@ -7,14 +7,11 @@
 
 import SwiftUI
 
-struct CompletedView: View {
+struct CompletedSegment: View {
     
     @ObservedObject var viewModel: GoalViewModel
-    @State private var goalStatus = "Completed"
-    var status = ["On Going", "Completed", "Archive"]
     
     var body: some View {
-        ScrollView {
             VStack {
                 ZStack {
                     Rectangle()
@@ -44,21 +41,9 @@ struct CompletedView: View {
                 
                 
                 ForEach(viewModel.getFinishGoal(), id: \.self) { goal in
-                    
                     NavigationLink(destination:
                                     GoalSummary(viewModel: GoalSummaryViewModel(goal: goal))
                         .navigationBarTitle(goal.name ?? "nil", displayMode: .inline)
-                        .toolbar {
-                            ToolbarItem(placement: .navigationBarTrailing) {
-                                
-                                NavigationLink(destination:
-                                                SetActivityView(viewModel: SetActivityViewModel(goal: goal))
-                                ) {
-                                   Text("Edit")                            }
-                                
-                                
-                            }
-                        }
                     ) {
                         CardCompleted(goalName: goal.name ?? "Empty Goal Name")
                         
@@ -70,7 +55,6 @@ struct CompletedView: View {
               
                 Spacer()
             }
-        }
     }
 }
 
@@ -109,7 +93,7 @@ struct completeRings: View {
 
 struct CompletedView_Previews: PreviewProvider {
     static var previews: some View {
-        CompletedView(viewModel: GoalViewModel())
+        CompletedSegment(viewModel: GoalViewModel())
     }
 }
 
@@ -144,3 +128,6 @@ struct CardCompleted: View {
         .padding(.horizontal, 30)
     }
 }
+
+
+

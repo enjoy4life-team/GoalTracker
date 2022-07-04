@@ -14,7 +14,6 @@ struct GoalViewItem: View {
     var status = ["On Going", "Completed", "Archive"]
     
     var body: some View{
-        ScrollView{
             VStack {
                 ZStack {
                     Text("On Going")
@@ -57,12 +56,10 @@ struct GoalViewItem: View {
                     }
                     
                 }
+                Spacer()
+            } .onAppear{
+                viewModel.getData()
             }
-            Spacer()
-            
-        }.onAppear{
-            viewModel.getData()
-        }
     }
 }
 

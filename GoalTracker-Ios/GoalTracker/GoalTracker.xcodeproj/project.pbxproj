@@ -49,7 +49,7 @@
 		CBFEE28E2865FD8A00377AE1 /* ActivityLocalDefaultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE28D2865FD8A00377AE1 /* ActivityLocalDefaultDataSource.swift */; };
 		CBFEE2922865FE6F00377AE1 /* SetActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE2912865FE6F00377AE1 /* SetActivityViewModel.swift */; };
 		CBFEE2962866BB6800377AE1 /* ActivityTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE2952866BB6800377AE1 /* ActivityTask.swift */; };
-		F445F7A02866B04400A2EE2B /* CompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445F79F2866B04400A2EE2B /* CompletedView.swift */; };
+		F445F7A02866B04400A2EE2B /* CompletedSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445F79F2866B04400A2EE2B /* CompletedSegment.swift */; };
 		F445F7A22866B38C00A2EE2B /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445F7A12866B38C00A2EE2B /* ArchiveView.swift */; };
 		F44C068D286741840086FD36 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C068C286741840086FD36 /* HomeTabView.swift */; };
 		F44C06922867437A0086FD36 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C06912867437A0086FD36 /* SearchBarView.swift */; };
@@ -119,7 +119,7 @@
 		CBFEE28D2865FD8A00377AE1 /* ActivityLocalDefaultDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLocalDefaultDataSource.swift; sourceTree = "<group>"; };
 		CBFEE2912865FE6F00377AE1 /* SetActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetActivityViewModel.swift; sourceTree = "<group>"; };
 		CBFEE2952866BB6800377AE1 /* ActivityTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTask.swift; sourceTree = "<group>"; };
-		F445F79F2866B04400A2EE2B /* CompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedView.swift; sourceTree = "<group>"; };
+		F445F79F2866B04400A2EE2B /* CompletedSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedSegment.swift; sourceTree = "<group>"; };
 		F445F7A12866B38C00A2EE2B /* ArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
 		F44C068C286741840086FD36 /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 		F44C06912867437A0086FD36 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -486,7 +486,7 @@
 				F4E3768C28649AF4001020AA /* GoalItemEmpty.swift */,
 				F44C06912867437A0086FD36 /* SearchBarView.swift */,
 				F4E3769928655C91001020AA /* GoalViewMainScreen.swift */,
-				F445F79F2866B04400A2EE2B /* CompletedView.swift */,
+				F445F79F2866B04400A2EE2B /* CompletedSegment.swift */,
 				F44C068C286741840086FD36 /* HomeTabView.swift */,
 				F4E3769728655BF1001020AA /* SettingView.swift */,
 				CB6CF96F286B4AB900828A54 /* GoalViewItem.swift */,
@@ -666,7 +666,7 @@
 				F4E3769A28655C91001020AA /* GoalViewMainScreen.swift in Sources */,
 				CBE314CF2862FAA100E88F35 /* GoalLocalDefaultDataSource.swift in Sources */,
 				CB9449ED286EA76F0008A35F /* SetTaskViewModel.swift in Sources */,
-				F445F7A02866B04400A2EE2B /* CompletedView.swift in Sources */,
+				F445F7A02866B04400A2EE2B /* CompletedSegment.swift in Sources */,
 				CBA7F2582872A17E00C5E7FF /* Date+FormattedString.swift in Sources */,
 				CBE314DF2862FF7600E88F35 /* MainTabView.swift in Sources */,
 				CB9449EF286EA7D90008A35F /* TaskView.swift in Sources */,
