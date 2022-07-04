@@ -27,20 +27,32 @@ struct GoalViewItem: View {
                         .cornerRadius(20)
                     
                     Group {
-                        goalRings(radius: 110, percent: 0.85, background: .black.opacity(0.1), color: .black)
-                        goalRings(radius: 90, percent: 0.45, background: .mint.opacity(0.1), color: .mint)
-                        goalRings(radius: 70, percent: 0.6, background: .red.opacity(0.1), color: .red)
+                        goalRings(radius: 110, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.communicationString), background: .red.opacity(0.3), color: .red)
+                        goalRings(radius: 90, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.collaborationString), background: .mint.opacity(0.3), color: .mint)
+                        goalRings(radius: 70, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.presentationString), background: .black.opacity(0.3), color: .black)
                     }
                 }
                 .padding(.bottom, 20)
                 
                 
-                ForEach(viewModel.goals, id: \.self) { goal in
+                ForEach(viewModel.goals.indices, id: \.self) { idx in
                     
                     NavigationLink(destination:
-                                    SetActivityView(viewModel: SetActivityViewModel(goal: goal))
+                                    GoalSummary(viewModel: GoalSummaryViewModel(goal: viewModel.goals[idx]))
+                        .navigationBarTitle(viewModel.goals[idx].name ?? "nil", displayMode: .inline)
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                
+                                NavigationLink(destination:
+                                                SetActivityView(viewModel: SetActivityViewModel(goal: viewModel.goals[idx]))
+                                ) {
+                                   Text("Edit")                            }
+                                
+                                
+                            }
+                        }
                     ) {
-                        CardNew(background: .black, goalName: goal.name ?? "Empty Goal Name")
+                        CardNew(goalName: viewModel.goals[idx].name ?? "Empty Goal Name")
                         
                     }
                     
@@ -80,8 +92,13 @@ struct goalRings: View {
                     .frame(width: self.radius * 2, height: self.radius * 2)
                     .rotationEffect(.degrees(-90))
                     .animation(Animation.easeIn(duration: self.animationDuration))
-                    .onAppear(){
-                        self.trimRing.toggle()
+                    .onAppear{
+                        self.trimRing = true
+                    }
+                    .onDisappear{
+                        if self.percent != 1.0{
+                            self.trimRing = false
+                        }
                     }
             }
         }
@@ -95,18 +112,17 @@ struct GoalView_Previews: PreviewProvider {
 }
 
 struct CardNew: View {
-    var background: Color
     var goalName: String
     var body: some View {
         ZStack {
             
             Rectangle()
-                .foregroundColor(background)
+                .foregroundColor(chooseColor())
                 .frame(height: 85)
                 .cornerRadius(20)
             
             HStack {
-                Text("Presentation")
+                Text(goalName)
                     .font(.subheadline)
                     .foregroundColor(Color.white)
                 Spacer()
@@ -123,5 +139,16 @@ struct CardNew: View {
             .padding(.horizontal, 20)
         }
         .padding(.horizontal, 30)
+    }
+    
+    func chooseColor() -> Color {
+        switch self.goalName {
+        case SmartGoalData.communicationString:
+            return .red
+        case SmartGoalData.collaborationString:
+            return .mint
+        default:
+            return .black
+        }
     }
 }

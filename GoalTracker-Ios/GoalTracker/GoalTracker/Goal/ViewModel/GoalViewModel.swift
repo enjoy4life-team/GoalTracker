@@ -76,4 +76,28 @@ final class GoalViewModel: ObservableObject {
             $0.isArchived
         }
     }
+    
+    func getGoalPercentage(goalType: String) -> Double {
+        let goals: [Goal] = goals.filter{$0.name == goalType}
+        
+        var taskList = [Task]()
+        
+        for goal in goals {
+            let activities = Array(goal.activities as? Set<Activity> ?? [])
+            for activity in activities {
+                let tasks = Array(activity.tasks as? Set<Task> ?? [])
+                taskList.append(contentsOf: tasks)
+            }
+        }
+        
+        let taskFinishCount = taskList.filter{$0.finish}.count
+        
+        if taskList.count == 0 {
+            return 0.0
+        }
+        
+        return Double(taskFinishCount) / Double(taskList.count)
+    }
+    
+
 }

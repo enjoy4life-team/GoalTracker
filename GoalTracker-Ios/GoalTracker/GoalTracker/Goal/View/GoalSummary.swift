@@ -8,18 +8,11 @@
 import SwiftUI
 
 struct GoalSummary: View {
-    @State private var goalName: String = "Communication"
-    @State private var goalImage: String = "Communication"
-    @State private var goalEndDate: Date = Date.now
-    @State private var activityName: String = "Scripting"
-    @State private var subtask: String = "Subtask1"
-    @State private var subtaskDate: Date = Date.now
-    
+    @ObservedObject var viewModel: GoalSummaryViewModel
     var body: some View {
-        NavigationView{
-            VStack(spacing: 15){
+        VStack{
                 ZStack{
-                    Image(goalImage)
+                    Image(viewModel.goal.name ?? "Custom Goal")
                         .resizable()
                         .frame(width: .infinity,
                                height: 187)
@@ -32,49 +25,88 @@ struct GoalSummary: View {
                         
                         Spacer()
                         
-                        Text(goalEndDate, format: .dateTime.day().month().hour().minute())
+                        Text(viewModel.goal.endDate?.formattedString() ?? "null")
                             .font(.title2.weight(.semibold))
                             .foregroundColor(.white)
                             .padding(.top, 120)
                     }
                     .padding(.horizontal,30)
                 }
-                List{
+             
+            List{
+                ForEach(viewModel.activities.indices, id: \.self){ idx in
                     Section {
-                        HStack{
-//                            Image(systemName: $subtask.isCompleted ? "square.fill" : "square")
-//                                .foregroundColor(subtask.isCompleted ? .green : .red)
-                            Text(subtask)
-                        }
-                        
-                    } header: {
-                        Text(activityName)
-                    } footer: {
-                        HStack{
-                            Spacer()
-                            Text("Today")
-                            Text(subtaskDate, format: .dateTime.hour().minute())
-                        }
-                        .font(.caption)
+                        CardExpandableView(isExpanded: $viewModel.expandable[idx], activity: $viewModel.activities[idx], action: viewModel.changeTaskStatus)
                     }
                 }
+                
             }
+            .frame(maxHeight: .infinity)
+            
+        }.onAppear{
+            viewModel.getData()
         }
-        .navigationTitle(goalName)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button{
-                    
-                }label: {
-                    Text("Edit")
+    }
+        
+}
+
+
+
+struct CardExpandableView: View {
+    @Binding var isExpanded: Bool
+    @Binding var activity: Activity
+    var action: (Task) -> Void
+    var body: some View {
+        VStack{
+            HStack{
+                Text(activity.name ?? "nil")
+                    .fontWeight(.medium)
+                    .font(.headline)
+                Spacer()
+                Button(action: {
+                    isExpanded.toggle()
+                }){
+                Label("", systemImage: isExpanded ? "chevron.up" : "chevron.down")
+                }.buttonStyle(.plain)
+            }
+            
+            if isExpanded {
+                let data = Array(activity.tasks as? Set<Task> ?? []).sorted(by: {$0.number > $1.number})
+                
+                if data.count == 0 {
+                    Text("No Task")
+                        .padding()
+                        .foregroundColor(Color.gray)
+                        .opacity(0.4)
+                }
+                
+                
+                ForEach(data, id: \.self){task in
+                    HStack{
+                        Button(action: {
+                            action(task)
+                        }){
+                            Label("", systemImage: task.finish ? "square.fill" : "square")
+                                .frame(width: 22, height: 22)
+                        }.buttonStyle(.plain)
+                        
+                        Text(task.name ?? "nil")
+                            .strikethrough(task.finish, color: .blue)
+                         
+                        Spacer()
+                    }
+                    .padding(.leading, 5)
+                }
+                
+                
+                
+                HStack{
+                    Spacer()
+                    Text(Date.now.formattedString())
                 }
             }
         }
-    }
+            
+            
 }
-
-struct GoalSummary_Previews: PreviewProvider {
-    static var previews: some View {
-        GoalSummary()
-    }
 }

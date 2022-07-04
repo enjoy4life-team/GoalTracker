@@ -21,7 +21,7 @@ final class GoalDefaultLocalDataStore: GoalLocalDataSource {
     
     func getAllGoalsData() throws -> [Goal]? {
         let fetchRequest = Goal.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "endDate", ascending: true)]
         return try self.container.viewContext.fetch(fetchRequest)
 
     }

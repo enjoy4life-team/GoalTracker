@@ -22,20 +22,6 @@ struct SetActivityView: View {
             Color.gray.ignoresSafeArea().opacity(0.1)
             
             VStack{
-                HStack{
-                    Text("Set Activity")
-                        .font(.headline)
-                        .padding(.leading, 16)
-                    Spacer()
-                    Toggle(isOn: $setActivity){
-                    }
-                    .padding(.trailing, 16)
-                }.frame(width: 358, height: 51)
-                    .background(Color.white)
-                    .cornerRadius(10)
-                    .padding(.horizontal, 16)
-                    .padding(.top, 48)
-                
                 List{
                     ForEach(viewModel.activities.indices, id: \.self) { idx in
                         HStack{
