@@ -60,7 +60,7 @@ struct CompletedView: View {
                             }
                         }
                     ) {
-                        CardCompleted( background: .green, goalName: goal.name ?? "Empty Goal Name")
+                        CardCompleted(goalName: goal.name ?? "Empty Goal Name")
                         
                     }
                     
@@ -114,7 +114,7 @@ struct CompletedView_Previews: PreviewProvider {
 }
 
 struct CardCompleted: View {
-    var background: Color
+    var background: Color = .green
     var goalName: String
     
     var body: some View {
