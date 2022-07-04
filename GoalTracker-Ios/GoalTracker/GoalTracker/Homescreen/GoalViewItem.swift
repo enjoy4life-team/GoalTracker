@@ -35,16 +35,16 @@ struct GoalViewItem: View {
                 .padding(.bottom, 20)
                 
                 
-                ForEach(viewModel.goals.indices, id: \.self) { idx in
+                ForEach(viewModel.goals.filter{!$0.isFinished()}, id: \.self) { goal in
                     
                     NavigationLink(destination:
-                                    GoalSummary(viewModel: GoalSummaryViewModel(goal: viewModel.goals[idx]))
-                        .navigationBarTitle(viewModel.goals[idx].name ?? "nil", displayMode: .inline)
+                                    GoalSummary(viewModel: GoalSummaryViewModel(goal: goal))
+                        .navigationBarTitle(goal.name ?? "nil", displayMode: .inline)
                         .toolbar {
                             ToolbarItem(placement: .navigationBarTrailing) {
                                 
                                 NavigationLink(destination:
-                                                SetActivityView(viewModel: SetActivityViewModel(goal: viewModel.goals[idx]))
+                                                SetActivityView(viewModel: SetActivityViewModel(goal: goal))
                                 ) {
                                    Text("Edit")                            }
                                 
@@ -52,7 +52,7 @@ struct GoalViewItem: View {
                             }
                         }
                     ) {
-                        CardNew(goalName: viewModel.goals[idx].name ?? "Empty Goal Name")
+                        CardNew(goalName: goal.name ?? "Empty Goal Name")
                         
                     }
                     

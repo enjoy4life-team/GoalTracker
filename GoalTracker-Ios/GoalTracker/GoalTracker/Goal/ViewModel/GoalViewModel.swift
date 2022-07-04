@@ -9,6 +9,7 @@ import Foundation
 
 final class GoalViewModel: ObservableObject {
     @Published var goals: [Goal] = []
+    @Published var finishedGoals: [Goal] = []
     @Published var selectedGoal: Goal?
     
     let dataStore: GoalLocalDataSource
@@ -58,16 +59,7 @@ final class GoalViewModel: ObservableObject {
 
     func getFinishGoal() -> [Goal]{
         return self.goals.filter{
-            let activities = Array($0.activities as? Set<Activity> ?? [])
-            
-            return activities.filter{
-                let tasks = Array($0.tasks as? Set<Task> ?? [])
-                
-                return tasks.count == tasks.filter {
-                    $0.finish != false
-                }.count
-
-            }.count == activities.count
+            $0.isFinished()
         }
     }
     
@@ -78,7 +70,8 @@ final class GoalViewModel: ObservableObject {
     }
     
     func getGoalPercentage(goalType: String) -> Double {
-        let goals: [Goal] = goals.filter{$0.name == goalType}
+        let goals: [Goal] = goals.filter{$0.name == goalType && !$0.isFinished()}
+        
         
         var taskList = [Task]()
         
@@ -98,6 +91,28 @@ final class GoalViewModel: ObservableObject {
         
         return Double(taskFinishCount) / Double(taskList.count)
     }
+
     
 
+}
+
+
+extension Goal {
+    func isFinished() -> Bool {
+        var taskList = [Task]()
+        
+        let activities = Array(self.activities as? Set<Activity> ?? [])
+        for activity in activities {
+            let tasks = Array(activity.tasks as? Set<Task> ?? [])
+            taskList.append(contentsOf: tasks)
+        }
+        
+        let taskFinishCount = taskList.filter{$0.finish}.count
+        
+        if taskList.count == 0 {
+            return false
+        }
+        
+        return taskFinishCount == taskList.count
+    }
 }

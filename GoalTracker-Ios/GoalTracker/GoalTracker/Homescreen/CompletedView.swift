@@ -41,14 +41,29 @@ struct CompletedView: View {
     //            .pickerStyle(.segmented)
     //            .padding()
                 
+                
+                
                 ForEach(viewModel.getFinishGoal(), id: \.self) { goal in
                     
                     NavigationLink(destination:
-                                    SetActivityView(viewModel: SetActivityViewModel(goal: goal))
+                                    GoalSummary(viewModel: GoalSummaryViewModel(goal: goal))
+                        .navigationBarTitle(goal.name ?? "nil", displayMode: .inline)
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                
+                                NavigationLink(destination:
+                                                SetActivityView(viewModel: SetActivityViewModel(goal: goal))
+                                ) {
+                                   Text("Edit")                            }
+                                
+                                
+                            }
+                        }
                     ) {
                         CardCompleted( background: .green, goalName: goal.name ?? "Empty Goal Name")
-
+                        
                     }
+                    
                     
                 }
                 

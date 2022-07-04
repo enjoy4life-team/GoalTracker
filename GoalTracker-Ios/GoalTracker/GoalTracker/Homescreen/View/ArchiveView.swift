@@ -39,7 +39,7 @@ struct ArchiveView: View {
     //            .pickerStyle(.segmented)
     //            .padding()
                 
-                ForEach(viewModel.getFinishGoal(), id: \.self) { goal in
+                ForEach(viewModel.getArchivedGoal(), id: \.self) { goal in
                     
                     NavigationLink(destination:
                                     SetActivityView(viewModel: SetActivityViewModel(goal: goal))
