@@ -67,4 +67,18 @@ class SetActivityViewModel: ObservableObject {
     func cancelChanges(){
         dataStore.rollBack()
     }
+    
+    func newActivity(){
+        let activityNew = Activity(context: PersistenceController.shared.container.viewContext)
+        activityNew.goal = self.goal
+        activityNew.name = "new activity"
+        activityNew.id = UUID.init()
+        activityNew.number = Int16(activities.count + 1)
+        activityNew.date = Date.now
+        activityNew.goal_id = self.goal.id
+    
+        activities.append(activityNew)
+    }
 }
+
+

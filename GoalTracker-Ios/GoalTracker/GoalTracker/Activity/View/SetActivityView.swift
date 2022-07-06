@@ -39,11 +39,16 @@ struct SetActivityView: View {
                     .onDelete(perform: { deletedOffsets in
                         viewModel.deleteData(idx: deletedOffsets)
                     })
-                    Label {
-                        Text("New Activity")
-                    } icon: {
-                        Image(systemName: "plus.circle.fill")
-                            .foregroundColor(Color.green)
+                    
+                    Button(action:{
+                        viewModel.newActivity()
+                    }){
+                        Label {
+                            Text("New Activity")
+                        } icon: {
+                            Image(systemName: "plus.circle.fill")
+                                .foregroundColor(Color.green)
+                        }
                     }
                     
                     
@@ -73,16 +78,16 @@ struct SetActivityView: View {
         }
         .alert(isPresented: $isAlertShowed) {
             Alert(
-                            title: Text("Are you sure you want to save the change?"),
-                            primaryButton: .default(Text("Yes")){
-                                viewModel.saveChanges()
-                                presentationMode.wrappedValue.dismiss()
-                            },
-                            secondaryButton: .destructive(Text("No")) {
-                                viewModel.cancelChanges()
-                                presentationMode.wrappedValue.dismiss()
-                            }
-                        )
+                title: Text("Are you sure you want to save the change?"),
+                primaryButton: .default(Text("Yes")){
+                    viewModel.saveChanges()
+                    presentationMode.wrappedValue.dismiss()
+                },
+                secondaryButton: .destructive(Text("No")) {
+                    viewModel.cancelChanges()
+                    presentationMode.wrappedValue.dismiss()
+                }
+            )
         }
         
     }
