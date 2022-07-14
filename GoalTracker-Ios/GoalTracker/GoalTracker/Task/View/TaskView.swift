@@ -35,8 +35,6 @@ struct TaskView: View {
     
     var body: some View {
         List {
-            
-            //Activity Name
             Section(header: Text("Activity Name")) {
                 TextField("Activity Name", text: $viewModel.activity.name.toUnwrapped(defaultValue: ""))
             }
@@ -99,10 +97,10 @@ struct TaskView: View {
 
 
             }
-        }
-        .onAppear{
+            
         }
         .listStyle(.insetGrouped)
+        .background(Color.red)
         .environment(\.editMode, $editMode)
         
     }
