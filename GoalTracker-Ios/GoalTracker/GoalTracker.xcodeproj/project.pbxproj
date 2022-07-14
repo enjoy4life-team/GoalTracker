@@ -19,6 +19,16 @@
 		CB6CF97D286C2B9D00828A54 /* AddNewGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CF97C286C2B9D00828A54 /* AddNewGoalViewModel.swift */; };
 		CB6CF981286CA92D00828A54 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = CB6CF980286CA92D00828A54 /* Introspect */; };
 		CB6CF9A0286DC76600828A54 /* OnboardingMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CF99F286DC76600828A54 /* OnboardingMainView.swift */; };
+		CB781E10287FDD32005E2654 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB781E0F287FDD32005E2654 /* Assets.xcassets */; };
+		CB781E16287FDD32005E2654 /* GoalinWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB781E15287FDD32005E2654 /* GoalinWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB781E1B287FDD32005E2654 /* GoalTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB781E1A287FDD32005E2654 /* GoalTrackerApp.swift */; };
+		CB781E1D287FDD32005E2654 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB781E1C287FDD32005E2654 /* ContentView.swift */; };
+		CB781E1F287FDD32005E2654 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB781E1E287FDD32005E2654 /* NotificationController.swift */; };
+		CB781E21287FDD32005E2654 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB781E20287FDD32005E2654 /* NotificationView.swift */; };
+		CB781E23287FDD32005E2654 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB781E22287FDD32005E2654 /* ComplicationController.swift */; };
+		CB781E25287FDD33005E2654 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB781E24287FDD33005E2654 /* Assets.xcassets */; };
+		CB781E28287FDD33005E2654 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB781E27287FDD33005E2654 /* Preview Assets.xcassets */; };
+		CB781E2D287FDD33005E2654 /* GoalinWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CB781E0D287FDD31005E2654 /* GoalinWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CB9449EA286E9CAC0008A35F /* SegmentedControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9449E9286E9CAC0008A35F /* SegmentedControls.swift */; };
 		CB9449ED286EA76F0008A35F /* SetTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9449EC286EA76F0008A35F /* SetTaskViewModel.swift */; };
 		CB9449EF286EA7D90008A35F /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9449EE286EA7D90008A35F /* TaskView.swift */; };
@@ -61,6 +71,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CB781E17287FDD32005E2654 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CBE314882862F3F500E88F35 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB781E14287FDD32005E2654;
+			remoteInfo = "GoalinWatch WatchKit Extension";
+		};
+		CB781E2B287FDD33005E2654 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CBE314882862F3F500E88F35 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB781E0C287FDD31005E2654;
+			remoteInfo = GoalinWatch;
+		};
 		CBE314A62862F3F600E88F35 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CBE314882862F3F500E88F35 /* Project object */;
@@ -77,6 +101,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CB781E2E287FDD33005E2654 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				CB781E2D287FDD33005E2654 /* GoalinWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB781E31287FDD33005E2654 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CB781E16287FDD32005E2654 /* GoalinWatch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		C813F05E286E3D00001D7DC1 /* GoalSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalSummary.swift; sourceTree = "<group>"; };
 		C86DD965286A717D006F9A0A /* AddGoalTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalTemplate.swift; sourceTree = "<group>"; };
@@ -86,6 +135,18 @@
 		CB6CF97A286C240400828A54 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		CB6CF97C286C2B9D00828A54 /* AddNewGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewGoalViewModel.swift; sourceTree = "<group>"; };
 		CB6CF99F286DC76600828A54 /* OnboardingMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMainView.swift; sourceTree = "<group>"; };
+		CB781E0D287FDD31005E2654 /* GoalinWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoalinWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB781E0F287FDD32005E2654 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB781E15287FDD32005E2654 /* GoalinWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "GoalinWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB781E1A287FDD32005E2654 /* GoalTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTrackerApp.swift; sourceTree = "<group>"; };
+		CB781E1C287FDD32005E2654 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CB781E1E287FDD32005E2654 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		CB781E20287FDD32005E2654 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		CB781E22287FDD32005E2654 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		CB781E24287FDD33005E2654 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB781E27287FDD33005E2654 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CB781E29287FDD33005E2654 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB781E2A287FDD33005E2654 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		CB9449E9286E9CAC0008A35F /* SegmentedControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegmentedControls.swift; path = GoalTracker/Homescreen/Views/SegmentedControls.swift; sourceTree = SOURCE_ROOT; };
 		CB9449EC286EA76F0008A35F /* SetTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTaskViewModel.swift; sourceTree = "<group>"; };
 		CB9449EE286EA7D90008A35F /* TaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
@@ -131,6 +192,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CB781E12287FDD32005E2654 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBE3148D2862F3F500E88F35 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -177,6 +245,38 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		CB781E0E287FDD31005E2654 /* GoalinWatch */ = {
+			isa = PBXGroup;
+			children = (
+				CB781E0F287FDD32005E2654 /* Assets.xcassets */,
+			);
+			path = GoalinWatch;
+			sourceTree = "<group>";
+		};
+		CB781E19287FDD32005E2654 /* GoalinWatch WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CB781E1A287FDD32005E2654 /* GoalTrackerApp.swift */,
+				CB781E1C287FDD32005E2654 /* ContentView.swift */,
+				CB781E1E287FDD32005E2654 /* NotificationController.swift */,
+				CB781E20287FDD32005E2654 /* NotificationView.swift */,
+				CB781E22287FDD32005E2654 /* ComplicationController.swift */,
+				CB781E24287FDD33005E2654 /* Assets.xcassets */,
+				CB781E29287FDD33005E2654 /* Info.plist */,
+				CB781E2A287FDD33005E2654 /* PushNotificationPayload.apns */,
+				CB781E26287FDD33005E2654 /* Preview Content */,
+			);
+			path = "GoalinWatch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		CB781E26287FDD33005E2654 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CB781E27287FDD33005E2654 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		CB9449EB286EA7520008A35F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +315,8 @@
 				CBE314922862F3F500E88F35 /* GoalTracker */,
 				CBE314A82862F3F600E88F35 /* GoalTrackerTests */,
 				CBE314B22862F3F600E88F35 /* GoalTrackerUITests */,
+				CB781E0E287FDD31005E2654 /* GoalinWatch */,
+				CB781E19287FDD32005E2654 /* GoalinWatch WatchKit Extension */,
 				CBE314912862F3F500E88F35 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -225,6 +327,8 @@
 				CBE314902862F3F500E88F35 /* GoalTracker.app */,
 				CBE314A52862F3F600E88F35 /* GoalTrackerTests.xctest */,
 				CBE314AF2862F3F600E88F35 /* GoalTrackerUITests.xctest */,
+				CB781E0D287FDD31005E2654 /* GoalinWatch.app */,
+				CB781E15287FDD32005E2654 /* GoalinWatch WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -506,6 +610,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CB781E0C287FDD31005E2654 /* GoalinWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB781E35287FDD33005E2654 /* Build configuration list for PBXNativeTarget "GoalinWatch" */;
+			buildPhases = (
+				CB781E0B287FDD31005E2654 /* Resources */,
+				CB781E31287FDD33005E2654 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB781E18287FDD32005E2654 /* PBXTargetDependency */,
+			);
+			name = GoalinWatch;
+			productName = GoalinWatch;
+			productReference = CB781E0D287FDD31005E2654 /* GoalinWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		CB781E14287FDD32005E2654 /* GoalinWatch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB781E34287FDD33005E2654 /* Build configuration list for PBXNativeTarget "GoalinWatch WatchKit Extension" */;
+			buildPhases = (
+				CB781E11287FDD32005E2654 /* Sources */,
+				CB781E12287FDD32005E2654 /* Frameworks */,
+				CB781E13287FDD32005E2654 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GoalinWatch WatchKit Extension";
+			productName = "GoalinWatch WatchKit Extension";
+			productReference = CB781E15287FDD32005E2654 /* GoalinWatch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		CBE3148F2862F3F500E88F35 /* GoalTracker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CBE314B92862F3F600E88F35 /* Build configuration list for PBXNativeTarget "GoalTracker" */;
@@ -513,10 +651,12 @@
 				CBE3148C2862F3F500E88F35 /* Sources */,
 				CBE3148D2862F3F500E88F35 /* Frameworks */,
 				CBE3148E2862F3F500E88F35 /* Resources */,
+				CB781E2E287FDD33005E2654 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CB781E2C287FDD33005E2654 /* PBXTargetDependency */,
 			);
 			name = GoalTracker;
 			packageProductDependencies = (
@@ -575,6 +715,12 @@
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					CB781E0C287FDD31005E2654 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					CB781E14287FDD32005E2654 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					CBE3148F2862F3F500E88F35 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -610,11 +756,30 @@
 				CBE3148F2862F3F500E88F35 /* GoalTracker */,
 				CBE314A42862F3F600E88F35 /* GoalTrackerTests */,
 				CBE314AE2862F3F600E88F35 /* GoalTrackerUITests */,
+				CB781E0C287FDD31005E2654 /* GoalinWatch */,
+				CB781E14287FDD32005E2654 /* GoalinWatch WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CB781E0B287FDD31005E2654 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB781E10287FDD32005E2654 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB781E13287FDD32005E2654 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB781E28287FDD33005E2654 /* Preview Assets.xcassets in Resources */,
+				CB781E25287FDD33005E2654 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBE3148E2862F3F500E88F35 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -641,6 +806,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CB781E11287FDD32005E2654 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB781E1F287FDD32005E2654 /* NotificationController.swift in Sources */,
+				CB781E1D287FDD32005E2654 /* ContentView.swift in Sources */,
+				CB781E23287FDD32005E2654 /* ComplicationController.swift in Sources */,
+				CB781E1B287FDD32005E2654 /* GoalTrackerApp.swift in Sources */,
+				CB781E21287FDD32005E2654 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBE3148C2862F3F500E88F35 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -710,6 +887,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CB781E18287FDD32005E2654 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB781E14287FDD32005E2654 /* GoalinWatch WatchKit Extension */;
+			targetProxy = CB781E17287FDD32005E2654 /* PBXContainerItemProxy */;
+		};
+		CB781E2C287FDD33005E2654 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB781E0C287FDD31005E2654 /* GoalinWatch */;
+			targetProxy = CB781E2B287FDD33005E2654 /* PBXContainerItemProxy */;
+		};
 		CBE314A72862F3F600E88F35 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CBE3148F2862F3F500E88F35 /* GoalTracker */;
@@ -723,6 +910,120 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		CB781E2F287FDD33005E2654 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89TMJ964L4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = GoalinWatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = GoalinWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.agusart.GoalTracker;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agusart.GoalTracker.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		CB781E30287FDD33005E2654 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89TMJ964L4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = GoalinWatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = GoalinWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.agusart.GoalTracker;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agusart.GoalTracker.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		CB781E32287FDD33005E2654 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GoalinWatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 89TMJ964L4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GoalinWatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "GoalinWatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agusart.GoalTracker.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		CB781E33287FDD33005E2654 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GoalinWatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 89TMJ964L4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GoalinWatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "GoalinWatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agusart.GoalTracker.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
 		CBE314B72862F3F600E88F35 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -976,6 +1277,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CB781E34287FDD33005E2654 /* Build configuration list for PBXNativeTarget "GoalinWatch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB781E32287FDD33005E2654 /* Debug */,
+				CB781E33287FDD33005E2654 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB781E35287FDD33005E2654 /* Build configuration list for PBXNativeTarget "GoalinWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB781E2F287FDD33005E2654 /* Debug */,
+				CB781E30287FDD33005E2654 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CBE3148B2862F3F500E88F35 /* Build configuration list for PBXProject "GoalTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
