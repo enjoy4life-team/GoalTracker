@@ -50,6 +50,20 @@ class SetActivityViewModel: ObservableObject {
         activities.forEach{ _ in
             activities[i].number = (Int16(i + 1))
             i = i+1
+            
+//            let tasks = Array(activities[i-1].tasks as? Set<Task> ?? []).sorted(by: {$0.number > $1.number})
+
+            if let activityDate = activities[i-1].date {
+                let interval = activityDate - Date.now
+                if let second = interval.second {
+                    if second > 0 {
+                        print(second)
+                        NotificationManager.sendNotif(timeInterval: second, title: "test", subtitle: "test")
+                    }
+                }
+            }
+            
+
         }
         
         dataStore.saveChanges()

@@ -102,7 +102,7 @@ struct CardExpandableView: View {
                 
                 HStack{
                     Spacer()
-                    Text(Date.now.formattedString())
+                    Text((activity.date ?? Date.now).formattedString())
                 }
             }
         }
