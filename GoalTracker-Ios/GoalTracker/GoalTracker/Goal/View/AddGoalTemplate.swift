@@ -14,6 +14,15 @@ struct AddGoalTemplate: View {
     
     var body: some View {
             VStack{
+                HStack{
+                    Button(action: {
+                        isSheetPresented.toggle()
+                    }){
+                        Label("List Goals", systemImage: "chevron.left")
+                    }
+                    .padding()
+                    Spacer()
+                }
                 ZStack{
                     Image("Communication")
                         .resizable()
@@ -94,9 +103,9 @@ struct AddGoalTemplate: View {
                     isSheetPresented.toggle()
                 }
                 
+                Spacer()
+                
             }
-            .navigationTitle("Select Goal")
-            .padding(.top, -150)
     }
 }
 
