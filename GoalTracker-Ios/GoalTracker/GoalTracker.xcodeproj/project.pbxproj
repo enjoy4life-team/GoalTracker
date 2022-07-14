@@ -905,6 +905,7 @@
 				CBA89EE228852856008C3A9C /* Homescreen.swift in Sources */,
 				CBA89EE128852856008C3A9C /* BlankHomescreen.swift in Sources */,
 				CB781E21287FDD32005E2654 /* NotificationView.swift in Sources */,
+				C85937792880A5D400F64F91 /* TodayTaskView.swift in Sources */,
 				CBA89EE328852856008C3A9C /* ListSubtask.swift in Sources */,
 				CBA89EDD28852832008C3A9C /* MainTabView.swift in Sources */,
 				C85937792880A5D400F64F91 /* TodayTaskView.swift in Sources */,

@@ -9,83 +9,47 @@ import SwiftUI
 
 struct TodayTaskView: View {
     
-    private struct Goals: Identifiable {
-        let goalColor: Color
-        var isCompleted: Bool
-        let activityName: String
-        let activityDate: String
-        let subtaskName: String
-        var id: String {activityName}
-    }
-    @State private var todayTasks = [
-        Goals(goalColor: .purple, isCompleted: false, activityName: "Activity 1", activityDate: "17.00", subtaskName: "Subtask 1"),
-        Goals(goalColor: .teal, isCompleted: false, activityName: "Activity 2", activityDate: "16.00",subtaskName: "Subtask 2"),
-        Goals(goalColor: .red, isCompleted: false, activityName: "Activity 3", activityDate: "18.00",subtaskName: "Subtask 3")
-    ]
+    @State var isTapped: Bool = false
+    
     var body: some View {
         ScrollView{
-            VStack(alignment: .leading, spacing: 0) {
-                ForEach(todayTasks.indices, id: \.self) {idx in
-                    HStack{
-                        Text(todayTasks[idx].activityName)
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                            .padding(.leading, 10)
-                        
-                        Spacer()
-                        
-                        Text(todayTasks[idx].activityDate)
-                            .font(.caption)
-                            .padding(.trailing, 10)
-                            .foregroundColor(.gray)
-                    }
-                    .background{
-                        RoundedRectangle(cornerRadius: 5)
-                            .frame(width: .infinity, height: 30)
-                            .foregroundColor(todayTasks[idx].goalColor.opacity(0.5))
-                    }
+            VStack(alignment: .leading, spacing: 3) {
+                ForEach((1...3), id: \.self) {
+                    Text("Activity \($0)")
+                        .font(.title3)
+                        .fontWeight(.semibold)
                     
-                    ZStack{
-                        HStack{
-                            Rectangle()
-                            .frame(width: 15, height: 48)
-                            .cornerRadius(radius: 10, corners: [.topLeft, .bottomLeft])
-                            .foregroundColor( todayTasks[idx].goalColor)
-                            .padding(.leading, 15)
-                        Spacer()
-                        }
-                        Button{
-                            todayTasks[idx].isCompleted.toggle()
-                        } label: {
-                            VStack(alignment: .leading, spacing: 3){
-                                HStack{
-                                    ZStack{
-                                        Image(systemName: "circle")
-                                            .resizable()
-                                            .frame(width: 20, height: 20)
-                                            .foregroundColor(.gray)
-                                        Image(systemName: todayTasks[idx].isCompleted ? "circle.fill" : "")
-                                            .resizable()
-                                            .frame(width: 17, height: 17)
-                                            .foregroundColor(.white)
-                                    }
-                                    .padding(.leading, 10)
-                                    
-                                    Text(todayTasks[idx].subtaskName)
-                                        .font(.title3)
-                                        .fontWeight(.semibold)
-                                        .strikethrough(todayTasks[idx].isCompleted)
-                                        .foregroundColor(todayTasks[idx].isCompleted ? .gray.opacity(0.8) : .white)
-                                }
-                            }
-                            Spacer()
-                        }
-                        .cornerRadius(10)
-                        .frame(width: .infinity, height: 65)
-                        .padding(.leading, 15)
+                    Button{
+                        isTapped.toggle()
+                    } label: {
+                        Image(systemName: "rectangle.fill")
+                            .resizable()
+                            .frame(width: 15, height: .infinity)
+                            .padding(.leading, -15)
+                            .foregroundColor(isTapped ? .gray.opacity(0.8) : .white)
                         
+                        VStack(alignment: .leading, spacing: 3){
+                            HStack{
+                                Image(systemName: isTapped ? "checkmark.circle" : "circle")
+                                    .resizable()
+                                    .frame(width: 20, height: 20)
+                                    .foregroundColor(.gray)
+                                
+                                Text("Subtask 1")
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
+                                    .strikethrough(isTapped)
+                                    .foregroundColor(isTapped ? .gray.opacity(0.8) : .white)
+                            }
+                            
+                            Text("17.50")
+                                .font(.caption)
+                                .padding(.leading, 25)
+                                .foregroundColor(.gray)
+                        }
+                        
+                        Spacer()
                     }
-                    .padding(.bottom,10)
                 }
             }
         }
@@ -99,26 +63,3 @@ struct TodayTaskView_Previews: PreviewProvider {
     }
 }
 
-struct CornerRadiusShape: Shape {
-    var radius = CGFloat.infinity
-    var corners = UIRectCorner.allCorners
-    
-    func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        return Path(path.cgPath)
-    }
-}
-struct CornerRadiusStyle: ViewModifier {
-    var radius: CGFloat
-    var corners: UIRectCorner
-    
-    func body(content: Content) -> some View {
-        content
-            .clipShape(CornerRadiusShape(radius: radius, corners: corners))
-    }
-}
-extension View {
-    func cornerRadius(radius: CGFloat, corners: UIRectCorner) -> some View {
-        ModifiedContent(content: self, modifier: CornerRadiusStyle(radius: radius, corners: corners))
-    }
-}
