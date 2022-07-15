@@ -12,7 +12,8 @@ struct GoalTrackerApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                MainTabView()
+//                ContentView()
             }
         }
 

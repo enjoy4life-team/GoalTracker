@@ -61,6 +61,7 @@
 		CBFEE28B2865FD5E00377AE1 /* ActivityLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE28A2865FD5E00377AE1 /* ActivityLocalDataSource.swift */; };
 		CBFEE28E2865FD8A00377AE1 /* ActivityLocalDefaultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE28D2865FD8A00377AE1 /* ActivityLocalDefaultDataSource.swift */; };
 		CBFEE2922865FE6F00377AE1 /* SetActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE2912865FE6F00377AE1 /* SetActivityViewModel.swift */; };
+		CBFEE2962866BB6800377AE1 /* ActivityTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFEE2952866BB6800377AE1 /* ActivityTask.swift */; };
 		F445F7A02866B04400A2EE2B /* CompletedSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445F79F2866B04400A2EE2B /* CompletedSegment.swift */; };
 		F445F7A22866B38C00A2EE2B /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445F7A12866B38C00A2EE2B /* ArchiveView.swift */; };
 		F44C068D286741840086FD36 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C068C286741840086FD36 /* HomeTabView.swift */; };
@@ -184,6 +185,7 @@
 		CBFEE28A2865FD5E00377AE1 /* ActivityLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLocalDataSource.swift; sourceTree = "<group>"; };
 		CBFEE28D2865FD8A00377AE1 /* ActivityLocalDefaultDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLocalDefaultDataSource.swift; sourceTree = "<group>"; };
 		CBFEE2912865FE6F00377AE1 /* SetActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetActivityViewModel.swift; sourceTree = "<group>"; };
+		CBFEE2952866BB6800377AE1 /* ActivityTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTask.swift; sourceTree = "<group>"; };
 		F445F79F2866B04400A2EE2B /* CompletedSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedSegment.swift; sourceTree = "<group>"; };
 		F445F7A12866B38C00A2EE2B /* ArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
 		F44C068C286741840086FD36 /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
@@ -260,6 +262,8 @@
 		CB781E19287FDD32005E2654 /* GoalinWatch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				F43961262880759B0075D78E /* Homescreen */,
+				F439612A288076350075D78E /* TabView */,
 				CB781E1A287FDD32005E2654 /* GoalTrackerApp.swift */,
 				CB781E1C287FDD32005E2654 /* ContentView.swift */,
 				CB781E1E287FDD32005E2654 /* NotificationController.swift */,
@@ -596,6 +600,32 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F43961262880759B0075D78E /* Homescreen */ = {
+			isa = PBXGroup;
+			children = (
+				F4396127288075A40075D78E /* View */,
+			);
+			path = Homescreen;
+			sourceTree = "<group>";
+		};
+		F4396127288075A40075D78E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4396128288075C60075D78E /* Homescreen.swift */,
+				F439612D288076C20075D78E /* ListSubtask.swift */,
+				F439612F28807CC20075D78E /* BlankHomescreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F439612A288076350075D78E /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				F439612B2880764E0075D78E /* MainTabView.swift */,
+			);
+			path = TabView;
+			sourceTree = "<group>";
+		};
 		F4E3768928647CB3001020AA /* Homescreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -828,7 +858,11 @@
 				CB781E1D287FDD32005E2654 /* ContentView.swift in Sources */,
 				CB781E23287FDD32005E2654 /* ComplicationController.swift in Sources */,
 				CB781E1B287FDD32005E2654 /* GoalTrackerApp.swift in Sources */,
+				F439612C2880764E0075D78E /* MainTabView.swift in Sources */,
+				F439612E288076C20075D78E /* ListSubtask.swift in Sources */,
+				F4396129288075C60075D78E /* Homescreen.swift in Sources */,
 				CB781E21287FDD32005E2654 /* NotificationView.swift in Sources */,
+				F439613028807CC20075D78E /* BlankHomescreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
