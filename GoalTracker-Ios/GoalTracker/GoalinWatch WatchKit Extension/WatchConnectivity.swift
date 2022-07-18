@@ -11,7 +11,7 @@ import WatchConnectivity
 
 final class WatchConnectivity: NSObject, WCSessionDelegate, ObservableObject {
     
-    public let shared = WatchConnectivity()
+    static let shared = WatchConnectivity()
     
     
     var session: WCSession

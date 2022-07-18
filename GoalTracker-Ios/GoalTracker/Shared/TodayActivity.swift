@@ -15,11 +15,11 @@ class TodayActivity {
 class ActivityItem {
     var activityName: String?
     var activityDate: Date?
-    var TaskList: [Task]?
+    var TaskList: [TaskDetail]?
 }
 
 
-class Task{
+class TaskDetail{
     var taskID: UUID?
     var taskName: String?
 }

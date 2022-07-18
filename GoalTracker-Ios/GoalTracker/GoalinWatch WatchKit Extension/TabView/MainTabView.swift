@@ -15,7 +15,18 @@ struct MainTabView: View {
         TabView(selection: $currentView){
             Homescreen().tag(1)
             ListSubtask().tag(2)
+            VStack{
+                Button(action:{
+                    send()
+                }){
+                    Text("asd")
+                }
+            }.tag(3)
         }
+    }
+    
+    func send(){
+        WatchConnectivity.shared.session.sendMessage(["data": GoalProgress(goalName: "name", completedTask: 10, totalTask: 20).encodeIt()], replyHandler: nil)
     }
 }
 
