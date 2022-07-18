@@ -13,28 +13,45 @@ struct TodayTaskView: View {
         let goalColor: Color
         var isCompleted: Bool
         let activityName: String
+        let activityDate: String
         let subtaskName: String
-        let subtaskDate: String
         var id: String {activityName}
     }
     @State private var todayTasks = [
-        Goals(goalColor: .purple, isCompleted: false, activityName: "Activity 1", subtaskName: "Subtask 1", subtaskDate: "17.00"),
-        Goals(goalColor: .teal, isCompleted: false, activityName: "Activity 2", subtaskName: "Subtask 2", subtaskDate: "16.00"),
-        Goals(goalColor: .red, isCompleted: false, activityName: "Activity 3", subtaskName: "Subtask 3", subtaskDate: "16.00")
+        Goals(goalColor: .purple, isCompleted: false, activityName: "Activity 1", activityDate: "17.00", subtaskName: "Subtask 1"),
+        Goals(goalColor: .teal, isCompleted: false, activityName: "Activity 2", activityDate: "16.00",subtaskName: "Subtask 2"),
+        Goals(goalColor: .red, isCompleted: false, activityName: "Activity 3", activityDate: "18.00",subtaskName: "Subtask 3")
     ]
     var body: some View {
         ScrollView{
-            VStack(alignment: .leading, spacing: 3) {
+            VStack(alignment: .leading, spacing: 0) {
                 ForEach(todayTasks.indices, id: \.self) {idx in
-                    Text(todayTasks[idx].activityName)
-                        .font(.title3)
-                        .fontWeight(.semibold)
+                    HStack{
+                        Text(todayTasks[idx].activityName)
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                            .padding(.leading, 10)
+                        
+                        Spacer()
+                        
+                        Text(todayTasks[idx].activityDate)
+                            .font(.caption)
+                            .padding(.trailing, 10)
+                            .foregroundColor(.gray)
+                    }
+                    .background{
+                        RoundedRectangle(cornerRadius: 5)
+                            .frame(width: .infinity, height: 30)
+                            .foregroundColor(todayTasks[idx].goalColor.opacity(0.5))
+                    }
+                    
                     ZStack{
                         HStack{
                             Rectangle()
-                            .frame(width: 15, height: 65)
+                            .frame(width: 15, height: 48)
                             .cornerRadius(radius: 10, corners: [.topLeft, .bottomLeft])
-                            .foregroundColor(todayTasks[idx].isCompleted ? .gray.opacity(0.8) : todayTasks[idx].goalColor)
+                            .foregroundColor( todayTasks[idx].goalColor)
+                            .padding(.leading, 15)
                         Spacer()
                         }
                         Button{
@@ -60,18 +77,15 @@ struct TodayTaskView: View {
                                         .strikethrough(todayTasks[idx].isCompleted)
                                         .foregroundColor(todayTasks[idx].isCompleted ? .gray.opacity(0.8) : .white)
                                 }
-                                
-                                Text(todayTasks[idx].subtaskDate)
-                                    .font(.caption)
-                                    .padding(.leading, 35)
-                                    .foregroundColor(.gray)
                             }
-                            
                             Spacer()
                         }
                         .cornerRadius(10)
                         .frame(width: .infinity, height: 65)
+                        .padding(.leading, 15)
+                        
                     }
+                    .padding(.bottom,10)
                 }
             }
         }
