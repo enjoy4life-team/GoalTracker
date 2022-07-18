@@ -40,10 +40,18 @@
 		CB9449EF286EA7D90008A35F /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9449EE286EA7D90008A35F /* TaskView.swift */; };
 		CBA7F2582872A17E00C5E7FF /* Date+FormattedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7F2572872A17E00C5E7FF /* Date+FormattedString.swift */; };
 		CBA7F25A2872A60600C5E7FF /* GoalSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7F2592872A60600C5E7FF /* GoalSummaryViewModel.swift */; };
+		CBA89ECF288521BC008C3A9C /* IosConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA89ECE288521BC008C3A9C /* IosConnectivity.swift */; };
+		CBA89ED12885221C008C3A9C /* WatchConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA89ED02885221C008C3A9C /* WatchConnectivity.swift */; };
+		CBA89ED5288522F3008C3A9C /* GoalsProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA89ED4288522F3008C3A9C /* GoalsProgress.swift */; };
+		CBA89ED7288523A3008C3A9C /* TodayActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA89ED6288523A3008C3A9C /* TodayActivity.swift */; };
+		CBA89ED8288524F6008C3A9C /* TodayActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA89ED6288523A3008C3A9C /* TodayActivity.swift */; };
+		CBA89ED9288524FE008C3A9C /* GoalsProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA89ED4288522F3008C3A9C /* GoalsProgress.swift */; };
 		CBA89EDD28852832008C3A9C /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA89EDC28852832008C3A9C /* MainTabView.swift */; };
 		CBA89EE128852856008C3A9C /* BlankHomescreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA89EDE28852856008C3A9C /* BlankHomescreen.swift */; };
 		CBA89EE228852856008C3A9C /* Homescreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA89EDF28852856008C3A9C /* Homescreen.swift */; };
 		CBA89EE328852856008C3A9C /* ListSubtask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA89EE028852856008C3A9C /* ListSubtask.swift */; };
+		CBA89EE528852E90008C3A9C /* MessageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA89EE428852E90008C3A9C /* MessageKey.swift */; };
+		CBA89EE628852E90008C3A9C /* MessageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA89EE428852E90008C3A9C /* MessageKey.swift */; };
 		CBE314942862F3F500E88F35 /* GoalTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE314932862F3F500E88F35 /* GoalTrackerApp.swift */; };
 		CBE314982862F3F600E88F35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE314972862F3F600E88F35 /* Assets.xcassets */; };
 		CBE3149B2862F3F600E88F35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBE3149A2862F3F600E88F35 /* Preview Assets.xcassets */; };
@@ -167,10 +175,15 @@
 		CB9449EE286EA7D90008A35F /* TaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		CBA7F2572872A17E00C5E7FF /* Date+FormattedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+FormattedString.swift"; sourceTree = "<group>"; };
 		CBA7F2592872A60600C5E7FF /* GoalSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalSummaryViewModel.swift; sourceTree = "<group>"; };
+		CBA89ECE288521BC008C3A9C /* IosConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosConnectivity.swift; sourceTree = "<group>"; };
+		CBA89ED02885221C008C3A9C /* WatchConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivity.swift; sourceTree = "<group>"; };
+		CBA89ED4288522F3008C3A9C /* GoalsProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsProgress.swift; sourceTree = "<group>"; };
+		CBA89ED6288523A3008C3A9C /* TodayActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayActivity.swift; sourceTree = "<group>"; };
 		CBA89EDC28852832008C3A9C /* MainTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabView.swift; path = "GoalinWatch WatchKit Extension/TabView/MainTabView.swift"; sourceTree = SOURCE_ROOT; };
 		CBA89EDE28852856008C3A9C /* BlankHomescreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankHomescreen.swift; sourceTree = "<group>"; };
 		CBA89EDF28852856008C3A9C /* Homescreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Homescreen.swift; sourceTree = "<group>"; };
 		CBA89EE028852856008C3A9C /* ListSubtask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListSubtask.swift; sourceTree = "<group>"; };
+		CBA89EE428852E90008C3A9C /* MessageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageKey.swift; sourceTree = "<group>"; };
 		CBE314902862F3F500E88F35 /* GoalTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoalTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE314932862F3F500E88F35 /* GoalTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTrackerApp.swift; sourceTree = "<group>"; };
 		CBE314972862F3F600E88F35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -286,6 +299,7 @@
 				CB781E29287FDD33005E2654 /* Info.plist */,
 				CB781E2A287FDD33005E2654 /* PushNotificationPayload.apns */,
 				CB781E26287FDD33005E2654 /* Preview Content */,
+				CBA89ED02885221C008C3A9C /* WatchConnectivity.swift */,
 			);
 			path = "GoalinWatch WatchKit Extension";
 			sourceTree = "<group>";
@@ -339,9 +353,20 @@
 			path = Date;
 			sourceTree = "<group>";
 		};
+		CBA89ED3288522B9008C3A9C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				CBA89ED4288522F3008C3A9C /* GoalsProgress.swift */,
+				CBA89ED6288523A3008C3A9C /* TodayActivity.swift */,
+				CBA89EE428852E90008C3A9C /* MessageKey.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		CBE314872862F3F500E88F35 = {
 			isa = PBXGroup;
 			children = (
+				CBA89ED3288522B9008C3A9C /* Shared */,
 				CBE314922862F3F500E88F35 /* GoalTracker */,
 				CBE314A82862F3F600E88F35 /* GoalTrackerTests */,
 				CBE314B22862F3F600E88F35 /* GoalTrackerUITests */,
@@ -378,6 +403,7 @@
 				CBE314972862F3F600E88F35 /* Assets.xcassets */,
 				CBE314992862F3F600E88F35 /* Preview Content */,
 				CB781E5528802BD7005E2654 /* AppDelegate.swift */,
+				CBA89ECE288521BC008C3A9C /* IosConnectivity.swift */,
 			);
 			path = GoalTracker;
 			sourceTree = "<group>";
@@ -869,8 +895,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBA89ED12885221C008C3A9C /* WatchConnectivity.swift in Sources */,
 				CB781E1F287FDD32005E2654 /* NotificationController.swift in Sources */,
+				CBA89ED5288522F3008C3A9C /* GoalsProgress.swift in Sources */,
 				CB781E1D287FDD32005E2654 /* ContentView.swift in Sources */,
+				CBA89ED7288523A3008C3A9C /* TodayActivity.swift in Sources */,
 				CB781E23287FDD32005E2654 /* ComplicationController.swift in Sources */,
 				CB781E1B287FDD32005E2654 /* GoalTrackerApp.swift in Sources */,
 				CBA89EE228852856008C3A9C /* Homescreen.swift in Sources */,
@@ -879,6 +908,7 @@
 				CBA89EE328852856008C3A9C /* ListSubtask.swift in Sources */,
 				CBA89EDD28852832008C3A9C /* MainTabView.swift in Sources */,
 				C85937792880A5D400F64F91 /* TodayTaskView.swift in Sources */,
+				CBA89EE628852E90008C3A9C /* MessageKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -896,6 +926,7 @@
 				F44C06922867437A0086FD36 /* SearchBarView.swift in Sources */,
 				CBE314D82862FBD600E88F35 /* GoalViewModel.swift in Sources */,
 				CB781E5428801CB3005E2654 /* Date+Interval.swift in Sources */,
+				CBA89EE528852E90008C3A9C /* MessageKey.swift in Sources */,
 				F4E3769828655BF1001020AA /* SettingView.swift in Sources */,
 				CBE314E62863007D00E88F35 /* UITabBar+DefaultAppearance.swift in Sources */,
 				F4E3768F28649BDA001020AA /* CardView.swift in Sources */,
@@ -916,6 +947,7 @@
 				CB9449EF286EA7D90008A35F /* TaskView.swift in Sources */,
 				CBE314EB2863023E00E88F35 /* Color.swift in Sources */,
 				CBFEE2922865FE6F00377AE1 /* SetActivityViewModel.swift in Sources */,
+				CBA89ED9288524FE008C3A9C /* GoalsProgress.swift in Sources */,
 				CBF074122869733F006452CB /* GoalDetailViewModel.swift in Sources */,
 				CBFEE2882865E5AA00377AE1 /* SetActivityView.swift in Sources */,
 				CBE314E12862FFE700E88F35 /* MainTabVIewModel.swift in Sources */,
@@ -927,10 +959,12 @@
 				CBE314942862F3F500E88F35 /* GoalTrackerApp.swift in Sources */,
 				CBFEE28E2865FD8A00377AE1 /* ActivityLocalDefaultDataSource.swift in Sources */,
 				C86DD967286A717D006F9A0A /* AddGoalTemplate.swift in Sources */,
+				CBA89ED8288524F6008C3A9C /* TodayActivity.swift in Sources */,
 				C86DD968286A717D006F9A0A /* AddNewGoalView.swift in Sources */,
 				CB5E2EC5288592C100763D28 /* MaxGoalPopUp.swift in Sources */,
 				CBE314CD2862FA9200E88F35 /* GoalLocalDataSource.swift in Sources */,
 				CB6CF9A0286DC76600828A54 /* OnboardingMainView.swift in Sources */,
+				CBA89ECF288521BC008C3A9C /* IosConnectivity.swift in Sources */,
 				CBE314A02862F3F600E88F35 /* GoalTracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
