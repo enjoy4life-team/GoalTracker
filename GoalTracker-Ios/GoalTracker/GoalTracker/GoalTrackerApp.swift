@@ -12,7 +12,7 @@ struct GoalTrackerApp: App {
     let persistenceController = PersistenceController.shared
     @AppStorage("FirstTimeUser") var firstTimeUser: Bool = true
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    
+    let conn = IosConnectivity()
 
     var body: some Scene {
         WindowGroup {

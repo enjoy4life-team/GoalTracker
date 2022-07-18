@@ -8,6 +8,9 @@
 import Foundation
 
 
-enum MessageKey {
-    
+enum MessageKey: String {
+    case getGoalProgress = "get_goal"
 }
+
+let msgKey = "message_key"
+let dataKey = "data_key"

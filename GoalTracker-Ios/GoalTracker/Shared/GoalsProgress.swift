@@ -10,6 +10,7 @@ import SwiftUI
 
 
 struct GoalProgress: Codable {
+    var goalID: UUID = UUID.init()
     var goalName: String
     var completedTask: Int
     var totalTask: Int

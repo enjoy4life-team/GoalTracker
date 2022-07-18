@@ -10,7 +10,6 @@ import SwiftUI
 struct MainTabView: View {
     
     @State var currentView = 1
-    
     var body: some View {
         TabView(selection: $currentView){
             Homescreen().tag(1)
@@ -26,7 +25,7 @@ struct MainTabView: View {
     }
     
     func send(){
-        WatchConnectivity.shared.session.sendMessage(["data": GoalProgress(goalName: "name", completedTask: 10, totalTask: 20).encodeIt()], replyHandler: nil)
+        WatchConnectivity.shared.getGoalProgress()
     }
 }
 

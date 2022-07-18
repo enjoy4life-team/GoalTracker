@@ -10,28 +10,36 @@ import WatchConnectivity
 
 class IosConnectivity: NSObject, WCSessionDelegate, ObservableObject {
     
-    let shared = IosConnectivity()
     var session: WCSession
-   
-    
     init(session: WCSession = .default){
         self.session = session
         super.init()
         self.session.delegate = self
-        session.activate()
+        self.session.activate()
     }
     
     
-
     
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-        DispatchQueue.main.async {
-            
-        }
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        print(message)
+
+    }
+
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
     }
     
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        guard let key = message[msgKey] as? String else {
+            return
+        }
+        
+        switch key{
+        case MessageKey.getGoalProgress.rawValue:
+            replyHandler([dataKey: [GoalProgress(goalName: "A", completedTask: 10, totalTask: 20).encodeIt()]])
+        default:
+            return
+        }
         
     }
     

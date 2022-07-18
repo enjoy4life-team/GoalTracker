@@ -10,31 +10,35 @@ import WatchConnectivity
 
 
 final class WatchConnectivity: NSObject, WCSessionDelegate, ObservableObject {
-    
-    static let shared = WatchConnectivity()
-    
-    
     var session: WCSession
+    @Published var goalProgress = [GoalProgress]()
+    static let shared = WatchConnectivity()
     
     init(session: WCSession = .default){
         self.session = session
         super.init()
         self.session.delegate = self
-        session.activate()
-    }
-    
+        self.session.activate()    }
     
 
     
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-        DispatchQueue.main.async {
-            
-        }
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
     }
     
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
+    
+    public func getGoalProgress(){
+        session.sendMessage([msgKey: MessageKey.getGoalProgress.rawValue]){ res in
+            if let data = res[dataKey] as? [Data] {
+                DispatchQueue.main.async {
+                    self.goalProgress = data.compactMap{
+                        GoalProgress.decodeIt($0)
+                    }
+                    print(self.goalProgress.count)
+                }
+                
+            }
+        }
     }
     
 }
