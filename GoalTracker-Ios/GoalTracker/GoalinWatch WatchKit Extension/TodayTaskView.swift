@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct TodayTaskView: View {
     
     private struct Goals: Identifiable {
@@ -93,9 +94,30 @@ struct TodayTaskView: View {
     }
 }
 
+struct EmptyTaskView: View {
+    
+    var body: some View {
+        VStack(spacing: 5){
+            Image(systemName: "scribble.variable")
+                .resizable()
+                .frame(width: 50, height: 50)
+            
+            Text("There's no task for you today")
+                .font(.title3)
+                .multilineTextAlignment(.center)
+        }
+    }
+}
+
 struct TodayTaskView_Previews: PreviewProvider {
     static var previews: some View {
         TodayTaskView()
+    }
+}
+
+struct EmptyTaskView_Previews: PreviewProvider {
+    static var previews: some View {
+        EmptyTaskView()
     }
 }
 

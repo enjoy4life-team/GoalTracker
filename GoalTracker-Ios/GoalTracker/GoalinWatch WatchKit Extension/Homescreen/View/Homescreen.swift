@@ -96,5 +96,6 @@ struct goalRing: View {
             Spacer()
         }
         .padding(.leading, 3)
+        .navigationTitle("Goal Summary")
     }
 }
