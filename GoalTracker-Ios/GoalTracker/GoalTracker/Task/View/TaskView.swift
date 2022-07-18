@@ -14,6 +14,18 @@ struct Subtask: Identifiable {
 }
 
 
+struct DateView: View {
+    @Binding var date : Date
+    
+    var body: some View {
+        DatePicker(
+            "Start Date",
+            selection: $date,
+            displayedComponents: [.date, .hourAndMinute]
+        )
+    }
+}
+
 struct TaskView: View {
     
     @ObservedObject var viewModel: SetTaskViewModel
@@ -23,16 +35,14 @@ struct TaskView: View {
     
     var body: some View {
         List {
-            
-            //Activity Name
-            Section {
+            Section(header: Text("Activity Name")) {
                 TextField("Activity Name", text: $viewModel.activity.name.toUnwrapped(defaultValue: ""))
             }
             
             //Subtask
-            Section {
+            Section(header: Text("Subtask")) {
                 HStack {
-                    Text("Subtask")
+                    Text("Add Subtask")
                     Spacer()
                     ZStack {
                         Rectangle()
@@ -61,40 +71,47 @@ struct TaskView: View {
                 
             }
             
-            Section {
-                //DATE
-                DateActivity()
+            Section(header: Text("Activity Schedule")) {
                 
-                //TIME
-                TimeActivity()
+                if let dateActivity = viewModel.activity.date {
+                    DateView(date: $viewModel.activity.date.toUnwrapped(defaultValue: dateActivity))
+                }
             }
-            Section {
-                //REPEAT
-                RepeatActivity()
-            }
-            Section {
+            
+//            Section {
+//                //DATE
+//                DateActivity()
+//
+//                //TIME
+//                TimeActivity()
+//            }
+//            Section {
+//                //REPEAT
+//                RepeatActivity()
+//            }
+            Section(header: Text("Notes")) {
                 //NOTES
                 TextEditor(text: self.$viewModel.activity.note.toUnwrapped(defaultValue: ""))
                     .frame(height: 118)
-                    .foregroundColor(viewModel.activity.note == placeholderString ? .gray : .primary)
-                    .onTapGesture {
-                        if viewModel.activity.note == placeholderString {
-                            viewModel.activity.note = ""
-                        }
-                    }
+                    .foregroundColor(.primary)
+
+
             }
+            
         }
         .listStyle(.insetGrouped)
+        .background(Color.red)
         .environment(\.editMode, $editMode)
         
     }
     
     func addSubtask() {
         let task = Task(context: PersistenceController.shared.container.viewContext)
-        task.name = ""
+        task.name = "new subtask"
         task.id = UUID.init()
         task.finish = false
         task.number = Int16(viewModel.tasks.count + 1)
+        
         
         viewModel.activity.addToTasks(task)
         viewModel.refreshData()

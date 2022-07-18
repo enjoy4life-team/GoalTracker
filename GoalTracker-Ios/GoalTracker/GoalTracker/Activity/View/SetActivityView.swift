@@ -24,14 +24,11 @@ struct SetActivityView: View {
             VStack{
                 List{
                     ForEach(viewModel.activities.indices, id: \.self) { idx in
-                        HStack{
-                            Text(viewModel.activities[idx].name ?? "null").padding(.vertical, 10)
                             if !isEditing {
-                                NavigationLink(destination: TaskView(viewModel: SetTaskViewModel(activity: viewModel.activities[idx]))) { EmptyView() } // disabled  !
+                                NavigationLink(destination: TaskView(viewModel: SetTaskViewModel(activity: viewModel.activities[idx]))) {
+                                    Text(viewModel.activities[idx].name ?? "null")
+                                } // disabled  !
                             }
-                            
-                        }
-                        
                     }
                     .onMove(perform: { from, to in
                         viewModel.moveData(fromOffsets: from, toOffset: to)
@@ -64,17 +61,16 @@ struct SetActivityView: View {
                 
                 editMode = isEditing ? .inactive : .active
                 isEditing.toggle()
+
             }){
-                Text(isEditing ? "Done" : "Edit")
+                Text(isEditing ? "Done" : "Edit").padding([.top, .bottom])
             }, trailing: Button(action: {
                 
                 isAlertShowed.toggle()
                 
             }){
-                Text("Save")
+                Text("Save").padding([.top, .bottom])
             })
-        }.onAppear{
-            print("appear")
         }
         .alert(isPresented: $isAlertShowed) {
             Alert(
