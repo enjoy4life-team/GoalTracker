@@ -11,8 +11,9 @@ struct AddNewGoalView: View{
     @ObservedObject var viewModel: AddNewGoalViewModel
     @Binding var parentRoute: GoalViewMainScreen.Route?
     @Environment(\.presentationMode) var presentationMode
-    @State var isPresented = false
-
+    @Binding var isPresented: Bool
+    
+    
     var body: some View{
         VStack(spacing: 10){
             ZStack{
@@ -20,7 +21,7 @@ struct AddNewGoalView: View{
                     .resizable()
                     .frame(width: .infinity,
                            height: 187)
-
+                
                 Text(viewModel.goal.name ?? "Custom Goal")
                     .font(.title2)
                     .foregroundColor(.white)
@@ -34,7 +35,7 @@ struct AddNewGoalView: View{
                     .fontWeight(.semibold)
                     .padding(.bottom, -10)
                     .padding(.top)
-
+                
                 TextField("write it down here", text: $viewModel.goal.name.toUnwrapped(defaultValue: ""))
                     .frame(width: 320, height: 50)
                     .background(
@@ -43,16 +44,16 @@ struct AddNewGoalView: View{
                         .fill(.gray.opacity(0.2))
                         .frame(width: 350, height: 50))
             }
-
+            
             Group{
                 DatePicker("Start Date",
                            selection: $viewModel.goal.startDate.toUnwrapped(defaultValue: Date.now.addingTimeInterval(86400)),
                            in: Date()...,
                            displayedComponents: [DatePickerComponents.date, DatePickerComponents.hourAndMinute])
                 
-
+                
                 Divider()
-
+                
                 DatePicker("Target Date",
                            selection: $viewModel.goal.endDate.toUnwrapped(defaultValue: Date.now),
                            in: Date()...,
@@ -60,9 +61,9 @@ struct AddNewGoalView: View{
                 .padding(.bottom,40)
             }
             .padding(.horizontal, 30)
-
-
-
+            
+            
+            
             Group{
                 ForEach(0..<viewModel.questionList.count, id: \.self){ idx in
                     HStack{
@@ -73,7 +74,7 @@ struct AddNewGoalView: View{
                         Spacer()
                     }
                     .padding(.horizontal,30)
-
+                    
                     TextField("write it down here", text: $viewModel.questionList[idx].answer.toUnwrapped(defaultValue: ""))
                         .frame(width: 320, height: 50)
                         .background(
@@ -92,14 +93,15 @@ struct AddNewGoalView: View{
             ToolbarItem(placement: .navigationBarTrailing){
                 Button{
                     viewModel.saveChanges()
-                    parentRoute = nil
+                    parentRoute = .NewGoalsAddActivity
+                    isPresented.toggle()
                 } label: {
                     Text("Save")
                 }
                 .tint(.blue)
-            
+                
             }
-
+            
             ToolbarItem(placement: .navigationBarLeading){
                 Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
@@ -117,7 +119,9 @@ struct AddNewGoalView: View{
 
 struct AddNewGoal_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewGoalView(viewModel: AddNewGoalViewModel(goal: SmartGoalTemplate.Presentation.getGoals()), parentRoute: Binding.constant(GoalViewMainScreen.Route.AddGoalsMainScreen))
+        AddNewGoalView(viewModel: AddNewGoalViewModel(goal: SmartGoalTemplate.Presentation.getGoals()), parentRoute: Binding.constant(GoalViewMainScreen.Route.AddGoalsMainScreen),
+                       isPresented: .constant(false)
+        )
     }
 }
 

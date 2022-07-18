@@ -14,52 +14,52 @@ struct GoalViewItem: View {
     var status = ["On Going", "Completed", "Archive"]
     
     var body: some View{
-            VStack {
-                ZStack {
-                    Text("On Going")
-                        .font(.title2)
-                        .bold()
-                    
-                    Rectangle()
-                        .frame(width: 330, height: 260)
-                        .foregroundColor(Color.gray.opacity(0.1))
-                        .cornerRadius(20)
-                    
-                    Group {
-                        goalRings(radius: 110, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.communicationString), background: .red.opacity(0.3), color: .red)
-                        goalRings(radius: 90, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.collaborationString), background: .mint.opacity(0.3), color: .mint)
-                        goalRings(radius: 70, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.presentationString), background: .black.opacity(0.3), color: .black)
-                    }
-                }
-                .padding(.bottom, 20)
+        VStack {
+            ZStack {
+                Text("On Going")
+                    .font(.title2)
+                    .bold()
                 
+                Rectangle()
+                    .frame(width: 330, height: 260)
+                    .foregroundColor(Color.gray.opacity(0.1))
+                    .cornerRadius(20)
                 
-                ForEach(viewModel.goals.filter{!$0.isFinished()}, id: \.self) { goal in
-                    
-                    NavigationLink(destination:
-                                    GoalSummary(viewModel: GoalSummaryViewModel(goal: goal))
-                        .navigationBarTitle(goal.name ?? "nil", displayMode: .inline)
-                        .toolbar {
-                            ToolbarItem(placement: .navigationBarTrailing) {
-                                
-                                NavigationLink(destination:
-                                                SetActivityView(viewModel: SetActivityViewModel(goal: goal))
-                                ) {
-                                   Text("Edit")                            }
-                                
-                                
-                            }
-                        }
-                    ) {
-                        CardNew(goalName: goal.name ?? "Empty Goal Name")
-                        
-                    }
-                    
+                Group {
+                    goalRings(radius: 110, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.communicationString), background: .red.opacity(0.3), color: .red)
+                    goalRings(radius: 90, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.collaborationString), background: .mint.opacity(0.3), color: .mint)
+                    goalRings(radius: 70, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.presentationString), background: .black.opacity(0.3), color: .black)
                 }
-                Spacer()
-            } .onAppear{
-                viewModel.getData()
             }
+            .padding(.bottom, 20)
+            
+            
+            ForEach(viewModel.getActiveGoals(), id: \.self) { goal in
+                
+                NavigationLink(destination:
+                                GoalSummary(viewModel: GoalSummaryViewModel(goal: goal))
+                    .navigationBarTitle(goal.name ?? "nil", displayMode: .inline)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            
+                            NavigationLink(destination:
+                                            SetActivityView(viewModel: SetActivityViewModel(goal: goal))
+                            ) {
+                                Text("Edit")                            }
+                            
+                            
+                        }
+                    }
+                ) {
+                    CardNew(goalName: goal.name ?? "Empty Goal Name")
+                    
+                }
+                
+            }
+            Spacer()
+        } .onAppear{
+            viewModel.getData()
+        }
     }
 }
 

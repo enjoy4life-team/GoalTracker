@@ -12,15 +12,19 @@ struct GoalViewMainScreen: View {
     
     @ObservedObject var viewModel: GoalViewModel
     @Binding var parentRoute: Route?
-    
+    @State var isCompletetaskSheetPresented = false
     
     var body: some View{
             VStack{
                 NavigationLink(unwrapping: $parentRoute, case: /Route.AddGoalsMainScreen) { _ in
-                    AddNewGoalView(viewModel: AddNewGoalViewModel(goal: viewModel.selectedGoal!), parentRoute: $parentRoute)
+                    AddNewGoalView(viewModel: AddNewGoalViewModel(goal: viewModel.selectedGoal!), parentRoute: $parentRoute, isPresented: $isCompletetaskSheetPresented)
                 } onNavigate: { _ in } label: { EmptyView() }
                 
-                
+                NavigationLink(unwrapping: $parentRoute, case: /Route.NewGoalsAddActivity) { _ in
+                    SetActivityView(viewModel: SetActivityViewModel(goal: viewModel.selectedGoal!))
+                } onNavigate: { _ in } label: { EmptyView() }
+          
+              
                 if viewModel.goals.isEmpty {
                     GoalItemEmpty()
                         .onAppear{
@@ -30,7 +34,10 @@ struct GoalViewMainScreen: View {
                     SegmentedControls(viewModel: viewModel)
                 }
                 
-        }
+            } .fullScreenCover(isPresented: $isCompletetaskSheetPresented) {
+                PopUp(isPresented: $isCompletetaskSheetPresented, route: $parentRoute)
+            }
+            
     }
     
 }
@@ -46,5 +53,6 @@ struct GoalViewMainScreen: View {
 extension GoalViewMainScreen {
     enum Route {
         case AddGoalsMainScreen
+        case NewGoalsAddActivity
     }
 }
