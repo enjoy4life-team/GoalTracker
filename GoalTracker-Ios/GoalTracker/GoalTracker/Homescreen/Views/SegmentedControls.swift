@@ -10,14 +10,14 @@ import SwiftUI
 struct SegmentedControls: View {
     @ObservedObject var viewModel: GoalViewModel
     @State private var selectedStatus : GoalStatus = .gOnGoing
-    
+
     init(viewModel: GoalViewModel){
         self.viewModel = viewModel
-      
     }
     
     var body: some View {
             VStack {
+             
                 Picker("Choose", selection: $selectedStatus) {
                     ForEach(GoalStatus.allCases, id: \.self) {
                         Text($0.rawValue)
