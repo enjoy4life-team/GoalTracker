@@ -41,7 +41,7 @@ struct TodayTaskView: View {
                             .foregroundColor(.gray)
                     }
                     .background{
-                        RoundedRectangle(cornerRadius: 5)
+                        RoundedRectangle(cornerRadius: 25)
                             .frame(width: .infinity, height: 30)
                             .foregroundColor(todayTasks[idx].goalColor.opacity(0.5))
                     }
