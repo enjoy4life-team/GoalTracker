@@ -69,8 +69,14 @@ final class GoalViewModel: ObservableObject {
         }
     }
     
+    func getActiveGoals() -> [Goal] {
+        return self.goals.filter{!$0.isFinished()}
+    }
+    
     func getGoalPercentage(goalType: String) -> Double {
-        let goals: [Goal] = goals.filter{$0.name == goalType && !$0.isFinished()}
+        let activeGoals = self.getActiveGoals()
+        
+        let goals: [Goal] = activeGoals.filter{$0.name == goalType && !$0.isFinished()}
         
         
         var taskList = [Task]()
@@ -98,7 +104,8 @@ final class GoalViewModel: ObservableObject {
 
 
 extension Goal {
-    func isFinished() -> Bool {
+    
+    private func getTaskList() -> [Task] {
         var taskList = [Task]()
         
         let activities = Array(self.activities as? Set<Activity> ?? [])
@@ -107,12 +114,23 @@ extension Goal {
             taskList.append(contentsOf: tasks)
         }
         
-        let taskFinishCount = taskList.filter{$0.finish}.count
-        
-        if taskList.count == 0 {
+        return taskList
+    }
+    
+    
+    func isFinished() -> Bool {
+        if self.getTaskList().count == 0 {
             return false
         }
         
-        return taskFinishCount == taskList.count
+        return (self.getTaskListFinishCount() == self.getTaskListCount())
+    }
+    
+    func getTaskListCount() -> Int {
+        return self.getTaskList().count
+    }
+    
+    func getTaskListFinishCount() -> Int {
+        return self.getTaskList().filter{$0.finish}.count
     }
 }

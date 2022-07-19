@@ -10,12 +10,22 @@ import SwiftUI
 struct MainTabView: View {
     
     @State var currentView = 1
-    
     var body: some View {
         TabView(selection: $currentView){
             Homescreen().tag(1)
             ListSubtask().tag(2)
+            VStack{
+                Button(action:{
+                    send()
+                }){
+                    Text("asd")
+                }
+            }.tag(3)
         }
+    }
+    
+    func send(){
+        WatchConnectivity.shared.getGoalProgress()
     }
 }
 

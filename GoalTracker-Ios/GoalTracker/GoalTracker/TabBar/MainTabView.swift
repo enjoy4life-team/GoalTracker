@@ -14,6 +14,7 @@ struct MainTabView: View {
     @ObservedObject private var goalViewModel = GoalViewModel()
     @State var searchText = ""
     @State var isSheetPresented = false
+    @State var isMaxPopUpPresented = false
     @State var route: GoalViewMainScreen.Route?
     
     
@@ -25,12 +26,14 @@ struct MainTabView: View {
     
     var body: some View {
         NavigationView{
+            
             TabView(selection: $mainTabViewModel.selectedTab){
                 GoalViewMainScreen(viewModel: goalViewModel, parentRoute: $route)
                     .tabItem {
                         Label("Goal", systemImage: "list.dash")
-                    }.tag(MainTabViewModel.TabItem.home)
-                    
+                    }
+
+                    .tag(MainTabViewModel.TabItem.home)
                 
                 SettingView()
                     .tabItem {
@@ -45,7 +48,14 @@ struct MainTabView: View {
                     ToolbarItem(placement: .navigationBarTrailing, content: {
                         if mainTabViewModel.selectedTab == .home {
                             Button(){
-                                isSheetPresented.toggle()
+                                let activeGoals = goalViewModel.goals.filter{!$0.isFinished()}
+                                
+                                if activeGoals.count >= 3 {
+                                    isMaxPopUpPresented.toggle()
+                                }else{
+                                    isSheetPresented.toggle()
+                                }
+                                 
                             }label: {
                                 Image(systemName: "plus")
                             }
@@ -55,6 +65,8 @@ struct MainTabView: View {
                 }
                 .fullScreenCover(isPresented: $isSheetPresented){
                     AddGoalTemplate(viewModel: goalViewModel, isSheetPresented: $isSheetPresented, parentRoute: $route)
+                }.fullScreenCover(isPresented: $isMaxPopUpPresented){
+                    MaxGoalPopUp(isPresented: $isMaxPopUpPresented)
                 }
                 
         }

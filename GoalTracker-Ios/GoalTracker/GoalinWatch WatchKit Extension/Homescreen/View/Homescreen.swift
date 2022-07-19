@@ -8,20 +8,34 @@
 import SwiftUI
 
 struct Homescreen: View {
+    
+    @ObservedObject var vm = WatchConnectivity.shared
     var body: some View {
         ScrollView {
             VStack {
-                goalRing(radius: 22, percent: 0.6, background: Color.purple.opacity(0.2), color: Color.purple, goalName: "Goal 1", percentColor: Color.purple, subTaskColor: Color.purple)
-                    .padding(.bottom, 12)
                 
-                goalRing(radius: 22, percent: 0.6, background: Color.mint.opacity(0.2), color: Color.mint, goalName: "Goal 2", percentColor: Color.mint, subTaskColor: Color.mint)
-                    .padding(.bottom, 12)
-                
-                goalRing(radius: 22, percent: 0.6, background: Color.red.opacity(0.2), color: Color.red, goalName: "Goal 3", percentColor: Color.red, subTaskColor: Color.red)
+                ForEach(vm.goalProgress, id: \.goalID){ goal in
+                    goalRing(radius: 22, percent: 0.6, background: Color.purple.opacity(0.2), color: Color.purple, goalName: goal.goalName, percentColor: Color.purple, subTaskColor: Color.purple)
+                        .padding(.bottom, 12)
+                    
+                }
+                //                goalRing(radius: 22, percent: 0.6, background: Color.purple.opacity(0.2), color: Color.purple, goalName: "Goal 1", percentColor: Color.purple, subTaskColor: Color.purple)
+                //                    .padding(.bottom, 12)
+                //
+                //                goalRing(radius: 22, percent: 0.6, background: Color.mint.opacity(0.2), color: Color.mint, goalName: "Goal 2", percentColor: Color.mint, subTaskColor: Color.mint)
+                //                    .padding(.bottom, 12)
+                //
+                //                goalRing(radius: 22, percent: 0.6, background: Color.red.opacity(0.2), color: Color.red, goalName: "Goal 3", percentColor: Color.red, subTaskColor: Color.red)
             }
             .navigationBarTitle("Progress")
             .padding(.top, 10)
         }
+        .task {
+            WatchConnectivity.shared.getGoalProgress()
+            print(WatchConnectivity.shared.goalProgress)
+        }
+        
+        
     }
 }
 
