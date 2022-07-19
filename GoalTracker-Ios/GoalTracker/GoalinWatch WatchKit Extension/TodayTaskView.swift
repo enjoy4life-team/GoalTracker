@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct TodayTaskView: View {
+    @ObservedObject var viewModel = WatchConnectivity.shared
     
     private struct Goals: Identifiable {
         let goalColor: Color
@@ -49,7 +50,7 @@ struct TodayTaskView: View {
                     ZStack{
                         HStack{
                             Rectangle()
-                            .frame(width: 15, height: 48)
+                            .frame(width: 15, height: 44)
                             .cornerRadius(radius: 10, corners: [.topLeft, .bottomLeft])
                             .foregroundColor( todayTasks[idx].goalColor)
                             .padding(.leading, 15)
@@ -98,9 +99,9 @@ struct EmptyTaskView: View {
     
     var body: some View {
         VStack(spacing: 5){
-            Image(systemName: "scribble.variable")
+            Image("bnwlogo")
                 .resizable()
-                .frame(width: 50, height: 50)
+                .frame(width: 80, height: 80)
             
             Text("There's no task for you today")
                 .font(.title3)
