@@ -9,7 +9,6 @@ import Foundation
 
 struct TodayActivity: Codable {
     var activityList = [ActivityItem]()
-    var goalName = ""
     
     func encodeIt() -> Data {
           let data = try! PropertyListEncoder.init().encode(self)
@@ -26,6 +25,7 @@ struct TodayActivity: Codable {
 struct ActivityItem: Codable {
     var ID = UUID.init()
     var activityName: String?
+    var goalName = ""
     var activityDate: Date?
     var TaskList = [TaskItem]()
 }

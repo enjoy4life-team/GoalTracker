@@ -43,6 +43,8 @@
 		CB9449EA286E9CAC0008A35F /* SegmentedControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9449E9286E9CAC0008A35F /* SegmentedControls.swift */; };
 		CB9449ED286EA76F0008A35F /* SetTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9449EC286EA76F0008A35F /* SetTaskViewModel.swift */; };
 		CB9449EF286EA7D90008A35F /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9449EE286EA7D90008A35F /* TaskView.swift */; };
+		CB9865402888618F00F8CD36 /* CardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98653F2888618F00F8CD36 /* CardColor.swift */; };
+		CB9865412888618F00F8CD36 /* CardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98653F2888618F00F8CD36 /* CardColor.swift */; };
 		CBA7F2582872A17E00C5E7FF /* Date+FormattedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7F2572872A17E00C5E7FF /* Date+FormattedString.swift */; };
 		CBA7F25A2872A60600C5E7FF /* GoalSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7F2592872A60600C5E7FF /* GoalSummaryViewModel.swift */; };
 		CBA89ECF288521BC008C3A9C /* IosConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA89ECE288521BC008C3A9C /* IosConnectivity.swift */; };
@@ -182,6 +184,7 @@
 		CB9449E9286E9CAC0008A35F /* SegmentedControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegmentedControls.swift; path = GoalTracker/Homescreen/Views/SegmentedControls.swift; sourceTree = SOURCE_ROOT; };
 		CB9449EC286EA76F0008A35F /* SetTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTaskViewModel.swift; sourceTree = "<group>"; };
 		CB9449EE286EA7D90008A35F /* TaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		CB98653F2888618F00F8CD36 /* CardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardColor.swift; sourceTree = "<group>"; };
 		CBA7F2572872A17E00C5E7FF /* Date+FormattedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+FormattedString.swift"; sourceTree = "<group>"; };
 		CBA7F2592872A60600C5E7FF /* GoalSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalSummaryViewModel.swift; sourceTree = "<group>"; };
 		CBA89ECE288521BC008C3A9C /* IosConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosConnectivity.swift; sourceTree = "<group>"; };
@@ -371,6 +374,7 @@
 				CBA89ED6288523A3008C3A9C /* TodayActivity.swift */,
 				CBA89EE428852E90008C3A9C /* MessageKey.swift */,
 				CB5E2ECA2886590700763D28 /* Complication.swift */,
+				CB98653F2888618F00F8CD36 /* CardColor.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -911,6 +915,7 @@
 				C8C3E4102887AFD50030909C /* Extension.swift in Sources */,
 				CBA89ED12885221C008C3A9C /* WatchConnectivity.swift in Sources */,
 				CB781E1F287FDD32005E2654 /* NotificationController.swift in Sources */,
+				CB9865412888618F00F8CD36 /* CardColor.swift in Sources */,
 				CBA89ED5288522F3008C3A9C /* GoalsProgress.swift in Sources */,
 				CB781E1D287FDD32005E2654 /* ContentView.swift in Sources */,
 				CBA89ED7288523A3008C3A9C /* TodayActivity.swift in Sources */,
@@ -985,6 +990,7 @@
 				CB6CF9A0286DC76600828A54 /* OnboardingMainView.swift in Sources */,
 				CBA89ECF288521BC008C3A9C /* IosConnectivity.swift in Sources */,
 				CBE314A02862F3F600E88F35 /* GoalTracker.xcdatamodeld in Sources */,
+				CB9865402888618F00F8CD36 /* CardColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

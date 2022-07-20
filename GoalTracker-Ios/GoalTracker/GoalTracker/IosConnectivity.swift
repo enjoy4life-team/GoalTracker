@@ -13,14 +13,19 @@ class IosConnectivity: NSObject, WCSessionDelegate, ObservableObject {
     static let shared = IosConnectivity()
 
     var goalSummaryViewModel: GoalSummaryViewModel?
+    var goalViewModel: GoalViewModel?
     var session: WCSession
     let taskDataStore: TaskLocalDataSource
+    let goalDataStore: GoalLocalDataSource
+
     let activityStore: ActivityLocalDataSource
     let goalStore: GoalLocalDataSource
 
     init(session: WCSession = .default){
         self.session = session
         taskDataStore = TaskLocalDefaultDataSource()
+        goalDataStore = GoalDefaultLocalDataStore()
+
         activityStore = ActivityDefaultLocalDataStore()
         goalStore = GoalDefaultLocalDataStore()
 
@@ -47,7 +52,9 @@ class IosConnectivity: NSObject, WCSessionDelegate, ObservableObject {
         
         switch key{
         case MessageKey.getGoalProgress.rawValue:
-            replyHandler([dataKey: [GoalProgress(goalName: "A", completedTask: 10, totalTask: 20).encodeIt()]])
+            if let progress = getGoalProgress() {
+                replyHandler([dataKey: progress.map({$0.encodeIt()})])
+            }
         case MessageKey.getTodayActivity.rawValue:
             if let todayActivity = getTodayActivities(){
                 replyHandler([dataKey: todayActivity.encodeIt()])
@@ -62,6 +69,8 @@ class IosConnectivity: NSObject, WCSessionDelegate, ObservableObject {
                     task.finish.toggle()
                     taskDataStore.saveChanges()
                     self.goalSummaryViewModel?.getData()
+                    self.goalViewModel?.getData()
+
 
                 }
             }catch{
@@ -147,13 +156,15 @@ class IosConnectivity: NSObject, WCSessionDelegate, ObservableObject {
             return activityDate > Date.yesterday && activityDate < tomorrow
         }
 
-        var goalName = ""
+
         for activity in activities {
             var activityItem = ActivityItem()
+            
 
-            goalName = activity.goal?.name ?? ""
             activityItem.activityName = activity.name
             activityItem.activityDate = activity.date
+            activityItem.goalName = activity.goal?.name ?? ""
+
 
             let tasks = Array(activity.tasks as? Set<Task> ?? []).sorted(by: {$0.number > $1.number})
 
@@ -167,6 +178,8 @@ class IosConnectivity: NSObject, WCSessionDelegate, ObservableObject {
             todayActivity.activityList.append(activityItem)
 
         }
+                
+
 
          todayActivity.goalName = goalName
 
@@ -176,6 +189,30 @@ class IosConnectivity: NSObject, WCSessionDelegate, ObservableObject {
 
     func updateOnWatch(){
         session.sendMessage(["ping":"pong"], replyHandler: nil)
+    }
+
+    func getGoalProgress() -> [GoalProgress]? {
+        do {
+            guard let data = try goalDataStore.getAllGoalsData() else{
+                return nil
+            }
+
+            return data.filter{!$0.isFinished()}.map{
+                var progress = GoalProgress()
+
+
+                progress.goalName = $0.name ?? ""
+                progress.totalTask = $0.getTaskListCount()
+                progress.completedTask = $0.getTaskListFinishCount()
+
+                return progress
+            }
+
+        } catch {
+                print(error)
+        }
+
+        return nil
     }
 }
 
