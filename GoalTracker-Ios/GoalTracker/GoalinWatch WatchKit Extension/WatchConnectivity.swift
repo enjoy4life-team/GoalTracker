@@ -7,13 +7,16 @@
 
 import Foundation
 import WatchConnectivity
+import ClockKit
 
 
 final class WatchConnectivity: NSObject, WCSessionDelegate, ObservableObject {
     var session: WCSession
     @Published var goalProgress = [GoalProgress]()
+    @Published var complicationData = [Complication]()
+
     @Published var todayActivity = [ActivityItem]()
-    
+
     static let shared = WatchConnectivity()
     
     init(session: WCSession = .default){
@@ -28,7 +31,7 @@ final class WatchConnectivity: NSObject, WCSessionDelegate, ObservableObject {
         self.getGoalProgress()
         self.getTodayActivity()
     }
-    
+
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
     }
@@ -46,7 +49,7 @@ final class WatchConnectivity: NSObject, WCSessionDelegate, ObservableObject {
             }
         }
     }
-    
+
     public func getTodayActivity(){
         session.sendMessage([msgKey: MessageKey.getTodayActivity.rawValue]){ res in
 
@@ -59,9 +62,38 @@ final class WatchConnectivity: NSObject, WCSessionDelegate, ObservableObject {
         }
     }
     
-    
+
     public func markTaskComplete(taskID: UUID){
         session.sendMessage([msgKey: MessageKey.markTaskComplete.rawValue, "task_id" : taskID.uuidString]){ res in
         }
     }
+
+    public func getComplicationData(){
+        session.sendMessage([msgKey: MessageKey.getComplicationData.rawValue]){ res in
+            if let data = res[dataKey] as? [Data] {
+                DispatchQueue.main.async {
+                    self.complicationData = data.compactMap{
+                        Complication.decodeIt($0)
+
+
+                    }
+                    print(self.complicationData.count)
+
+                    let server = CLKComplicationServer.sharedInstance()
+                    server.activeComplications?.forEach {
+                      server.reloadTimeline(for: $0)
+                    }
+                }
+
+
+            }
+        }
+    }
+
+
+    func nextActivity(from date: Date) -> Complication? {
+      return complicationData.first { $0.time > date }
+    }
+
+
 }
