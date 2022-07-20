@@ -10,6 +10,7 @@ import Foundation
 
 enum MessageKey: String {
     case getGoalProgress = "get_goal"
+    case getComplicationData = "get_complication_data"
     case getTodayActivity = "get_activity"
     case markTaskComplete = "mark_task_comlete"
 }

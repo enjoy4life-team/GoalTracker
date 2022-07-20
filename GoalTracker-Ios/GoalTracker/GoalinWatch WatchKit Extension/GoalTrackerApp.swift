@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 @main
 struct GoalTrackerApp: App {
     @SceneBuilder var body: some Scene {
@@ -14,6 +15,9 @@ struct GoalTrackerApp: App {
             NavigationView {
                 MainTabView()
 //                ContentView()
+            }.task {
+                WatchConnectivity.shared.getComplicationData()
+               
             }
         }
 

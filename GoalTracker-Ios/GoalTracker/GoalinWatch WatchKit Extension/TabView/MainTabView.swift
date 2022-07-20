@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ClockKit
 
 struct MainTabView: View {
     
@@ -25,7 +26,12 @@ struct MainTabView: View {
     }
     
     func send(){
-        WatchConnectivity.shared.getGoalProgress()
+        WatchConnectivity.shared.complicationData = [Complication(goalName: "A", activityName: "asd", time: Date(timeIntervalSinceNow: 30)), Complication(goalName: "B", activityName: "asd", time: Date(timeIntervalSinceNow: 40))]
+        
+        let server = CLKComplicationServer.sharedInstance()
+        server.activeComplications?.forEach {
+          server.reloadTimeline(for: $0)
+        }
     }
 }
 
