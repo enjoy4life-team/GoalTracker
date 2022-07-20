@@ -8,8 +8,7 @@
 import SwiftUI
 
 protocol TaskLocalDataSource {
-    func markTaskAsComplete(taskId: UUID)
-    func getTaskByActivityID(id: UUID) throws -> [Task]?
+    func getTaskByID(taskId: String)throws -> Task?
     func saveChanges()
     func rollBack()
 }

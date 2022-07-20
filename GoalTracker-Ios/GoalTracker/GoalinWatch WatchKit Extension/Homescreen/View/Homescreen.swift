@@ -10,6 +10,7 @@ import SwiftUI
 struct Homescreen: View {
     
     @ObservedObject var vm = WatchConnectivity.shared
+    
     var body: some View {
         ScrollView {
             VStack {
