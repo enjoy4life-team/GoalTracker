@@ -179,10 +179,6 @@ class IosConnectivity: NSObject, WCSessionDelegate, ObservableObject {
 
         }
                 
-
-
-         todayActivity.goalName = goalName
-
          return todayActivity
     }
 
