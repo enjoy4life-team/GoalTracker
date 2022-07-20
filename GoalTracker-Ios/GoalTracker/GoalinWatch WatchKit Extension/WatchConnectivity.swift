@@ -24,6 +24,11 @@ final class WatchConnectivity: NSObject, WCSessionDelegate, ObservableObject {
     
 
     
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        self.getGoalProgress()
+        self.getTodayActivity()
+    }
+    
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
     }

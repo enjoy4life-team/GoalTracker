@@ -10,6 +10,9 @@ import WatchConnectivity
 
 class IosConnectivity: NSObject, WCSessionDelegate, ObservableObject {
     
+    static let shared = IosConnectivity()
+
+    var goalSummaryViewModel: GoalSummaryViewModel?
     var session: WCSession
     let dataStore: ActivityLocalDataSource
     let taskDataStore: TaskLocalDataSource
@@ -56,10 +59,13 @@ class IosConnectivity: NSObject, WCSessionDelegate, ObservableObject {
                 if let task = try taskDataStore.getTaskByID(taskId: taskID) {
                     task.finish.toggle()
                     taskDataStore.saveChanges()
+                    self.goalSummaryViewModel?.getData()
+                    
                 }
             }catch{
                 print(error)
             }
+            
             
         default:
             return
@@ -102,7 +108,7 @@ class IosConnectivity: NSObject, WCSessionDelegate, ObservableObject {
                 return false
             }
             
-            return activityDate > today && activityDate < tomorrow
+            return activityDate > Date.yesterday && activityDate < tomorrow
         }
                 
         var goalName = ""
@@ -131,5 +137,9 @@ class IosConnectivity: NSObject, WCSessionDelegate, ObservableObject {
          return todayActivity
     }
     
+    
+    func updateOnWatch(){
+        session.sendMessage(["ping":"pong"], replyHandler: nil)
+    }
 }
 

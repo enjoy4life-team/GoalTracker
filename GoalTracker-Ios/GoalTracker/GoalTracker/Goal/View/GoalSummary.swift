@@ -45,6 +45,7 @@ struct GoalSummary: View {
             
         }.onAppear{
             viewModel.getData()
+            IosConnectivity.shared.goalSummaryViewModel = viewModel
         }
     }
         

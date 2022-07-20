@@ -19,7 +19,6 @@ final class GoalSummaryViewModel: ObservableObject {
         self.goal = goal
         
         self.getData()
-        
     }
     
     
@@ -43,7 +42,7 @@ final class GoalSummaryViewModel: ObservableObject {
     func changeTaskStatus(task: Task) {
         task.finish.toggle()
         dataStore.saveChanges()
-        
+        IosConnectivity.shared.updateOnWatch()
         getData()
     }
 }
