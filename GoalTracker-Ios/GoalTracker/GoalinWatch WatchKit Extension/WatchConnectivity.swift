@@ -12,6 +12,8 @@ import WatchConnectivity
 final class WatchConnectivity: NSObject, WCSessionDelegate, ObservableObject {
     var session: WCSession
     @Published var goalProgress = [GoalProgress]()
+    @Published var todayActivity = [ActivityItem]()
+    
     static let shared = WatchConnectivity()
     
     init(session: WCSession = .default){
@@ -21,6 +23,11 @@ final class WatchConnectivity: NSObject, WCSessionDelegate, ObservableObject {
         self.session.activate()    }
     
 
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        self.getGoalProgress()
+        self.getTodayActivity()
+    }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
@@ -36,9 +43,25 @@ final class WatchConnectivity: NSObject, WCSessionDelegate, ObservableObject {
                     }
                     print(self.goalProgress.count)
                 }
-                
             }
         }
     }
     
+    public func getTodayActivity(){
+        session.sendMessage([msgKey: MessageKey.getTodayActivity.rawValue]){ res in
+
+            if let data = res[dataKey] as? Data {
+                DispatchQueue.main.async {
+                    self.todayActivity = TodayActivity.decodeIt(data).activityList
+                    print(self.todayActivity)
+                }
+            }
+        }
+    }
+    
+    
+    public func markTaskComplete(taskID: UUID){
+        session.sendMessage([msgKey: MessageKey.markTaskComplete.rawValue, "task_id" : taskID.uuidString]){ res in
+        }
+    }
 }

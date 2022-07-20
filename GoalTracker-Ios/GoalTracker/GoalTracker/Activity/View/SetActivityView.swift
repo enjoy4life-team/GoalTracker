@@ -76,6 +76,7 @@ struct SetActivityView: View {
             Alert(
                 title: Text("Are you sure you want to save the change?"),
                 primaryButton: .default(Text("Yes")){
+                    IosConnectivity.shared.updateOnWatch()
                     viewModel.saveChanges()
                     presentationMode.wrappedValue.dismiss()
                 },

@@ -12,8 +12,6 @@ struct ListSubtask: View {
         ScrollView {
             TodayTaskView()
         }
-        .navigationTitle("Today's Activity")
-        
     }
 }
 

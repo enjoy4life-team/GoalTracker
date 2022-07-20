@@ -12,8 +12,7 @@ struct GoalTrackerApp: App {
     let persistenceController = PersistenceController.shared
     @AppStorage("FirstTimeUser") var firstTimeUser: Bool = true
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    let conn = IosConnectivity()
-
+    
     var body: some Scene {
         WindowGroup {
             MainTabView().fullScreenCover(isPresented:$firstTimeUser){
@@ -22,6 +21,7 @@ struct GoalTrackerApp: App {
                 let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
                 print(paths[0])
 
+                IosConnectivity.shared.updateOnWatch()
                 UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
                     if success {
                         print("All set!")

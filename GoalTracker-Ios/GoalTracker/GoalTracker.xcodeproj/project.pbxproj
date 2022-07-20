@@ -14,6 +14,8 @@
 		C86DD968286A717D006F9A0A /* AddNewGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86DD966286A717D006F9A0A /* AddNewGoalView.swift */; };
 		C8A8813F286DD7E40098866C /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A8813E286DD7E40098866C /* SettingViewModel.swift */; };
 		C8B7EF00286E9E2B00484547 /* HalfASheet in Frameworks */ = {isa = PBXBuildFile; productRef = C8B7EEFF286E9E2B00484547 /* HalfASheet */; };
+		C8C3E4102887AFD50030909C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C3E40F2887AFD50030909C /* Extension.swift */; };
+		C8C3E4122887B5890030909C /* TaskLocalDefaultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C3E4112887B5890030909C /* TaskLocalDefaultDataSource.swift */; };
 		CB5E2EC3288563FD00763D28 /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5E2EC2288563FD00763D28 /* PopUp.swift */; };
 		CB5E2EC5288592C100763D28 /* MaxGoalPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5E2EC4288592C100763D28 /* MaxGoalPopUp.swift */; };
 		CB6CF970286B4AB900828A54 /* GoalViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CF96F286B4AB900828A54 /* GoalViewItem.swift */; };
@@ -149,6 +151,8 @@
 		C86DD965286A717D006F9A0A /* AddGoalTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalTemplate.swift; sourceTree = "<group>"; };
 		C86DD966286A717D006F9A0A /* AddNewGoalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewGoalView.swift; sourceTree = "<group>"; };
 		C8A8813E286DD7E40098866C /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		C8C3E40F2887AFD50030909C /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		C8C3E4112887B5890030909C /* TaskLocalDefaultDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskLocalDefaultDataSource.swift; sourceTree = "<group>"; };
 		CB5E2EC2288563FD00763D28 /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
 		CB5E2EC4288592C100763D28 /* MaxGoalPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxGoalPopUp.swift; sourceTree = "<group>"; };
 		CB6CF96F286B4AB900828A54 /* GoalViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewItem.swift; sourceTree = "<group>"; };
@@ -300,6 +304,7 @@
 				CB781E2A287FDD33005E2654 /* PushNotificationPayload.apns */,
 				CB781E26287FDD33005E2654 /* Preview Content */,
 				CBA89ED02885221C008C3A9C /* WatchConnectivity.swift */,
+				C8C3E40F2887AFD50030909C /* Extension.swift */,
 			);
 			path = "GoalinWatch WatchKit Extension";
 			sourceTree = "<group>";
@@ -596,6 +601,7 @@
 			isa = PBXGroup;
 			children = (
 				CBF07415286978F9006452CB /* TaskLocalDataSource.swift */,
+				C8C3E4112887B5890030909C /* TaskLocalDefaultDataSource.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -895,6 +901,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8C3E4102887AFD50030909C /* Extension.swift in Sources */,
 				CBA89ED12885221C008C3A9C /* WatchConnectivity.swift in Sources */,
 				CB781E1F287FDD32005E2654 /* NotificationController.swift in Sources */,
 				CBA89ED5288522F3008C3A9C /* GoalsProgress.swift in Sources */,
@@ -905,6 +912,7 @@
 				CBA89EE228852856008C3A9C /* Homescreen.swift in Sources */,
 				CBA89EE128852856008C3A9C /* BlankHomescreen.swift in Sources */,
 				CB781E21287FDD32005E2654 /* NotificationView.swift in Sources */,
+				C85937792880A5D400F64F91 /* TodayTaskView.swift in Sources */,
 				CBA89EE328852856008C3A9C /* ListSubtask.swift in Sources */,
 				CBA89EDD28852832008C3A9C /* MainTabView.swift in Sources */,
 				C85937792880A5D400F64F91 /* TodayTaskView.swift in Sources */,
@@ -940,6 +948,7 @@
 				CB9449EA286E9CAC0008A35F /* SegmentedControls.swift in Sources */,
 				F4E3769A28655C91001020AA /* GoalViewMainScreen.swift in Sources */,
 				CBE314CF2862FAA100E88F35 /* GoalLocalDefaultDataSource.swift in Sources */,
+				C8C3E4122887B5890030909C /* TaskLocalDefaultDataSource.swift in Sources */,
 				CB9449ED286EA76F0008A35F /* SetTaskViewModel.swift in Sources */,
 				F445F7A02866B04400A2EE2B /* CompletedSegment.swift in Sources */,
 				CBA7F2582872A17E00C5E7FF /* Date+FormattedString.swift in Sources */,

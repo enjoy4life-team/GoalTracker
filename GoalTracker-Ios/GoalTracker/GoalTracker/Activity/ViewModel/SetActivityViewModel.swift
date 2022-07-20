@@ -17,7 +17,6 @@ class SetActivityViewModel: ObservableObject {
     init(goal: Goal){
         self.dataStore = ActivityDefaultLocalDataStore()
         self.goal = goal
-        
         getData()
     }
     

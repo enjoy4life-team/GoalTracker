@@ -10,6 +10,7 @@ import SwiftUI
 struct Homescreen: View {
     
     @ObservedObject var vm = WatchConnectivity.shared
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -96,5 +97,6 @@ struct goalRing: View {
             Spacer()
         }
         .padding(.leading, 3)
+        .navigationTitle("Goal Summary")
     }
 }

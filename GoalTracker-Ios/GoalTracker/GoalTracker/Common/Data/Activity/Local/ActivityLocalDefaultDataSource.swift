@@ -13,10 +13,18 @@ final class ActivityDefaultLocalDataStore: ActivityLocalDataSource{
         return try self.container.viewContext.fetch(fetchRequest)
     }
     
+    
+    
     private let container = PersistenceController.shared.container
 
     func deleteActivity(activity: Activity) {
         container.viewContext.delete(activity)
+    }
+    
+    func getTodayActivities() throws -> [Activity]? {
+        let fetchRequest = Activity.fetchRequest()
+        
+        return try self.container.viewContext.fetch(fetchRequest)
     }
     
     func saveChanges() {
