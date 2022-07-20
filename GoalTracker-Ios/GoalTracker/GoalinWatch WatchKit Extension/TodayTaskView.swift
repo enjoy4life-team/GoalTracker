@@ -32,7 +32,7 @@ struct TodayTaskView: View {
                         RoundedRectangle(cornerRadius: 20)
                             .frame(height: 30)
                             .frame(maxWidth: .infinity)
-                            .foregroundColor(.red.opacity(0.5))
+                            .foregroundColor(chooseColor(goalName: activity.goalName.wrappedValue).opacity(0.5))
                     }
                     .padding()
                     
@@ -43,7 +43,7 @@ struct TodayTaskView: View {
                                 Rectangle()
                                 .frame(width: 15, height: 44)
                                 .cornerRadius(radius: 10, corners: [.topLeft, .bottomLeft])
-    //                            .foregroundColor( todayTasks[idx].goalColor)
+                                .foregroundColor(chooseColor(goalName: activity.goalName.wrappedValue))
                                 .padding(.leading, 15)
                             Spacer()
                             }

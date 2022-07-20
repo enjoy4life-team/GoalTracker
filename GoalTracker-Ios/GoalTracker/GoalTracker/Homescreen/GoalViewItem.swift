@@ -26,9 +26,9 @@ struct GoalViewItem: View {
                     .cornerRadius(20)
                 
                 Group {
-                    goalRings(radius: 110, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.communicationString), background: .red.opacity(0.3), color: .red)
-                    goalRings(radius: 90, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.collaborationString), background: .mint.opacity(0.3), color: .mint)
-                    goalRings(radius: 70, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.presentationString), background: .black.opacity(0.3), color: .black)
+                    goalRings(radius: 110, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.communicationString), background: chooseColor(goalName: SmartGoalData.communicationString).opacity(0.3), color: chooseColor(goalName: SmartGoalData.communicationString))
+                    goalRings(radius: 90, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.collaborationString), background: chooseColor(goalName: SmartGoalData.collaborationString).opacity(0.3), color: chooseColor(goalName: SmartGoalData.collaborationString))
+                    goalRings(radius: 70, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.presentationString), background: chooseColor(goalName: SmartGoalData.presentationString).opacity(0.3), color: chooseColor(goalName: SmartGoalData.presentationString))
                 }
             }
             .padding(.bottom, 20)
@@ -59,6 +59,7 @@ struct GoalViewItem: View {
             Spacer()
         } .onAppear{
             viewModel.getData()
+            IosConnectivity.shared.goalViewModel = viewModel
         }
     }
 }
@@ -114,7 +115,7 @@ struct CardNew: View {
         ZStack {
             
             Rectangle()
-                .foregroundColor(chooseColor())
+                .foregroundColor(chooseColor(goalName: goalName))
                 .frame(height: 85)
                 .cornerRadius(20)
             
@@ -136,16 +137,5 @@ struct CardNew: View {
             .padding(.horizontal, 20)
         }
         .padding(.horizontal, 30)
-    }
-    
-    func chooseColor() -> Color {
-        switch self.goalName {
-        case SmartGoalData.communicationString:
-            return .red
-        case SmartGoalData.collaborationString:
-            return .mint
-        default:
-            return .black
-        }
     }
 }

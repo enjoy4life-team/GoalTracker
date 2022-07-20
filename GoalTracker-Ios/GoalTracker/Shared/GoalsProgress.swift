@@ -11,9 +11,9 @@ import SwiftUI
 
 struct GoalProgress: Codable {
     var goalID: UUID = UUID.init()
-    var goalName: String
-    var completedTask: Int
-    var totalTask: Int
+    var goalName: String = ""
+    var completedTask: Int = 0
+    var totalTask: Int = 0
     
     func encodeIt() -> Data {
           let data = try! PropertyListEncoder.init().encode(self)
@@ -23,6 +23,14 @@ struct GoalProgress: Codable {
     static func decodeIt(_ data:Data) -> GoalProgress {
           let goalProgress = try! PropertyListDecoder.init().decode(GoalProgress.self, from: data)
           return goalProgress
+    }
+    
+    func getProgressPercentage() -> Double {
+        if self.totalTask == 0 {
+            return 0.0
+        }
+        
+         return Double(completedTask) / Double(totalTask)
     }
 }
 
