@@ -45,6 +45,7 @@
 		CB9449EF286EA7D90008A35F /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9449EE286EA7D90008A35F /* TaskView.swift */; };
 		CB9865402888618F00F8CD36 /* CardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98653F2888618F00F8CD36 /* CardColor.swift */; };
 		CB9865412888618F00F8CD36 /* CardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98653F2888618F00F8CD36 /* CardColor.swift */; };
+		CB98654428890DB900F8CD36 /* ExtentionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98654328890DB900F8CD36 /* ExtentionDelegate.swift */; };
 		CBA7F2582872A17E00C5E7FF /* Date+FormattedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7F2572872A17E00C5E7FF /* Date+FormattedString.swift */; };
 		CBA7F25A2872A60600C5E7FF /* GoalSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA7F2592872A60600C5E7FF /* GoalSummaryViewModel.swift */; };
 		CBA89ECF288521BC008C3A9C /* IosConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA89ECE288521BC008C3A9C /* IosConnectivity.swift */; };
@@ -185,6 +186,7 @@
 		CB9449EC286EA76F0008A35F /* SetTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTaskViewModel.swift; sourceTree = "<group>"; };
 		CB9449EE286EA7D90008A35F /* TaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		CB98653F2888618F00F8CD36 /* CardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardColor.swift; sourceTree = "<group>"; };
+		CB98654328890DB900F8CD36 /* ExtentionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionDelegate.swift; sourceTree = "<group>"; };
 		CBA7F2572872A17E00C5E7FF /* Date+FormattedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+FormattedString.swift"; sourceTree = "<group>"; };
 		CBA7F2592872A60600C5E7FF /* GoalSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalSummaryViewModel.swift; sourceTree = "<group>"; };
 		CBA89ECE288521BC008C3A9C /* IosConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosConnectivity.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				CBA89ED02885221C008C3A9C /* WatchConnectivity.swift */,
 				CB5E2EC82886534E00763D28 /* ComplicationView.swift */,
 				C8C3E40F2887AFD50030909C /* Extension.swift */,
+				CB98654328890DB900F8CD36 /* ExtentionDelegate.swift */,
 			);
 			path = "GoalinWatch WatchKit Extension";
 			sourceTree = "<group>";
@@ -927,6 +930,7 @@
 				C85937792880A5D400F64F91 /* TodayTaskView.swift in Sources */,
 				CBA89EE328852856008C3A9C /* ListSubtask.swift in Sources */,
 				CBA89EDD28852832008C3A9C /* MainTabView.swift in Sources */,
+				CB98654428890DB900F8CD36 /* ExtentionDelegate.swift in Sources */,
 				C85937792880A5D400F64F91 /* TodayTaskView.swift in Sources */,
 				CB5E2EC92886534E00763D28 /* ComplicationView.swift in Sources */,
 				CBA89EE628852E90008C3A9C /* MessageKey.swift in Sources */,

@@ -70,7 +70,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         var entries: [CLKComplicationTimelineEntry] = []
         
         
-        for d in vm.complicationData{
+        for d in vm.complicationData.reversed(){
             if entries.count < limit && d.time.timeIntervalSince(date) > 0 {
                 if let ctemplate = makeTemplate(complication: complication, data: d){
                     let entry = CLKComplicationTimelineEntry(

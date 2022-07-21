@@ -41,8 +41,7 @@ struct ComplicationViewEmpty: View {
 
 
 extension Date {
-
-    func formattedString(_ format: String = "hh:mm") -> String {
+    func formattedString(_ format: String = "hh:mm a") -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: self)

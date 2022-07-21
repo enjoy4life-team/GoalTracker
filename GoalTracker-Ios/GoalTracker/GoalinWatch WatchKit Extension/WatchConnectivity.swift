@@ -26,11 +26,22 @@ final class WatchConnectivity: NSObject, WCSessionDelegate, ObservableObject {
         self.session.activate()    }
     
 
-    
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
         self.getGoalProgress()
         self.getTodayActivity()
+        self.getComplicationData()
     }
+    
+//    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+//        self.getGoalProgress()
+//        self.getTodayActivity()
+//        self.getComplicationData()
+//
+//        let server = CLKComplicationServer.sharedInstance()
+//        server.activeComplications?.forEach {
+//          server.reloadTimeline(for: $0)
+//        }
+//    }
 
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
@@ -44,7 +55,6 @@ final class WatchConnectivity: NSObject, WCSessionDelegate, ObservableObject {
                     self.goalProgress = data.compactMap{
                         GoalProgress.decodeIt($0)
                     }
-                    print(self.goalProgress.count)
                 }
             }
         }
@@ -56,7 +66,6 @@ final class WatchConnectivity: NSObject, WCSessionDelegate, ObservableObject {
             if let data = res[dataKey] as? Data {
                 DispatchQueue.main.async {
                     self.todayActivity = TodayActivity.decodeIt(data).activityList
-                    print(self.todayActivity)
                 }
             }
         }
@@ -74,17 +83,13 @@ final class WatchConnectivity: NSObject, WCSessionDelegate, ObservableObject {
                 DispatchQueue.main.async {
                     self.complicationData = data.compactMap{
                         Complication.decodeIt($0)
-
-
                     }
-                    print(self.complicationData.count)
-
+                    
                     let server = CLKComplicationServer.sharedInstance()
                     server.activeComplications?.forEach {
                       server.reloadTimeline(for: $0)
                     }
                 }
-
 
             }
         }

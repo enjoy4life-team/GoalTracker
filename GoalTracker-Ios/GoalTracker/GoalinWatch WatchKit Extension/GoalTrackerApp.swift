@@ -10,14 +10,16 @@ import SwiftUI
 
 @main
 struct GoalTrackerApp: App {
+    @WKExtensionDelegateAdaptor(ExtensionDelegate.self)
+    private var extensionDelegate
+    
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
                 MainTabView()
 //                ContentView()
             }.task {
-                WatchConnectivity.shared.getComplicationData()
-               
+                ExtensionDelegate.scheduleBAR(true)
             }
         }
 

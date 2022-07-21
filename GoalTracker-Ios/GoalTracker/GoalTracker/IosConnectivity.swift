@@ -109,7 +109,6 @@ class IosConnectivity: NSObject, WCSessionDelegate, ObservableObject {
 
             }
 
-            print(complication.count)
 
             replyHandler([dataKey: complication])
         default:
@@ -184,7 +183,9 @@ class IosConnectivity: NSObject, WCSessionDelegate, ObservableObject {
 
 
     func updateOnWatch(){
-        session.sendMessage(["ping":"pong"], replyHandler: nil)
+//        session.sendMessage(["ping":"pong"], replyHandler: nil)
+        session.transferUserInfo(["ping":"pong"])
+        
     }
 
     func getGoalProgress() -> [GoalProgress]? {
