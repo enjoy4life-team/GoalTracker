@@ -13,6 +13,12 @@ struct Homescreen: View {
     
     var body: some View {
         ScrollView {
+            if vm.goalProgress.isEmpty {
+                BlankHomescreen()
+                    .navigationBarTitle("Progress")
+                    .padding(.top, 10)
+            }else{
+                
             VStack {
                 
                 ForEach(vm.goalProgress, id: \.goalID){ goal in
@@ -20,10 +26,12 @@ struct Homescreen: View {
                         .padding(.bottom, 12)
                     
                 }
+            
             }
             .navigationBarTitle("Progress")
             .padding(.top, 10)
         }
+    }
         .task {
             WatchConnectivity.shared.getGoalProgress()
             print(WatchConnectivity.shared.goalProgress)

@@ -28,7 +28,9 @@ struct SetActivityView: View {
                                 NavigationLink(destination: TaskView(viewModel: SetTaskViewModel(activity: viewModel.activities[idx]))) {
                                     Text(viewModel.activities[idx].name ?? "null")
                                 } // disabled  !
-                            }
+                            }else{
+                                Text(viewModel.activities[idx].name ?? "null")
+                            } // disabled  !                            }
                     }
                     .onMove(perform: { from, to in
                         viewModel.moveData(fromOffsets: from, toOffset: to)
