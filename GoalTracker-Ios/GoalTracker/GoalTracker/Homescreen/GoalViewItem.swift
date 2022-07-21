@@ -26,9 +26,9 @@ struct GoalViewItem: View {
                     .cornerRadius(20)
                 
                 Group {
-                    goalRings(radius: 110, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.communicationString), background: chooseColor(goalName: SmartGoalData.communicationString).opacity(0.3), color: chooseColor(goalName: SmartGoalData.communicationString))
-                    goalRings(radius: 90, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.collaborationString), background: chooseColor(goalName: SmartGoalData.collaborationString).opacity(0.3), color: chooseColor(goalName: SmartGoalData.collaborationString))
-                    goalRings(radius: 70, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.presentationString), background: chooseColor(goalName: SmartGoalData.presentationString).opacity(0.3), color: chooseColor(goalName: SmartGoalData.presentationString))
+                    goalRings(radius: 110, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.communicationString), background: chooseColorIos(goalName: SmartGoalData.communicationString).opacity(0.2), color: chooseColorIos(goalName: SmartGoalData.communicationString))
+                    goalRings(radius: 90, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.collaborationString), background: chooseColorIos(goalName: SmartGoalData.collaborationString).opacity(0.2), color: chooseColorIos(goalName: SmartGoalData.collaborationString))
+                    goalRings(radius: 70, percent: viewModel.getGoalPercentage(goalType: SmartGoalData.presentationString), background: chooseColorIos(goalName: SmartGoalData.presentationString).opacity(0.2), color: chooseColorIos(goalName: SmartGoalData.presentationString))
                 }
             }
             .padding(.bottom, 20)
@@ -115,7 +115,7 @@ struct CardNew: View {
         ZStack {
             
             Rectangle()
-                .foregroundColor(chooseColor(goalName: goalName))
+                .foregroundColor(chooseColorIos(goalName: goalName))
                 .frame(height: 85)
                 .cornerRadius(20)
             
