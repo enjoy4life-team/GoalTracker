@@ -16,24 +16,19 @@ struct TodayTaskView: View {
             VStack(alignment: .leading, spacing: 5) {
                 ForEach($viewModel.todayActivity, id: \.ID) {activity in
                     
-                    VStack(spacing:0){
-                        HStack{
-                            Text(activity.activityName.toUnwrapped(defaultValue: "").wrappedValue)
-                                .font(.caption)
-                                .fontWeight(.semibold)
-                                .padding(.leading, 10)
-                            
-                            Spacer()
-                        }
+                    HStack{
+                        Text(activity.activityName.toUnwrapped(defaultValue: "").wrappedValue)
+                            .font(.caption)
+                            .fontWeight(.semibold)
+                            .padding(.leading, 8)
+                            .frame(maxWidth: 200, maxHeight: 25)
                         
-                        HStack{
-                            Spacer()
-                            
-                            Text(activity.activityDate.toUnwrapped(defaultValue: .now).wrappedValue, style: .time)
-                                .font(.footnote)
-                                .padding(.trailing, 10)
-                                .foregroundColor(.gray)
-                        }
+                        Spacer()
+                        
+                        Text(activity.activityDate.toUnwrapped(defaultValue: .now).wrappedValue, style: .time)
+                            .font(.footnote)
+                            .padding(.trailing, 8)
+                            .foregroundColor(.gray)
                     }
                     .background{
                         RoundedRectangle(cornerRadius: 20)
