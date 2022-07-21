@@ -38,3 +38,21 @@ func chooseColor(goalName: String) -> Color {
         return .black
     }
 }
+
+
+func chooseColorIos(goalName: String) -> Color {
+    let communicationString = "Communication"
+    let collaborationString = "Collaboration"
+    let presentationString = "Presentation"
+    
+    switch goalName {
+    case communicationString:
+        return Color(hex: 0xDD261C)
+    case collaborationString:
+        return Color(hex: 0x00A39B)
+    case presentationString:
+        return Color(hex: 0xA54BD2)
+    default:
+        return .black
+    }
+}
