@@ -8,10 +8,22 @@
 import SwiftUI
 
 struct ListSubtask: View {
+    @ObservedObject var viewModel = WatchConnectivity.shared
+//    @State var empty = true
     var body: some View {
         ScrollView {
-            TodayTaskView()
+//            if empty {
+//                EmptyTaskView()
+//
+//            }else{
+                TodayTaskView()
+//            }
+            
         }
+//        .onAppear{
+//            viewModel.getTodayActivity()
+//            empty = viewModel.todayActivity.isEmpty
+//        }
     }
 }
 

@@ -13,7 +13,8 @@ struct TodayTaskView: View {
     
     var body: some View {
         ScrollView{
-            VStack(alignment: .leading, spacing: 3) {
+            
+            VStack(alignment: .leading, spacing: 10) {
                 ForEach($viewModel.todayActivity, id: \.ID) {activity in
                     HStack{
                         Text(activity.activityName.toUnwrapped(defaultValue: "").wrappedValue)
@@ -23,7 +24,7 @@ struct TodayTaskView: View {
                         
                         Spacer()
                         
-                        Text("")
+                        Text(activity.activityDate.toUnwrapped(defaultValue: Date.now).wrappedValue, style: .time)
                             .font(.caption)
                             .padding(.trailing, 10)
                             .foregroundColor(.gray)
@@ -34,14 +35,14 @@ struct TodayTaskView: View {
                             .frame(maxWidth: .infinity)
                             .foregroundColor(.red.opacity(0.5))
                     }
-                    .padding()
-                    
+                    .padding(.bottom, -5)
+                    .padding(.top)
                     
                     ForEach(activity.TaskList, id: \.taskID){ task in
                         ZStack{
                             HStack{
                                 Rectangle()
-                                .frame(width: 15, height: 44)
+                                .frame(width: 15, height: 45)
                                 .cornerRadius(radius: 10, corners: [.topLeft, .bottomLeft])
     //                            .foregroundColor( todayTasks[idx].goalColor)
                                 .padding(.leading, 15)
@@ -76,13 +77,8 @@ struct TodayTaskView: View {
                             .cornerRadius(10)
                             .frame(maxWidth: .infinity, maxHeight: 40)
                             .padding(.leading, 15)
-                            
                         }
                     }
-                    
-                    
-                    
-               
                 }
             }
         }
@@ -97,6 +93,7 @@ struct EmptyTaskView: View {
     
     var body: some View {
         VStack(spacing: 5){
+            Spacer()
             Image("bnwlogo")
                 .resizable()
                 .frame(width: 80, height: 80)
@@ -105,6 +102,8 @@ struct EmptyTaskView: View {
                 .font(.title3)
                 .multilineTextAlignment(.center)
         }
+        .padding()
+        .navigationTitle("Today's Tasks")
     }
 }
 
