@@ -13,29 +13,35 @@ struct TodayTaskView: View {
     
     var body: some View {
         ScrollView{
-            VStack(alignment: .leading, spacing: 3) {
+            VStack(alignment: .leading, spacing: 5) {
                 ForEach($viewModel.todayActivity, id: \.ID) {activity in
-                    HStack{
-                        Text(activity.activityName.toUnwrapped(defaultValue: "").wrappedValue)
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                            .padding(.leading, 10)
+                    
+                    VStack(spacing:0){
+                        HStack{
+                            Text(activity.activityName.toUnwrapped(defaultValue: "").wrappedValue)
+                                .font(.caption)
+                                .fontWeight(.semibold)
+                                .padding(.leading, 10)
+                            
+                            Spacer()
+                        }
                         
-                        Spacer()
-                        
-                        Text("")
-                            .font(.caption)
-                            .padding(.trailing, 10)
-                            .foregroundColor(.gray)
+                        HStack{
+                            Spacer()
+                            
+                            Text(activity.activityDate.toUnwrapped(defaultValue: .now).wrappedValue, style: .time)
+                                .font(.footnote)
+                                .padding(.trailing, 10)
+                                .foregroundColor(.gray)
+                        }
                     }
                     .background{
                         RoundedRectangle(cornerRadius: 20)
-                            .frame(height: 30)
+                            .frame(height: 25)
                             .frame(maxWidth: .infinity)
                             .foregroundColor(chooseColor(goalName: activity.goalName.wrappedValue).opacity(0.5))
                     }
-                    .padding()
-                    
+                    .padding(.top)
                     
                     ForEach(activity.TaskList, id: \.taskID){ task in
                         ZStack{
@@ -44,7 +50,7 @@ struct TodayTaskView: View {
                                 .frame(width: 15, height: 44)
                                 .cornerRadius(radius: 10, corners: [.topLeft, .bottomLeft])
                                 .foregroundColor(chooseColor(goalName: activity.goalName.wrappedValue))
-                                .padding(.leading, 15)
+                                .padding(.leading, 20)
                             Spacer()
                             }
                             Button{
@@ -75,14 +81,9 @@ struct TodayTaskView: View {
                             }
                             .cornerRadius(10)
                             .frame(maxWidth: .infinity, maxHeight: 40)
-                            .padding(.leading, 15)
-                            
+                            .padding(.leading, 20)
                         }
                     }
-                    
-                    
-                    
-               
                 }
             }
         }
@@ -100,11 +101,14 @@ struct EmptyTaskView: View {
             Image("bnwlogo")
                 .resizable()
                 .frame(width: 80, height: 80)
+                .padding(.top)
             
             Text("There's no task for you today")
                 .font(.title3)
                 .multilineTextAlignment(.center)
         }
+        .padding()
+        .navigationTitle("Today's Tasks")
     }
 }
 
