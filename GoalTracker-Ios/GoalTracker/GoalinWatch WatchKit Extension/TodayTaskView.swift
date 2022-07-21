@@ -21,7 +21,7 @@ struct TodayTaskView: View {
                             .font(.caption)
                             .fontWeight(.semibold)
                             .padding(.leading, 8)
-                            .frame(maxWidth: 200, maxHeight: 25)
+                            .frame(maxWidth: 250, maxHeight: 25)
                         
                         Spacer()
                         
