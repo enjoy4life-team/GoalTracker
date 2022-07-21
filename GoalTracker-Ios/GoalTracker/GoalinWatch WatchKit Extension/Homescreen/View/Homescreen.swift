@@ -85,7 +85,8 @@ struct goalRing: View {
             
             VStack (alignment: .leading){
                 Text(goalName)
-                    .font(.subheadline)
+                    .font(.footnote)
+//                    .font(.subheadline)
                     .fontWeight(.medium)
                 Text("Subtask: \(completeTask)/\(totaltask)")
                     .font(.footnote)
