@@ -18,7 +18,7 @@ struct TodayTaskView: View {
                     
                     HStack{
                         Text(activity.activityName.toUnwrapped(defaultValue: "").wrappedValue)
-                            .font(.caption)
+                            .font(.callout)
                             .fontWeight(.semibold)
                             .padding(.leading, 8)
                             .frame(maxWidth: 250, maxHeight: 25)
