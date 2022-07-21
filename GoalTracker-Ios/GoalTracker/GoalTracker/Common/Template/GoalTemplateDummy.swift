@@ -64,7 +64,7 @@ struct SmartGoalData {
 
         let acttivity3 = Activity(context: ctx)
         acttivity3.id = UUID.init()
-        acttivity3.name = "Feed Back"
+        acttivity3.name = "Feedback"
         acttivity3.date = Date.now
         acttivity3.number = 3
         acttivity3.goal_id = goal.id
